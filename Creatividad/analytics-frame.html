@@ -1,0 +1,147 @@
+<!doctype html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+  <head>
+    <meta charset="utf-8" />
+    <meta  name="referrer" content="origin" />
+    <script>
+      /* jshint ignore:start */
+      // jscs:disable
+      // https://gist.github.com/982883
+      var uuid = function(a) {
+        return a           // if the placeholder was passed, return
+          ? (              // a random number from 0 to 15
+            a ^            // unless b is 8,
+            Math.random()  // in which case
+            * 16           // a random number from
+            >> a/4         // 8 to 11
+            ).toString(16) // in hexadecimal
+          : (              // or otherwise a concatenated string:
+            [1e7] +        // 10000000 +
+            -1e3 +         // -1000 +
+            -4e3 +         // -4000 +
+            -8e3 +         // -80000000 +
+            -1e11          // -100000000000,
+            ).replace(     // replacing
+              /[018]/g,    // zeroes, ones, and eights with
+              uuid         // random hex digits
+            );
+      };
+
+      window.frameHash = window.location.hash.replace(/^#/, '');
+
+      var postToParent = function(message) {
+        if (window.parent.postMessage != null) {
+          window.parent.postMessage(message, '*');
+        }
+      };
+
+      var onDidReceiveMessage = function(e) {
+        if (e.data.id === frameHash) {
+          var xhr = new XMLHttpRequest(),
+              now = new Date(),
+              data = {
+                messageId: uuid(),
+                sentAt: now.toISOString(),
+                batch: [ {
+                  event: e.data.event,
+                  properties: e.data.properties,
+                  type: 'track',
+                  messageId: uuid(),
+                  timestamp: now.toISOString(),
+                  context: {
+                    ip: '0.0.0.0',
+                    page: {
+                      path: '/',
+                      referrer: '',
+                      search: '',
+                      title: '',
+                      url: 'http://'
+                    }
+                  },
+                  integrations: {},
+                  userId: e.data.aid
+                } ]
+              };
+
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+              postToParent({
+                id: frameHash,
+                message: 'xhr sent'
+              });
+              window.onDidReceiveMessage = null;
+            }
+          };
+
+          xhr.open('POST', 'https://metrics.articulate.com/v1/import');
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(JSON.stringify(data));
+        }
+      };
+
+      if ('onmessage' in window) {
+        window.addEventListener('message', onDidReceiveMessage, false);
+      } else {
+        // coming from flash, we will use older JS since we can expect some older IE versions
+        var validProps = [
+          'os', 'browser', 'playerVersion', 'playerType', 'lmsPresent', 'tinCanPresent',
+          'aoSupport', 'publishSource', 'protocol', 'productChannel', 'cid', 'screenResolution',
+          'pixelRatio'
+        ];
+        var aid,
+            props = window.location.search.replace(/^\?/, '').split('&'),
+            config = {};
+
+        for (var i = 0, ii = props.length, currProp; i < ii; i++) {
+          currProp = props[i].split('=');
+          if (validProps.indexOf(currProp[0]) > -1 && currProp.length === 2) {
+            config[currProp[0]] = currProp[1];
+          } else if (currProp[0] === 'aid') {
+            aid = currProp[1];
+          }
+        }
+
+        window.onDidReceiveMessage({
+          data: {
+            id: frameHash,
+            event: 'player_course_load',
+            properties: config,
+            aid: aid
+          }
+        })
+
+      }
+      /* jshint ignore:end */
+      // jscs:enable
+    </script>
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">FJNHK3QCHCF6-2088904399-6526</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">e662e2c0-04ab-4631-898f-8b7b499f4af9</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://fundacionjaes.sharepoint.com/sites/desarrollo/programas/_layouts/15/DocIdRedir.aspx?ID=FJNHK3QCHCF6-2088904399-6526, FJNHK3QCHCF6-2088904399-6526</mso:_dlc_DocIdUrl>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Cristina Morales</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">652600.000000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Cristina Morales</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:ContentTypeId msdt:dt="string">0x010100F05DB450A3364C468B80E43C40C26C75</mso:ContentTypeId>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:MediaLengthInSeconds msdt:dt="string"></mso:MediaLengthInSeconds>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<title></title></head>
+  <body>
+  </body>
+  <script>
+    postToParent({
+      id: window.frameHash,
+      message: 'loaded'
+    });
+  </script>
+</html>

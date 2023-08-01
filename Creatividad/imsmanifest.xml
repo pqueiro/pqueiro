@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_5wf02Fcotw7" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">CREATIVIDAD Y CURISOSIDAD</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="CREATIVIDAD_Y_CURISOSIDAD_ORG">
+    <organization identifier="CREATIVIDAD_Y_CURISOSIDAD_ORG">
+      <title>CREATIVIDAD Y CURISOSIDAD</title>
+      <item identifier="Creatividad_y_curiosidad._Manual_voluntario/_docente._SCO" isvisible="true" identifierref="__5wf02Fcotw7_RES">
+        <title>CREATIVIDAD Y CURISOSIDAD</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__5wf02Fcotw7_RES" type="webcontent" href="index_lms.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/66T9pFEjtIp.png" />
+      <file href="mobile/67GcU3ewTqw.png" />
+      <file href="mobile/6PjzODwJxvK.png" />
+      <file href="mobile/6CHoqrD2Z6B.png" />
+      <file href="mobile/6acIwHB9uJt.png" />
+      <file href="mobile/6IEttKLFmA8.png" />
+      <file href="mobile/6UZrgHoMVa2.png" />
+      <file href="mobile/689HCr2xaiE.png" />
+      <file href="mobile/6IJk88Xenu3.png" />
+      <file href="mobile/64XJdFhGnKx.png" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5i8ZNswNphD.js" />
+      <file href="html5/data/js/5kmD9C5fBWH.js" />
+      <file href="html5/data/js/5psOqZgSVtf.js" />
+      <file href="html5/data/js/5wJpqwxXwg5.js" />
+      <file href="html5/data/js/5wkB0XksSVg.js" />
+      <file href="html5/data/js/5XFe9Jc3K4c.js" />
+      <file href="html5/data/js/5zld19Ebu5c.js" />
+      <file href="html5/data/js/62dz7kJ1552.js" />
+      <file href="html5/data/js/64rO25pRieU.js" />
+      <file href="html5/data/js/67m6uyfYBSA.js" />
+      <file href="html5/data/js/69ktlbNHsxa.js" />
+      <file href="html5/data/js/6B31ZGONpyB.js" />
+      <file href="html5/data/js/6FhMK4INOiz.js" />
+      <file href="html5/data/js/6G2wXvVr1Xu.js" />
+      <file href="html5/data/js/6GuwT0bYB6N.js" />
+      <file href="html5/data/js/6i93ZYCAC1Y.js" />
+      <file href="html5/data/js/6IXAYGDvDuS.js" />
+      <file href="html5/data/js/6kmk0XNSNv7.js" />
+      <file href="html5/data/js/6myMsRoVepb.js" />
+      <file href="html5/data/js/6MzMi5axedr.js" />
+      <file href="html5/data/js/6OOZ3GAqY0A.js" />
+      <file href="html5/data/js/6P4xqRmvIyA.js" />
+      <file href="html5/data/js/6qZiNbZWm4w.js" />
+      <file href="html5/data/js/6SiQ81k8ezA.js" />
+      <file href="html5/data/js/6TvShccioDA.js" />
+      <file href="html5/data/js/6TyWNOoqWbl.js" />
+      <file href="html5/data/js/6V4nfWzh7Ek.js" />
+      <file href="html5/data/js/6Vry8KM9QZG.js" />
+      <file href="html5/data/js/6W8pQOAk4wP.js" />
+      <file href="html5/data/js/6YaloqfW2hw.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>
