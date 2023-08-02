@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_5ufHZ4n9eXT" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">ABRIR LA MENTE</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="ABRIR_LA_MENTE_ORG">
+    <organization identifier="ABRIR_LA_MENTE_ORG">
+      <title>ABRIR LA MENTE</title>
+      <item identifier="Abrir_la_mente._Manual_voluntario/_docente._SCO" isvisible="true" identifierref="__5ufHZ4n9eXT_RES">
+        <title>ABRIR LA MENTE</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__5ufHZ4n9eXT_RES" type="webcontent" href="index_lms.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/66T9pFEjtIp.png" />
+      <file href="mobile/67GcU3ewTqw.png" />
+      <file href="mobile/6DMfKGNBASV.png" />
+      <file href="mobile/5ovrbd7NVN0.png" />
+      <file href="mobile/6pQEebkxuiU.png" />
+      <file href="mobile/6bzbhEbV20Q.png" />
+      <file href="mobile/6qoMY3Zdrap.png" />
+      <file href="mobile/69Y3YjKzX4V.png" />
+      <file href="mobile/5wNzA8k4hnD.png" />
+      <file href="mobile/6NghZNuE5ra.png" />
+      <file href="mobile/61coJMRXXf8.png" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5eiyj49tie5.js" />
+      <file href="html5/data/js/5i8ZNswNphD.js" />
+      <file href="html5/data/js/5igWH4Tj3gE.js" />
+      <file href="html5/data/js/5kmD9C5fBWH.js" />
+      <file href="html5/data/js/5l1LM3Xh0lH.js" />
+      <file href="html5/data/js/5uiY6eTD5E8.js" />
+      <file href="html5/data/js/5wkB0XksSVg.js" />
+      <file href="html5/data/js/5zld19Ebu5c.js" />
+      <file href="html5/data/js/65YPC337BlF.js" />
+      <file href="html5/data/js/69ktlbNHsxa.js" />
+      <file href="html5/data/js/69zAd8sUWEq.js" />
+      <file href="html5/data/js/6B31ZGONpyB.js" />
+      <file href="html5/data/js/6CHAtgrr5XR.js" />
+      <file href="html5/data/js/6G2wXvVr1Xu.js" />
+      <file href="html5/data/js/6GuVZWdL6hL.js" />
+      <file href="html5/data/js/6GuwT0bYB6N.js" />
+      <file href="html5/data/js/6i93ZYCAC1Y.js" />
+      <file href="html5/data/js/6KXHvxEUnew.js" />
+      <file href="html5/data/js/6omCpBLrVH7.js" />
+      <file href="html5/data/js/6p5LcWVqUmd.js" />
+      <file href="html5/data/js/6P7bk8SJlzk.js" />
+      <file href="html5/data/js/6SiQ81k8ezA.js" />
+      <file href="html5/data/js/6Vry8KM9QZG.js" />
+      <file href="html5/data/js/6X6nqmGwU1A.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>

@@ -1,0 +1,69 @@
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+	<head>
+	<script>
+	window.document.onkeypress = CheckForDebugCommand;
+
+	var intQuestionCounter = 0;
+	var ASCII_QUESTION = 63;
+	
+	function CheckForDebugCommand(e){
+
+
+		var intKeyCode = 0;			
+		if (window.event) {
+			e = window.event;
+			intKeyCode = e.keyCode;
+		}
+		else  {
+			intKeyCode = e.which;
+		}
+
+		if (intKeyCode == ASCII_QUESTION){
+			intQuestionCounter++;
+			if (intQuestionCounter == 3){
+				intQuestionCounter = 0;
+				
+				parent.ShowDebugWindow();
+			}
+		}
+		else if (intKeyCode !=0){		//in FireFox, the shift key comes through as a keypress with code of 0...we want to ignore this
+			intQuestionCounter = 0;
+		}
+	}		
+	
+	
+
+	</script>
+	
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">FJNHK3QCHCF6-2088904399-6922</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">e1b86cd1-855f-4a17-91c5-4f4b3a0e1174</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://fundacionjaes.sharepoint.com/sites/desarrollo/programas/_layouts/15/DocIdRedir.aspx?ID=FJNHK3QCHCF6-2088904399-6922, FJNHK3QCHCF6-2088904399-6922</mso:_dlc_DocIdUrl>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Cristina Morales</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">692200.000000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Cristina Morales</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:ContentTypeId msdt:dt="string">0x010100F05DB450A3364C468B80E43C40C26C75</mso:ContentTypeId>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:MediaLengthInSeconds msdt:dt="string"></mso:MediaLengthInSeconds>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<title></title></head>
+	<body>
+		&nbsp;
+<!--
+If the course does not load and is stuck on this page:
+ -Click in the middle of the page
+ -Press the question mark key (?) three times
+ -A window should pop up containing debug information, send this information to technical support for further assistance
+ -If no information appears, try again 1 or 2 more times, sometimes that just does the trick
+ -->
+	</body>
+</html>

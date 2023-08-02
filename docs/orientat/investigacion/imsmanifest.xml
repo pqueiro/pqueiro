@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_6Ot9lerVzYg" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">INVESTIGACIÓN.</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="INVESTIGACIÓN._ORG">
+    <organization identifier="INVESTIGACIÓN._ORG">
+      <title>INVESTIGACIÓN.</title>
+      <item identifier="Investigación._Manual_voluntario/_docente._SCO" isvisible="true" identifierref="__6Ot9lerVzYg_RES">
+        <title>INVESTIGACIÓN.</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__6Ot9lerVzYg_RES" type="webcontent" href="index_lms.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/66T9pFEjtIp.png" />
+      <file href="mobile/67GcU3ewTqw.png" />
+      <file href="mobile/6DMfKGNBASV.png" />
+      <file href="mobile/5ovrbd7NVN0.png" />
+      <file href="mobile/6pQEebkxuiU.png" />
+      <file href="mobile/65P0FUZbbCO_P_402_466_312_330.png" />
+      <file href="mobile/66xGNsHe4wm_P_420_372_670_558.png" />
+      <file href="mobile/6AOBLyCzO5w_P_424_304_918_628.png" />
+      <file href="mobile/5t54rmdT0tv_P_418_420_562_318.png" />
+      <file href="mobile/66twho7lxZP_P_94_239_795_552.png" />
+      <file href="mobile/6FLdxxa20No.png" />
+      <file href="mobile/63M9lZMvbj5.png" />
+      <file href="mobile/5t54rmdT0tv_P_426_494_553_243.png" />
+      <file href="mobile/6AOBLyCzO5w_P_424_368_918_564.png" />
+      <file href="mobile/66xGNsHe4wm_P_429_452_660_467.png" />
+      <file href="mobile/65P0FUZbbCO_P_402_527_312_268.png" />
+      <file href="mobile/6aOfwhY5Asi.png" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5i8ZNswNphD.js" />
+      <file href="html5/data/js/5kmD9C5fBWH.js" />
+      <file href="html5/data/js/5wkB0XksSVg.js" />
+      <file href="html5/data/js/5zld19Ebu5c.js" />
+      <file href="html5/data/js/63gmjKCZhp2.js" />
+      <file href="html5/data/js/67Qk4tm7XWI.js" />
+      <file href="html5/data/js/69ktlbNHsxa.js" />
+      <file href="html5/data/js/69rfNuXKtCn.js" />
+      <file href="html5/data/js/6B31ZGONpyB.js" />
+      <file href="html5/data/js/6Bi8n1f3od8.js" />
+      <file href="html5/data/js/6dSVuYc41QP.js" />
+      <file href="html5/data/js/6f5WoR1N6jz.js" />
+      <file href="html5/data/js/6G2wXvVr1Xu.js" />
+      <file href="html5/data/js/6GuwT0bYB6N.js" />
+      <file href="html5/data/js/6i93ZYCAC1Y.js" />
+      <file href="html5/data/js/6kmk0XNSNv7.js" />
+      <file href="html5/data/js/6lTcwXbZSuX.js" />
+      <file href="html5/data/js/6P4xqRmvIyA.js" />
+      <file href="html5/data/js/6p5LcWVqUmd.js" />
+      <file href="html5/data/js/6redHLCWfa3.js" />
+      <file href="html5/data/js/6SiQ81k8ezA.js" />
+      <file href="html5/data/js/6Vry8KM9QZG.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>

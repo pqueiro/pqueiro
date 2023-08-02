@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_5jA9hoZRmKl" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">Capacidad de interpretación en Internet: FAKE NEWS</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="Capacidad_de_interpretación_en_Internet:_FAKE_NEWS_ORG">
+    <organization identifier="Capacidad_de_interpretación_en_Internet:_FAKE_NEWS_ORG">
+      <title>Capacidad de interpretación en Internet: FAKE NEWS</title>
+      <item identifier="Capacidad_de_interpretación_en_Internet:_FAKE_NEWS_SCO" isvisible="true" identifierref="__5jA9hoZRmKl_RES">
+        <title>Capacidad de interpretación en Internet: FAKE NEWS</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__5jA9hoZRmKl_RES" type="webcontent" href="index_lms.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/66T9pFEjtIp.png" />
+      <file href="mobile/67GcU3ewTqw.png" />
+      <file href="mobile/5mL6vO2hbfo.png" />
+      <file href="mobile/6AdFTBQpgAR.png" />
+      <file href="mobile/6boyvr9ZqZz.png" />
+      <file href="mobile/6Y5RqBTVRVm.png" />
+      <file href="mobile/5uMoTtBqM5B.png" />
+      <file href="mobile/60UCN83DMJP.png" />
+      <file href="mobile/5djJrVvX3qK.png" />
+      <file href="mobile/5YxlljEMna5.png" />
+      <file href="mobile/6MlYPm3uPY5.png" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="mobile/txt__default_6ZmSZ9csFBt.png" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5abHChN783e.js" />
+      <file href="html5/data/js/5i8ZNswNphD.js" />
+      <file href="html5/data/js/5kmD9C5fBWH.js" />
+      <file href="html5/data/js/5slsEmr8iKj.js" />
+      <file href="html5/data/js/5V5OVD8VqM4.js" />
+      <file href="html5/data/js/5wkB0XksSVg.js" />
+      <file href="html5/data/js/5YaR0u4pvEB.js" />
+      <file href="html5/data/js/5z8MaVTPwPK.js" />
+      <file href="html5/data/js/5zld19Ebu5c.js" />
+      <file href="html5/data/js/60icZR6T0F9.js" />
+      <file href="html5/data/js/63DBvT8YV7n.js" />
+      <file href="html5/data/js/69fzmsjIFBC.js" />
+      <file href="html5/data/js/69ktlbNHsxa.js" />
+      <file href="html5/data/js/6B31ZGONpyB.js" />
+      <file href="html5/data/js/6BtQ8yezPgz.js" />
+      <file href="html5/data/js/6EfbyZdJEXp.js" />
+      <file href="html5/data/js/6FPFnWmmtEc.js" />
+      <file href="html5/data/js/6G2wXvVr1Xu.js" />
+      <file href="html5/data/js/6GuwT0bYB6N.js" />
+      <file href="html5/data/js/6i93ZYCAC1Y.js" />
+      <file href="html5/data/js/6mXhjOw20xw.js" />
+      <file href="html5/data/js/6nJvw34nddf.js" />
+      <file href="html5/data/js/6NyXPfm5thc.js" />
+      <file href="html5/data/js/6qZiNbZWm4w.js" />
+      <file href="html5/data/js/6SiQ81k8ezA.js" />
+      <file href="html5/data/js/6T0DjYenGRh.js" />
+      <file href="html5/data/js/6TZ3FVPM6b7.js" />
+      <file href="html5/data/js/6UHRYcZHpP1.js" />
+      <file href="html5/data/js/6Vry8KM9QZG.js" />
+      <file href="html5/data/js/6YaloqfW2hw.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>
