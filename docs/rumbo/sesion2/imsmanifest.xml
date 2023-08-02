@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_6h0yLx5mohl" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">SESIÓN 2. ¿COMO CONSEGUIR MIS OBJETIVOS?</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="SESIÓN_2._¿COMO_CONSEGUIR_MIS_OBJETIVOS?_ORG">
+    <organization identifier="SESIÓN_2._¿COMO_CONSEGUIR_MIS_OBJETIVOS?_ORG">
+      <title>SESIÓN 2. ¿COMO CONSEGUIR MIS OBJETIVOS?</title>
+      <item identifier="SESIÓN_2._¿COMO_CONSEGUIR_MIS_OBJETIVOS?_SCO" isvisible="true" identifierref="__6h0yLx5mohl_RES">
+        <title>SESIÓN 2. ¿COMO CONSEGUIR MIS OBJETIVOS?</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__6h0yLx5mohl_RES" type="webcontent" href="index_lms.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/6SCfFPXrKoh_80_P_0_171_867_253_DX1628_DY1628_CX868_CY254.png" />
+      <file href="mobile/67GcU3ewTqw_80_DX212_DY212_CX166_CY82.png" />
+      <file href="mobile/6JZJEjt1kir_80_P_260_270_591_591_DX788_DY788_CX248_CY248.png" />
+      <file href="mobile/6SCfFPXrKoh_80_P_0_171_867_253_DX1628_DY1628_CX212_CY62.png" />
+      <file href="mobile/5i5P5oLBZc0_80_P_202_225_719_627_DX726_DY726_CX281_CY245.png" />
+      <file href="mobile/5jc1Z00vP4C_80_P_190_300_761_527_DX394_DY394_CX208_CY144.png" />
+      <file href="mobile/6LYIkSYDJmv_80_P_193_296_743_525_DX610_DY610_CX262_CY185.png" />
+      <file href="mobile/6KUFEqzoeM5_80_P_220_223_695_638_DX712_DY712_CX345_CY317.png" />
+      <file href="mobile/6eoLtfLkpnM_80_P_312_264_500_617_DX620_DY620_CX217_CY267.png" />
+      <file href="mobile/6JZJEjt1kir_80_P_260_254_589_614_DX788_DY788_CX325_CY339.png" />
+      <file href="mobile/6DbwbLizjrl_80_P_228_312_629_520_DX800_DY800_CX352_CY291.png" />
+      <file href="mobile/6UZeBn92W4t_80_P_306_266_499_595_DX742_DY742_CX258_CY308.png" />
+      <file href="mobile/5i5P5oLBZc0_80_P_177_239_756_610_DX726_DY726_CX384_CY310.png" />
+      <file href="mobile/6ZcSl1Mx9Ku_80_P_201_306_745_492_DX790_DY790_CX412_CY272.png" />
+      <file href="mobile/6LYIkSYDJmv_80_P_188_268_747_556_DX610_DY610_CX317_CY236.png" />
+      <file href="mobile/6eoLtfLkpnM_80_P_303_254_500_623_DX620_DY620_CX179_CY223.png" />
+      <file href="mobile/6SCfFPXrKoh_80_P_0_171_867_253_DX1628_DY1628_CX273_CY80.png" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5athmbKeyMG.js" />
+      <file href="html5/data/js/5bweqcoFA1O.js" />
+      <file href="html5/data/js/5egQV6E1amu.js" />
+      <file href="html5/data/js/5hp0FRe8dFG.js" />
+      <file href="html5/data/js/5kUmdVXBDlE.js" />
+      <file href="html5/data/js/5oc4ocoMDti.js" />
+      <file href="html5/data/js/5rf7YNqGCdP.js" />
+      <file href="html5/data/js/5rSpDhIG615.js" />
+      <file href="html5/data/js/5XolEd4wWE9.js" />
+      <file href="html5/data/js/5XZFnxDkdeb.js" />
+      <file href="html5/data/js/62AOnA9xQ33.js" />
+      <file href="html5/data/js/63e2JQTNwwU.js" />
+      <file href="html5/data/js/63NvRYQLQBb.js" />
+      <file href="html5/data/js/68fYYiRj4jP.js" />
+      <file href="html5/data/js/6bElxTJGmn7.js" />
+      <file href="html5/data/js/6C7nxlhh6a5.js" />
+      <file href="html5/data/js/6FV6N1EN6r4.js" />
+      <file href="html5/data/js/6G2wXvVr1Xu.js" />
+      <file href="html5/data/js/6GuwT0bYB6N.js" />
+      <file href="html5/data/js/6JhV1G3NjUZ.js" />
+      <file href="html5/data/js/6MemmaS8Axr.js" />
+      <file href="html5/data/js/6oKF5aRhDih.js" />
+      <file href="html5/data/js/6oSXXLRDbpW.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>
