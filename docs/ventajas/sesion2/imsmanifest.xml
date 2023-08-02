@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_6Wb4m39f6zR" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">SESIÓN 2. EL COSTE DEL ABANDONO ESCOLAR</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="SESIÓN_2._EL_COSTE_DEL_ABANDONO_ESCOLAR_ORG">
+    <organization identifier="SESIÓN_2._EL_COSTE_DEL_ABANDONO_ESCOLAR_ORG">
+      <title>SESIÓN 2. EL COSTE DEL ABANDONO ESCOLAR</title>
+      <item identifier="LAS_VENTAJAS_DE_PERMANECER_EN_EL_COLEGIO_SCO" isvisible="true" identifierref="__6Wb4m39f6zR_RES">
+        <title>SESIÓN 2. EL COSTE DEL ABANDONO ESCOLAR</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__6Wb4m39f6zR_RES" type="webcontent" href="launcher.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/5sHdW38Ma4P.png" />
+      <file href="mobile/67GcU3ewTqw.png" />
+      <file href="mobile/6R66T1CwXfl_P_296_226_515_630.png" />
+      <file href="mobile/5oKazPRDlJJ_P_204_275_733_583.png" />
+      <file href="mobile/5aT8Pkeqcee_P_187_312_733_512.png" />
+      <file href="mobile/5kUpnwE0KAQ_P_275_170_579_667.png" />
+      <file href="mobile/6F8zPK3nC35_P_245_204_630_629.png" />
+      <file href="mobile/5xRwzUzQ1Pd_P_195_302_697_492.png" />
+      <file href="mobile/5vaAMl5Uzng_P_321_262_457_595.png" />
+      <file href="mobile/6QP7A7RZgq1_P_260_262_585_627.png" />
+      <file href="mobile/5vBjgMFC3ah_80.jpg" />
+      <file href="mobile/5pI4ZSUxAHI_P_257_262_599_577.png" />
+      <file href="mobile/6eAPbGJoXaM_80.jpg" />
+      <file href="mobile/68nKPEQPt8f_80.jpg" />
+      <file href="mobile/5X3mxTo8E2u_80.jpg" />
+      <file href="mobile/5pcHYaea33f_80.jpg" />
+      <file href="mobile/6B4xDAGTqAh_P_260_283_569_563.png" />
+      <file href="mobile/5keVGTVIt1A_P_322_235_471_623.png" />
+      <file href="mobile/6mXZ8Iu3QdR_P_225_246_700_583.png" />
+      <file href="mobile/6F8zPK3nC35_P_241_212_634_633.png" />
+      <file href="mobile/5vaAMl5Uzng_P_338_262_428_604.png" />
+      <file href="mobile/5aT8Pkeqcee_P_212_291_704_525.png" />
+      <file href="mobile/6F8zPK3nC35_P_257_208_617_625.png" />
+      <file href="mobile/5kUpnwE0KAQ_P_271_166_579_704.png" />
+      <file href="mobile/65YtKcAE74r_P_271_208_558_717.png" />
+      <file href="mobile/6mXZ8Iu3QdR_P_216_224_717_618.png" />
+      <file href="mobile/65YtKcAE74r_P_296_185_529_727.png" />
+      <file href="mobile/5vaAMl5Uzng_P_325_275_462_579.png" />
+      <file href="mobile/5vscusHoWSP_P_341_262_429_588.png" />
+      <file href="mobile/5oKazPRDlJJ_P_204_270_729_591.png" />
+      <file href="mobile/69aU3gnwF29_80.jpg" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="mobile/Shape6kFKgRdKMgY.png" />
+      <file href="mobile/Shape5tXPzNYZCDj.png" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5c2NRrktIgJ.js" />
+      <file href="html5/data/js/5eSzOVLsS34.js" />
+      <file href="html5/data/js/5f29bHHWUTJ.js" />
+      <file href="html5/data/js/5fHN1lHt7ER.js" />
+      <file href="html5/data/js/5hPVQQV4TVd.js" />
+      <file href="html5/data/js/5hVxMLGvpaZ.js" />
+      <file href="html5/data/js/5hxEzBE70hz.js" />
+      <file href="html5/data/js/5kfmdrsaxFC.js" />
+      <file href="html5/data/js/5kVUe28AHy6.js" />
+      <file href="html5/data/js/5n176bTq9QP.js" />
+      <file href="html5/data/js/5oyau2Lpz4b.js" />
+      <file href="html5/data/js/5uPkryeMr4U.js" />
+      <file href="html5/data/js/5V0lJTAKjlp.js" />
+      <file href="html5/data/js/5vRdvhdRqrl.js" />
+      <file href="html5/data/js/5vybxGtysSY.js" />
+      <file href="html5/data/js/5wArxOVddDZ.js" />
+      <file href="html5/data/js/5wOoQj2TTfy.js" />
+      <file href="html5/data/js/5WUjO5ZNVzu.js" />
+      <file href="html5/data/js/5WuvnWeXOvp.js" />
+      <file href="html5/data/js/5XO8iucf3MT.js" />
+      <file href="html5/data/js/5ZF8bI5WoPo.js" />
+      <file href="html5/data/js/60gaUYAWSYk.js" />
+      <file href="html5/data/js/61dMgiXC4l5.js" />
+      <file href="html5/data/js/624QORPHhBG.js" />
+      <file href="html5/data/js/644faPsJuY2.js" />
+      <file href="html5/data/js/651Vi9NOv84.js" />
+      <file href="html5/data/js/65G6wHiP6lR.js" />
+      <file href="html5/data/js/65X9MqL6lJQ.js" />
+      <file href="html5/data/js/67IlaPT43U0.js" />
+      <file href="html5/data/js/68c5dqtcfxq.js" />
+      <file href="html5/data/js/68n2GREVn5c.js" />
+      <file href="html5/data/js/68SHkBZt8im.js" />
+      <file href="html5/data/js/6949bPggbHi.js" />
+      <file href="html5/data/js/69g7oHV0zee.js" />
+      <file href="html5/data/js/6EdMsNgnDHG.js" />
+      <file href="html5/data/js/6EUuFoeOnqr.js" />
+      <file href="html5/data/js/6f2cSkn05yp.js" />
+      <file href="html5/data/js/6gGOAPOXN2f.js" />
+      <file href="html5/data/js/6HZLqw6DFlD.js" />
+      <file href="html5/data/js/6idgEDM0qBa.js" />
+      <file href="html5/data/js/6J9CVPSKgtw.js" />
+      <file href="html5/data/js/6jqSncnt5tv.js" />
+      <file href="html5/data/js/6lc39QaM1yY.js" />
+      <file href="html5/data/js/6LNR9xHGcpb.js" />
+      <file href="html5/data/js/6NBMcWuHPgI.js" />
+      <file href="html5/data/js/6OU366Na9rd.js" />
+      <file href="html5/data/js/6pFgeK49RB3.js" />
+      <file href="html5/data/js/6PJ2G0O8CJW.js" />
+      <file href="html5/data/js/6PrpqE2IPCG.js" />
+      <file href="html5/data/js/6qmTdFtPz2M.js" />
+      <file href="html5/data/js/6QNiYMStJam.js" />
+      <file href="html5/data/js/6QQdyjfR7VO.js" />
+      <file href="html5/data/js/6rBYsfLqseH.js" />
+      <file href="html5/data/js/6ROWqrmWXUq.js" />
+      <file href="html5/data/js/6SnpfjK65N3.js" />
+      <file href="html5/data/js/6VAosZsDJwM.js" />
+      <file href="html5/data/js/6WaJhyAInN2.js" />
+      <file href="html5/data/js/6XWh5LXlArQ.js" />
+      <file href="html5/data/js/6YTaGExlO14.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="launcher.html" />
+      <file href="story_content/external_window.png" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>
