@@ -1,0 +1,136 @@
+<script id="ProcessPuzzleStandardLayout" type="text/html">
+    <!--[if gt IE 9]><!-->
+    <!-- ko if: $data.helper.customisedSeparatorsUsed-->
+    <style>
+        /* [IN:49860] font-face for IE8 and IE9 is in processCommon.less and is always loaded */
+        @font-face {
+            font-family: 'Quicksand';
+            src: url('css/fonts/Quicksand Regular/Quicksand Regular.woff') format('woff'); /* Pretty Modern Browsers */
+        }
+    </style>
+    <!-- /ko -->
+    <!--<![endif]-->
+
+    <div class="process__wrapper" data-bind="css : dragItemType()">
+        <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+        <div class="exercise__content-wrapper">
+            <div class="exercise__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+
+                <!-- ko if: !StringHelper.isNullOrEmpty(helper.exerciseIntro.text()) -->
+                <div class="process-about__introduction"
+                     data-bind="richtext: helper.exerciseIntro.text()"></div> <!-- to change -->
+                <!-- /ko -->
+                <!-- This table is used to have the same size for captions and titles-->
+                <table class="process-common__table" role="presentation">
+                    <tr class="process-common__row-titles">
+                        <!-- ko foreach: items() -->
+                        <td class="process-common__cell process-puzzle__cell-title" aria-live="polite"
+                            data-bind="attr: { 'tabindex': itemTabindex, 'aria-label': ariaDropzoneTitle(), role: !answerFound() ? 'button' : 'group'  },
+                                                         click: (isAllDraggable && !answerFound()) || (!isAllDraggable && isTitleDroppable && !answerFound())? selectDropZone: onClick,
+                                                css:{
+                                                    'dropzone--top': isAllDraggable && !answerFound() ,
+                                                    'dropzone': !isAllDraggable && isTitleDroppable && !answerFound() ,
+                                                    'process-puzzle__cell-title--answerFound' : answerFound()
+                                                }, id: 'title-zone-' + id()">
+                            <!-- Particular case : the title above feedback image is never display in the case the main image is a polaroid and the image feedback is not a polaroid. For more informations, see IN:39431 -->
+                            <!-- ko if: (!isSelected() && !image().isPolaroid()) || (!image().isPolaroid() && !hasPolaroid()) -->
+                            <h3 class="process-common__item-title-text process-puzzle__item-title-text media__title" 
+                                data-bind="css: {selected : isSelected() }">
+                                <span class="wizard-main-text" data-bind="text: title"></span>
+                            </h3>
+                            <!-- /ko -->
+                        </td>
+                        <td class="process-common__cell process-common__gutter"
+                            data-bind="visible:!isLast()"></td>
+                        <!-- /ko -->
+                    </tr>
+                    <tr class="process-common__row-images">
+                        <!-- ko foreach: items() -->
+                        <td class="process-common__cell process-common__cell-images"
+                            data-bind="attr: { tabindex: itemTabindex, 'aria-label': ariaDropzoneImage(), role: !answerFound() ? 'button' : 'group' },
+                                        click: (isAllDraggable && !answerFound()) || (!isAllDraggable && isImageDroppable && !answerFound())? selectDropZone: onClick,
+                                        css: {  'dropzone--middle': isAllDraggable && !answerFound(),
+                                                'dropzone': !isAllDraggable && isImageDroppable && !answerFound() ,
+                                                'process-puzzle__cell-images--answerFound' : answerFound() 
+                                             },  id: 'image-zone-' + id()">
+                            <div class="process-common__item-images-wrapper process-puzzle__item-image-wrapper">
+                                <div class="process-common__item-image process-puzzle__item-image process-common__item-image--normal process-puzzle__item-image--normal media-image-parent-landmark show"
+                                     data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: image }"></div>
+                            </div>
+                        </td>
+                        <td class="process-common__spacer process-common__cell"
+                            data-bind="visible:!isLast()">
+                            <!-- The default separator -->
+                            <div class="iconfont process-common__spacer-icon" 
+                                 data-bind="visible:parent.ownerViewModel.arrowVisible() && customisedSeparator == ''"></div>
+                            <!-- The customised separator -->
+                            <div class="process-common__spacer-customised"
+                                 data-bind="visible:parent.ownerViewModel.arrowVisible() && customisedSeparator != '',
+                                            attr: {tabindex: itemTabindex() + 1},
+                                            text: customisedSeparator">
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                    </tr>
+                    <tr class="process-common__row-captions">
+                        <!-- ko foreach: items() -->
+                        <td class="process-common__cell-caption process-common__cell process-puzzle__cell-caption"
+                            data-bind="attr: { tabindex: caption != '' && itemTabindex, 'aria-label': ariaDropzoneCaption(), role: !answerFound() ? 'button' : 'group' },
+                                                            click: (isAllDraggable && !answerFound()) || (!isAllDraggable && isCaptionDroppable && !answerFound())? selectDropZone: onClick,
+                                                            css:{'dropzone--bottom': isAllDraggable && !answerFound(),
+                                                                'dropzone':!isAllDraggable && isCaptionDroppable && !answerFound(),
+                                                                'process-puzzle__cell-caption--answerFound' : answerFound()},
+                                                            id: 'caption-zone-' + id()">
+                            <!-- ko if: caption != "" -->
+                            <h4 class="media__caption" data-bind="css: {selected : isSelected() || parent.canDisplayAllCaptions}">
+                                <span class="wizard-main-text" data-bind="text: caption"></span>
+                            </h4>
+                            <!-- /ko -->
+                        </td>
+                        <td class="process-common__cell"
+                            data-bind="visible:!isLast()"></td>
+                        <!-- /ko -->
+                    </tr>
+
+                    <tr class="process-common__row-feedbacks">
+                        <!-- ko foreach: items() -->
+                        <td class="process-common__cell">
+                            <!-- ko if: responseText().text() != "" -->
+                            <span class="process-common__stretchable-feedback"
+                                  role="group"
+                                  data-bind="id: feedbackContentId,attr: { tabindex: isSelected() && itemTabindex, 'aria-label': $parent.transformStringForAriaLabel(responseText().text()) },
+                                             css:{
+                                                 'process-common__stretchable-feedback--selected' : isSelected(),
+                                                 'process-common__stretchable-feedback--stretched':feedbackTextStretched()
+                                             }">
+                                <span class="process-common__feedback-text" data-bind="richtext: responseText().text()"></span>
+                            </span>
+                            <!-- ko if: sound && sound.url() != '' -->
+                            <div style="opacity: 0; z-index: -1; width: 1px; height: 1px; background-color: transparent;"
+                                 role="button"
+                                 data-bind="click: sound.toggle.bind(sound),
+                                            clickBubble: false,
+                                            attr : {
+                                                'aria-label': localizedText.Accessibility_AudioToggle(),
+                                                'tabindex': isSelected() ? itemTabindex : -1
+                                            }"></div>
+                            <!-- /ko -->
+                            <!-- /ko -->
+                        </td>
+                        <td class="process-common__cell process-common__gutter" data-bind="visible:!isLast()"></td>
+                        <!-- /ko -->
+                    </tr>
+                </table>
+                <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ko template: { name: "PuzzleDragdropTemplate",data:$data}--><!-- /ko -->
+</script>

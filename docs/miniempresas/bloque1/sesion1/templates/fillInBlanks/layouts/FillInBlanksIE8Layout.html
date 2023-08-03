@@ -1,0 +1,27 @@
+﻿<script id="FillInBlanksItemBlankIE8Template" type="text/html">
+    <span class="fill-in-the-blanks__blank"
+          data-bind="css: {'fill-in-the-blanks__blank--long': isLong() && validated()}">
+        <input class="fill-in-the-blanks__blank__input" data-bind="value:response
+                  , valueUpdate: parent.behavior.assessmentManager ? '' : 'keyup',
+                  , event:{focus:select, blur:unselect}
+                  , visible:!validated()
+                  , attr:{id:id, 'size':responseLength, tabindex: $parent.forceTabIndex()? 100:$parent.tabindex(), 'aria-label': localizedText.Accessibility_TextToFind() + ' ' + (indexOfBlank+1)}" />
+
+        <span class="fill-in-the-blanks__blank__answer--right" data-bind="text:response,visible:validated()" />
+        <span class="fill-in-the-blanks__blank__icons">
+            <span class="fill-in-the-blanks__blank__icon iconfont fill-in-the-blanks__blank__icon--reveal"
+                  data-bind="attr:{ 'aria-label': localizedText.Accessibility_DisplayCorrectAnswer(),
+                                    tabindex: $parent.tabindex() } ,
+                            event: { click: validate },
+                            style:{display:(selected() || ($parent.isActiveAndAccessibilityEnabled() && !validated()))?'inline-block':'none'}">
+            </span><span class="fill-in-the-blanks__blank__icon iconfont fill-in-the-blanks__blank__icon--wrong"
+                         data-bind="style:{display:(!$parent.isActiveAndAccessibilityEnabled() && !selected() && !correct() && filled())?'inline-block':'none'}">
+                &#x58;
+            </span><span class="fill-in-the-blanks__blank__icon iconfont fill-in-the-blanks__blank__icon--right"
+                         data-bind="style:{display:validated()?'inline-block':'none'}">
+                &#x2714;
+            </span>
+        </span>
+    </span>
+</script>
+

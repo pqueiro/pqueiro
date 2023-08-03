@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="15676.539 2295 79.689 81.542">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.5;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="groupe-51" transform="translate(15541.715 2093.099)">
+    <ellipse id="ellipse-5" class="cls-1" cx="39.845" cy="40.771" rx="39.845" ry="40.771" transform="translate(134.824 201.901)"/>
+    <g id="groupe-8" transform="translate(133.034 201.774)">
+      <path id="tracé" class="cls-2" d="M38.244,63.982a1.566,1.566,0,0,1-1.565-1.565V33.831a1.565,1.565,0,0,1,2.279-1.392L66.811,46.731a1.565,1.565,0,0,1,0,2.785L38.958,63.809A1.565,1.565,0,0,1,38.244,63.982Zm1.565-27.589V59.854l22.861-11.73Z" transform="translate(-7.606 -7.139)"/>
+    </g>
+  </g>
+</svg>

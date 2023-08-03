@@ -1,0 +1,7 @@
+﻿<script id="ProgressbarTemplate" type="text/html">
+    <div class="progress-tooltip" aria-hidden="true" data-bind="text: currentProgressionLabel(),style: {'left':  currentProgressionLabel()},
+        css: { 'fade-in': progressTooltipVisible(), 'fade-out': !progressTooltipVisible(), 'progress-tooltip--hidden': hideTooltip() }"></div>
+    <div id="progressbar" class="progressbar">
+        <div class="progressbar__progression" data-bind="style: { width: currentProgressionLabel() }"></div>
+    </div>
+</script>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HtmlSkin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SkinSettings>
+    <DefaultSettings>
+      <Setting key="logoPosition" value="top-right" />
+      <Setting key="headerBackgroundUrl" />
+      <Setting key="backgroundurl" />
+      <Setting key="headerlogourl" value="res/images/headerLogo.png" />
+      <Setting key="backgroundImagePosition" value="centered" />
+    </DefaultSettings>
+    <TemplateSettings name="bulletPoint">
+      <Setting key="bulleturl" value="" />
+    </TemplateSettings>
+    <TemplateSettings name="intro">
+      <Setting key="backgroundurl" value="res/images/introBackground.png" />
+      <Setting key="backgroundImagePosition" value="centered" />
+      <Setting key="slidepageimageurl" value="" />
+      <Setting key="logourl" value="res/images/logoIntro.jpg" />
+    </TemplateSettings>
+    <TemplateSettings name="spacer">
+      <Setting key="backgroundurl" value="res/images/spacerBackground.png" />
+      <Setting key="backgroundImagePosition" value="centered" />
+    </TemplateSettings>
+    <TemplateSettings name="ending">
+      <Setting key="centeredImageUrl" value="" />
+      <Setting key="backgroundImagePosition" value="centered" />
+      <Setting key="backgroundurl" value="res/images/endingBackground.png" />
+    </TemplateSettings>
+    <TemplateSettings name="certificate">
+      <Setting key="certificateBackgroundurl" value="res/images/certificate.png" />
+    </TemplateSettings>
+  </SkinSettings>
+</HtmlSkin>

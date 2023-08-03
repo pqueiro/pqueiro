@@ -1,0 +1,86 @@
+<script id="ClassicMCStandardLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper classicmc--standard__content-wrapper">
+        <div class="exercise__content classicmc__content classicmc--standard__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <!-- ko if:  intro.text().length > 0 -->
+            <p class="classicmc__intro classicmc--standard__intro" role="group" data-bind="richtext: intro.text(), attr : { tabindex: tabindexIntro(), 'aria-label' : intro.transformStringForAriaLabel() }"></p>
+            <!-- /ko -->
+            <!-- Image -->
+            <!-- ko if: (image().getJsonUrl() != "") -->
+            <div class="classicmc--standard__image"
+                 data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data:image }, 
+                            attr : { tabindex: tabindex(), 'aria-label': image().metadataScreenReaderDescription }
+                            ,css:{'classicmc--standard--large__image':isLargeImage() }">
+
+            </div>
+            <!-- /ko -->
+
+            <div class="classicmc__answers classicmc--standard__answers">
+                <!-- ko foreach: items -->
+                <div role="button" class="classicmc__answer classicmc--standard__answer"
+                     data-bind="id: answerId
+                                , css:{'right':(isCorrect && isClicked)
+                                        , 'wrong':(!isCorrect && isClicked)
+                                        , 'last': isLast
+                                        , 'classicmc--standard__answer--selected' : feedbackVisible() }
+                                , attr : { tabindex: tabindex(), 'aria-label': ariaLabel }
+                                , click:onClick">
+
+                    <table class="classicmc__answer-table classicmc--standard__answer-table button"
+                           data-stretch-keep-same-size-answer
+                           data-bind="css : {
+                                            'classicmc--standard__answer-table--small-layout' : !parent.isLargeImage(),
+                                            'classicmc--standard__answer-table--large-layout' : parent.isLargeImage(),
+                                            'classicmc--standard__answer-table--right button--right' : (isCorrect && isClicked),
+                                            'classicmc--standard__answer-table--wrong button--wrong' : (!isCorrect && isClicked),
+                                            'button--selected': isClicked,
+                                            'last' : isLast
+                                       }">
+
+                        <tr>
+                            <td class="classicmc--standard__icon">
+                                <span class="button__iconfont classicmc--standard__answer-table__icon--visibility"
+                                      data-bind="style: { visibility: isClicked()? '' : 'hidden' }">
+                                    <span class="iconfont wizard-main-text" data-bind="text:isCorrect?'&#x2714;':'&#x58;'"></span>
+                                </span>
+                            </td>
+                            <td class="classicmc--standard__answer-table__text-wrapper">
+                                <div class="classicmc--standard__answer-table__text"
+                                     data-nb-word-wrap-allowed="0"
+                                     data-stretch-parent=".classicmc--standard__answer-table"
+                                     data-stretch-others-context-selector=".classicmc--standard__answers"
+                                     data-stretch-others-selector="[data-stretch-keep-same-size-answer]"
+                                     data-stretch-source-node-selector=".classicmc--standard__answer-table__text-content">
+                                    <span data-bind="html:text" class="classicmc--standard__answer-table__text-content wizard-main-text"></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="classicmc--standard__inlinefeedback"
+                         data-bind="id: inlinefeedbackGuidId,
+                                    css:{
+                                        'classicmc--standard__inlinefeedback--right':(isCorrect && isClicked),
+                                        'classicmc--standard__inlinefeedback--wrong':(!isCorrect && isClicked),
+                                        'last': isLast,
+                                        'classicmc--standard__inlinefeedback--visible' : feedbackVisible(),
+                                        'classicmc--standard__inlinefeedback--hidden' : !feedbackVisible()
+                                    }"
+                         data-nb-word-wrap-allowed="0"
+                         data-stretch-self>
+                        <span data-bind="html: feedback" class="classicmc--standard__inlinefeedback__text wizard-main-text"></span>
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+        </div>
+    </div>
+</script>

@@ -1,0 +1,70 @@
+﻿<script id="ConceptListStandardLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper conceptlist__content-wrapper">
+        <div class="exercise__content conceptlist__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <!-- ko if: introduction.text() != '' -->
+            <div class="conceptlist__introduction"
+                 role="group"
+                 data-nb-word-wrap-allowed="0"
+                 data-stretch-parent=".exercise__content"
+                 data-bind="attr:{ tabindex: tabindexIntro(), 'aria-label': ariaLabelIntro }">
+                <p class="conceptlist__introduction__text"
+                   data-bind="richtext:introduction.text()"></p>
+            </div>
+            <!-- /ko -->
+            <table class="conceptlist__table" data-bind="foreach:items()">
+                <tr class="conceptlist__concept" data-bind="click: $parent.isActiveAndAccessibilityEnabled() && toggleSound,
+                                id: id,
+                                css : {'conceptlist__concept--clickable' : sound && !$parent.isActiveAndAccessibilityEnabled() && $parent.isConclusionShown() ,
+                                    'conceptlist__concept--active':isVisited() }">
+                    <td class="conceptlist__cell__image"
+                        role="button"
+                        data-bind="click: sound != null && $parent.isConclusionShown() ? select : null,
+                                    css : { 'conceptlist__cell__image--active' : isVisited() , 'conceptlist__cell__image--polaroid': (image != null && image.isPolaroid() )},
+                                    attr:{ tabindex: tabindexItem,
+                                            'aria-label': image && image.metadataScreenReaderDescription }">
+                        <div class="image imagenormal media-image-parent-landmark"
+                             data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: image }" />
+                    </td>
+                    <td class="conceptlist__cell__text"
+                        role="group"
+                        data-bind="click: sound != null && $parent.isConclusionShown() ? select : null,
+                                    css : { 'conceptlist__cell__text--active' : isVisited(), 'conceptlist__cell__text--polaroid': (image != null && image.isPolaroid() ) },
+                                    attr:{ tabindex: tabindexItem, 'aria-label': ariaLabelItem }">
+                        <h3 class="conceptlist__concept__title" data-bind="css : { 'conceptlist__concept__title--active' : isVisited() }"
+                            data-nb-word-wrap-allowed="0"
+                            data-stretch-parent=".exercise__content">
+                            <span data-bind="text:title"
+                                  class="conceptlist__concept__title__text wizard-main-text"></span>
+                        </h3>
+                        <div class="conceptlist__concept__description"
+                             data-nb-word-wrap-allowed="0"
+                             data-stretch-parent=".exercise__content">
+                            <span data-bind="richtext:description.text()"
+                                  class="text"></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!-- ko if: conclusion.text() != '' -->
+            <div class="conceptlist__conclusion"
+                 role="group"
+                 data-bind="css: {'conceptlist__conclusion--active': isConclusionShown() },
+                            attr:{ tabindex: tabindexConclusion(),
+                                'aria-label': ariaLabelConclu }"
+                 data-nb-word-wrap-allowed="0"
+                 data-stretch-parent=".exercise__content">
+                <p class="conceptlist__conclusion__text"
+                   data-bind="richtext: conclusion.text()"></p>
+            </div>
+            <!-- /ko -->
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+        </div>
+    </div>
+</script>

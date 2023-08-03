@@ -1,0 +1,69 @@
+﻿<!-- *****************************************
+     *   Template : SequencerTemplatetop    *
+     ***************************************** -->
+
+<script id="SequencerTemplatetopleft" type="text/html">
+
+    <!-- ko if: introductionMedia() -->
+    <div class="sequencer__card__intro">
+        <p role="group" data-bind="id: introId, attr: { tabindex: tabindex, 'aria-label': ariaLabelIntro }, template: {name: applicationViewModel.koGetMediaTemplateName, data: introductionMedia}"></p>
+    </div>
+    <!-- /ko -->
+
+    <div class="sequencer__card__illustration" data-bind="css: {
+                                                        'transition__all-fast--ease-in': animateVisualElements(),
+                                                        'sequencer__card__illustration--small': !mediaIsLarge(),
+                                                        'sequencer__card__illustration--large': mediaIsLarge(),
+                                                        'fade-out': !graphicVisible(),
+                                                        'fade-effect': animateVisualElements(),
+                                                        'sequencer__card__illustration--top': (layout() == 'top'),
+                                                        'sequencer__card__illustration--bottom': (layout() == 'bottom'),
+                                                        'sequencer__card__illustration--left': (layout() == 'left'),
+                                                        'sequencer__card__illustration--right': (layout() == 'right'),
+                                                        'sequencer__card__illustration--left-emphasized': (layout() == 'left-emphasized'),
+                                                        'sequencer__card__illustration--right-emphasized': (layout() == 'right-emphasized')
+                                                    },
+                                                    id: graphicId()">
+
+        <div data-bind="visible: graphicTitle() != '', attr: { tabindex : tabindex, 'aria-label' : graphicTitle() }">
+            <h3 class="media__title" data-bind="id: graphicTitleId()">
+                <span class="wizard-main-text" data-bind="text: graphicTitle"></span>
+            </h3>
+        </div>
+
+        <!-- ko if: !StringHelper.isNullOrEmpty(media()) -->
+        <div data-bind="template: {name: applicationViewModel.koGetMediaTemplateName, data: media}"></div>
+        <!-- /ko -->
+
+        <div data-bind="visible: graphicCaption() != '', attr: { tabindex : tabindex, 'aria-label' : graphicCaption() }">
+            <h4 class="media__caption" data-bind="id: graphicCaptionId()">
+                <span class="wizard-main-text" data-bind="text: graphicCaption"></span>
+            </h4>
+        </div>
+
+    </div><!-- DO NOT DELETE -->
+    <div class="sequencer__card__content" data-bind="visible: contentMedia(),
+                                         css: {
+                                             'fade-out': !contentVisible(),
+                                             'fade-effect': animateVisualElements(),
+                                             'sequencer__card__content--top': (layout() == 'top'),
+                                             'sequencer__card__content--bottom': (layout() == 'bottom'),
+                                             'sequencer__card__content--left': (layout() == 'left'),
+                                             'sequencer__card__content--right': (layout() == 'right'),
+                                             'sequencer__card__content--left-emphasized': (layout() == 'left-emphasized'),
+                                             'sequencer__card__content--right-emphasized': (layout() == 'right-emphasized')
+                                         },
+                                         attr: { id: contentId() }">
+        <div role="group" data-bind="attr: { tabindex: tabindex, 'aria-label': ariaLabelContent }, template: { name: applicationViewModel.koGetMediaTemplateName, data: contentMedia }"></div>
+    </div>
+
+    <!-- ko if: conclusionMedia() -->
+    <div class="sequencer__card__conclusion">
+        <p role="group" data-bind="attr: { tabindex: tabindex, 'aria-label': ariaLabelConclusion }, 
+           css: { 'fade-out': !conclusionVisible(), 'fade-effect': animateVisualElements()},
+           template: {name: applicationViewModel.koGetMediaTemplateName, data: conclusionMedia}"></p>
+    </div>
+    <!-- /ko -->
+
+</script>
+

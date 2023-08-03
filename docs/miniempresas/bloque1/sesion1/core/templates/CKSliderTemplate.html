@@ -1,0 +1,71 @@
+<script id="CKSliderTemplate" type="text/html">
+    <!-- Context KO : SliderViewModel -->
+    <table id="tablecontent" class="structure__table" style="display: none;"
+           data-bind="event: { mouseover: onMouseOver }, css: { 'tablecontent--deactivated': contentDeactivated() }">
+        <tr>
+
+            <!--ko with: previousButton -->
+            <td id="previous" class="nav-buttons nav-button__previous"
+                data-bind=" visible :isActive
+                            ,css:{ 'fade-effect': fadeEffectActivated()
+                                  ,'nav-buttons--soften fade-effect' : soften() && isVisible()}">
+
+                <a id="buttonprevious"
+                   class="iconfont nav-button__previous-icon nav-button__icon"
+                   href="javascript: return false;"
+                   role="button"
+                   data-bind="click: click
+                                , event: { mousemove: function (data,event){$parent.onMouseOver($parent,event)} }
+                                , css: {'nav-buttons__icon--visible nav-button__previous-icon--visible': isVisible(),
+                                        'nav-buttons__icon--hidden nav-button__previous-icon--hidden': !isVisible()}
+                                , attr: {'tabindex': isVisible() && applicationViewModel.accessibilityViewModel.accessibilityFeaturesActivated() ? '1002' : '-1', 'aria-label': localizedText.Accessibility_PreviousSlide()}">&#x3c;</a>
+            </td>
+            <!-- /ko -->
+            <td id="tdcontent" class="structure__slider">
+                <!-- Exercise's slides -->
+                <div id="slider"
+                     class="swipe slider__swipe">
+
+                    <div id="swipe-container"
+                         class="slider__swipe-wrapper"
+                         onselectstart="return false;">
+                        <div id="pastSlide"></div>
+                        <div id="previousSlide"></div>
+                        <div id="currentSlide"></div>
+                        <div id="nextSlide"></div>
+                        <div id="CTASlide"></div>
+                        <div id="futureSlide"></div>
+                        <div id="branchSlide" class="inactive"></div>
+                        <div id="lock"></div>
+                    </div>
+
+                </div>
+            </td>
+            <!-- ko with: nextButton -->
+            <td id="next" class="nav-buttons nav-button__next"
+                data-bind="visible :isActive
+                            ,css : {'fade-effect': fadeEffectActivated()
+                                    ,'nav-buttons--soften fade-effect' : soften() && isVisible() }">
+                <a id="buttonnext"
+                   class="nav-button__next-icon nav-button__icon iconfont"
+                   href="javascript: return false;"
+                   role="button"
+                   data-bind="click: click
+                                , event: { mousemove: function (data,event){$parent.onMouseOver($parent,event)} }
+                                , css: {'nav-buttons__icon--visible nav-button__next-icon--visible': isVisible(),
+                                        'nav-buttons__icon--hidden nav-button__next-icon--hidden': !isVisible()}
+                                , attr: {'tabindex': isVisible() && applicationViewModel.accessibilityViewModel.accessibilityFeaturesActivated() ? '1000' : '-1', 'aria-label': localizedText.Accessibility_NextSlide()}">&#x3e;</a>
+            </td>
+            <!-- /ko -->
+        </tr>
+    </table>
+
+    <div id="sticky__bottom-anchor">
+        <div id="sticky__container"
+             data-bind="style:{ width: applicationViewModel.width() + 'px' }, css : {'fade-in': !contentDeactivated(),'fade-out': contentDeactivated()}"></div>
+    </div>
+
+    <div class="moreContentArrow">
+        
+    </div>
+</script>

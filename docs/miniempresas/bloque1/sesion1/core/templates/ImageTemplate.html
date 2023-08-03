@@ -1,0 +1,56 @@
+﻿<script id="ImageTemplate" type="text/html">
+    <div data-bind="css: {'media-image-wrapper--vertical-align-middle' : $data.verticalAlignMiddle()}, click: startFeedback">
+        <div class="media-image--vertical-align-middle-container">
+
+            <div class="media-image-wrapper" data-bind="css: { 'media-image-wrapper--polaroid': $data.isPolaroid(), 'media-image-wrapper-clickable':$data.imageZoomOnClick}
+                                                     , attr: { id: idIllustration, tabindex: tabindex(), 'aria-label': metadataScreenReaderDescription }">
+                <div class="media-image media-image-parent-landmark"
+                     data-bind="css: {    'media-image--polaroid': $data.isPolaroid()
+                                , 'media-image--shadow': $data.isShadow()
+                                , 'media-image--borders': $data.isBorder()
+                                , 'media-image--rounded-borders': $data.isRoundedBorder()},
+                        visible: $data.isVisible(),
+                        id: idImage ">
+
+                    <!-- ko if: $data.urlLowQuality() != "" -->
+                    <div class="media-image__lowQuality-wrapper">
+                        <img alt=""
+                             class="media-image__img media-image__img--lq"
+                             data-bind="event: { load: $data.lqLoaded, error: $data.lqError },
+                                css: { 'media-image__img--no-source': !$data.hasSourceUrl(), 
+                                'media-image__img--zoomout': $data.isZoomout(),
+                                'media-image__img--play':isPlaying(),
+                                'media-image__img--play_with_delay':isPlayingWithDelay() },
+                                attr: { 'id': $data.idLow, 'src': $data.urlLowQuality, 'alt': $data.metadataScreenReaderDescription },
+                                visibility: !$data.isHqLoaded()" />
+                    </div>
+                    <!-- /ko -->
+                    <!-- ko if: $data.url() != "" -->
+                    <img alt="" class="media-image__img media-image__img--hq"
+                         data-bind="click: onClick,
+                            event: {load: $data.hqLoaded, error: $data.hqError },
+                            css: { 'media-image__img--no-source': !$data.hasSourceUrl(), 
+                                   'media-image__img--zoomout': $data.isZoomout(),
+                                   'media-image__img--play':isPlaying(),
+                                   'media-image__img--play_with_delay':isPlayingWithDelay() },
+                             },
+                            attr: { 'id': $data.id, 'src': $data.url, 'alt': $data.metadataScreenReaderDescription }" />
+                    <!-- /ko -->
+                   <div class="media-image-zoom-button iconfont" 
+                         data-bind="visible:$data.imageZoomOnClick,                     
+                          attr: { 'aria-label': localizedText.Accessibility_ZoomOnclick(),
+                          'aria-hidden': ($data.imageZoomOnClick) ? false : true,
+                          'title':localizedText.Tooltip_MediaImage_ZoomOnclick()}">
+                        &#128269;
+                    </div>
+                </div>
+
+                <!-- ko if: $data.isPolaroid()-->
+                <h3 class="media-image__polaroid-title" data-bind="id: idH3">
+                    <span class="wizard-main-text" data-bind="text: $data.polaroidTitle"></span>
+                </h3>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</script>

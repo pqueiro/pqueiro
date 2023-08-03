@@ -1,0 +1,85 @@
+<script id="FillInBlanksTemplateLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper fillinblanks__content-wrapper">
+        <div class="exercise__content fillinblanks__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <div class="exercise__vertical-align">
+                <div role="group" class="fill-in-the-blanks__text-wrapper wizard-main-text"
+                     data-nb-word-wrap-allowed="8"
+                     data-stretch-parent=".exercise__content"
+                     data-bind="id: globalTextId, attr: {tabindex: tabindex(), 'aria-label': ariaLabelWrapper}, css: { 'text__effect--note' : effect == 'note'}">
+                    <p data-bind="template: {foreach:items, name: koGetItemTemplateName}"></p>
+                </div>
+            </div>
+
+            <!-- SUBMIT BUTTON -->
+            <!-- ko if: behavior.assessmentManager -->
+            <!-- ko with: behavior -->
+            <div class="assessment_submit_button--center"
+                 data-bind="template: { name: 'AssessmentSubmitButtonTemplate', data: $data }"></div>
+            <!-- /ko -->
+            <!-- /ko -->
+
+            <!-- ko if: !behavior.assessmentManager -->
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+            <!-- /ko -->
+
+        </div>
+    </div>
+  
+
+</script>
+
+<script id="FillInBlanksItemTextTemplate" type="text/html">
+    <span class="fill-in-the-blanks__span" data-bind="html:text" />
+</script>
+
+<script id="FillInBlanksItemBlankTemplate" type="text/html">
+    <span class="fill-in-the-blanks__blank"
+          data-bind="css: {'fill-in-the-blanks__blank--long': isLong() && validated(),'fill-in-the-blanks__blank--assessment':parent.behavior.assessmentManager}">
+        
+        
+        <!-- ko if: !parent.emptyFielMode -->
+        <select class="fill-in-the-blanks__blank__input" data-bind="options: textsShuffled
+                , valueAllowUnset: true
+                , selectedOptions: selectedResponse
+                , enable:parent.behavior.itemsEnabled()
+                , event:{focus:select, change:unselect}
+                , visible:isInputVisible()
+                , attr:{id:id, tabindex: $parent.forceTabIndex()? 100:$parent.tabindex(), 'aria-label': localizedText.Accessibility_TextToFind() + ' ' + (indexOfBlank+1)}"></select>
+        <!-- /ko -->
+        
+        <!-- ko if: parent.emptyFielMode -->
+        <input class="fill-in-the-blanks__blank__input" data-bind="value:response
+                  , valueUpdate: parent.behavior.assessmentManager ? '' : 'input',
+                  , event:{focus:select, blur:unselect}
+                  , enable:parent.behavior.itemsEnabled()
+                  , visible:isInputVisible()
+                  , attr:{id:id, 'size':responseLength, tabindex: $parent.forceTabIndex()? 100:$parent.tabindex(), 'aria-label': localizedText.Accessibility_TextToFind() + ' ' + (indexOfBlank+1)}" />
+        <!-- /ko -->
+
+        <span class="fill-in-the-blanks__blank__answer" data-bind="html:response, visible:isUserResponseVisible()" />
+        <span class="fill-in-the-blanks__blank__answer--false" data-bind="html:response, visible:isUserResponseWrongVisible()" />
+        <span class="fill-in-the-blanks__blank__answer--right" data-bind="html:response, visible:isUserResponseRightVisible()" />
+        
+        <span class="fill-in-the-blanks__blank__icons">
+            <span class="fill-in-the-blanks__blank__icon iconfont fill-in-the-blanks__blank__icon--reveal"
+                  role="button"
+                  data-bind="visible:isValidateButtonVisible(),
+                            attr:{ 'aria-label': localizedText.Accessibility_DisplayCorrectAnswer(),
+                                    tabindex: $parent.tabindex() } ,
+                            event: { click: validate }"></span>
+            <span class="fill-in-the-blanks__blank__icon iconfont fill-in-the-blanks__blank__icon--wrong"
+                  data-bind="visible:isIconWrongVisible()">&#x58;</span>
+            <span class="fill-in-the-blanks__blank__icon iconfont fill-in-the-blanks__blank__icon--right"
+                  data-bind="visible:isIconRightVisible()">&#x2714;</span>
+        </span>
+        <span class="fill-in-the-blanks__blank__answer--rightresponse" data-bind="html:texts[0],visible:isSolutionVisible()" />
+    </span>
+
+</script>

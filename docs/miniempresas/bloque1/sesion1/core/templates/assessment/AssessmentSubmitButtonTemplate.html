@@ -1,0 +1,20 @@
+﻿<script id="AssessmentSubmitButtonTemplate" type="text/html">
+    <!-- ko with: assessmentManager -->
+    <table id="assessmentSubmitButton" role="button"
+           data-bind="css:{'assessment_submit_button--show': !assessmentFeedbackUI.exerciseCompleted() && !assessmentFeedbackUI.show(),
+                                          'assessment_submit_button--hide':assessmentFeedbackUI.show()},
+                                      click: (assessmentFeedbackUI.show() || assessmentFeedbackUI.exerciseCompleted()) ? null : submitProcess,
+                                      'aria-label': assessmentFeedbackUI.submitLocalizedText(),
+                                      attr: {tabindex: assessmentFeedbackUI.tabIndexSubmit()}"
+           class="assessment_submit_button call-to-action__button">
+        <tr class="wizard-main-text">
+            <td class="assessment__button--icon call-to-action__button--icon iconfont"
+                aria-hidden="true">
+                ✓
+            </td>
+            <td class="assessment__button--text call-to-action__button--text" data-bind="text: assessmentFeedbackUI.submitLocalizedText"></td>
+            <td class="assessment__button--timer call-to-action__button--text" data-bind="visible: countDown != null, text: countDown != null ? countDown.countDownValue() : ''"></td>
+        </tr>
+    </table>
+    <!-- /ko -->
+</script>

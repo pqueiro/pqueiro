@@ -1,0 +1,99 @@
+﻿<script id="CallToActionTemplate" type="text/html">
+ 
+    <!-- ko if : parent.hasCallToAction() || parent.hasRestartButton() -->
+    <div class="call-to-action" 
+         data-bind="id: parent.callToActionId">
+
+        <table class="call-to-action__table animation-fade-out"
+               data-bind="css: { 'fade-effect' :!parent.callToActionRotateAnimation(),
+                                 'fade-in' : (!parent.callToActionRotateAnimation() && parent.showCallToAction()), 
+                                 'fade-out': (!parent.callToActionRotateAnimation() && !parent.showCallToAction()),
+
+                                 'animation-fade-in': (parent.callToActionRotateAnimation() && parent.showCallToAction()),
+                                 'animation-fade-out': (parent.callToActionRotateAnimation() && !parent.showCallToAction())},
+
+                          style: {  width:  parent.showConfirmButtonRestart() ? '1px': 'auto',
+                                    height: parent.showConfirmButtonRestart() ? '1px':'auto' }">
+            <tr>
+
+                <!-- ko if: parent.hasRestartButton() -->
+                <td>
+                    <!-- restart button -->
+                    <table role="button" class="call-to-action__button call-to-action__restart-button"
+
+                           data-bind="click: parent.showConfirmResetAndRestartButton,
+                                      attr: {'aria-label': localizedText.Accessibility_RestartAndResetTheScore,
+                                      tabindex: !parent.showCallToAction() && parent.isCurrent() ? tabindexCalltoAction : -1}">
+                        <tr>
+                            <td class="assessment__button--icon call-to-action__button--icon iconfont" aria-hidden="true">
+                                r
+                            </td>
+                            <td class="assessment__button--text call-to-action__button--text call-to-action__restart-button--text" 
+                                data-bind="text:(parent.callToActionReset()?parent.callToActionText:localizedText.CallToAction_RestartAndReset)">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <!-- /ko -->
+
+                <!-- ko if: parent.hasCallToAction() -->
+                <td>
+                    <!-- call to action, continue button -->
+                    <table role="button" class="call-to-action__button"
+                           data-bind="click:function(data,event){parent.callToActionClick(data,event);},
+                                      clickBubble: false,
+                                      attr:{ tabindex: parent.showCallToAction() && parent.isCurrent() ? tabindexCalltoAction : -1}">
+                        <tr class="wizard-main-text">
+                            <td class="call-to-action__table-cell call-to-action__button--text" data-bind="text:parent.callToActionText"></td>
+                            <td class="call-to-action__table-cell call-to-action__button--icon iconfont" aria-hidden="true">&#x27a7;</td>
+                        </tr>
+                    </table>
+
+                </td>
+                <!-- /ko -->
+            </tr>
+        </table>
+
+        <!-- ko if: parent.hasRestartButton()-->
+        <table class="call-to-action__table animation-fade-out" 
+               data-bind="css: { 'animation-fade-in': parent.showConfirmButtonRestart(), 
+                                 'animation-fade-out': !parent.showConfirmButtonRestart()},
+                         style: {   width: !parent.showConfirmButtonRestart() ? '1px':'auto',
+                                    height: !parent.showConfirmButtonRestart() ?'1px': 'auto'}">
+            <tr>
+                <td>
+                    <!-- confirm button to restart -->
+                    <table role="button" class="call-to-action__button call-to-action__confirm-restart-button"
+                           data-bind="click: parent.resetAndRestartCourse, clickBubble: false,
+                                      attr:{ tabindex: parent.showConfirmButtonRestart() && parent.isCurrent() ? tabindexCalltoAction : -1}">
+                        <tr>
+                            <td class="assessment__button--icon call-to-action__button--icon iconfont"
+                                aria-hidden="true">
+                                ✓
+                            </td>
+                            <td class="assessment__button--text call-to-action__button--text call-to-action__restart-button--text"
+                                data-bind="text:localizedText.CallToAction_Confirm">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <!-- cancel button to restart -->
+                    <table role="button"
+                           class="call-to-action__button"
+                           data-bind="click: parent.cancelResetAndRestartCourse ,
+                                      clickBubble: false,
+                                      attr:{ tabindex: parent.showConfirmButtonRestart() && parent.isCurrent() ? tabindexCalltoAction : -1}">
+                        <tr>
+                               <td class="assessment__button--text call-to-action__button--text call-to-action__restart__button--text" 
+                                   data-bind="text:localizedText.CallToAction_Cancel">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!-- /ko -->
+    </div>
+    <!-- /ko -->
+</script>

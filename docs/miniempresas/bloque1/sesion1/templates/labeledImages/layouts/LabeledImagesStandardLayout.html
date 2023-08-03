@@ -1,0 +1,66 @@
+﻿<script id="LabeledImagesStandardLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+    
+    <div class="exercise__content-wrapper labeledimages__content-wrapper">
+        <div class="exercise__content labeledimages__content"
+             data-bind="id: matchimagesContentId,
+                        css: {'labeledimages--exercise-finished': allAnswersFound(),
+                            'labeledimages--dragging-item' : isDragging(),
+                            'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                            'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                            'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                            'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+
+            <table class="labeledimages__table"
+                   data-bind="css: {'labeledimages__table--has-polaroid': hasPolaroidItems() }">
+                <tr class="labeledimages__row--titles"
+                    data-bind="foreach: items">
+                    <td class="labeledimages__cell labeledimages__cell--title"
+                        data-bind="id: titleDomId ">
+                        <!-- ko if: !image.isPolaroid()-->
+                        <h3 class="labeledimages__item--title media__title">
+                            <span class="wizard-main-text" data-bind="text: title"></span>
+                        </h3>
+                        <!-- /ko -->
+                    </td>
+                </tr>
+
+                <tr class="labeledimages__row--images items-dropping-container"
+                    data-bind="foreach: items">
+                    <td class="labeledimages__cell labeledimages__cell--image"
+                        role="button"
+                        data-bind="id: imageDomId,
+                                    template: {name: applicationViewModel.koGetMediaTemplateName, data: image},
+                                    attr: { tabindex: tabindexDropItem(),
+                                        'aria-label': itemScreenReaderDescription },
+                                    click: $parent.isActiveAndAccessibilityEnabled() && selectDropBox"></td>
+                </tr>
+
+                <tr class="labeledimages__row--dropped-items"
+                    data-bind="foreach: items">
+                    <td class="labeledimages__cell labeledimages__cell--dropped-items"
+                        data-bind="id: droppedZoneId ">
+                        <!-- ko foreach: labelItemsFound -->
+                        <div class="labeledimages__answer sticky__drag-item--dragged release"
+                             role="button"
+                             data-bind="visible: dropped(),
+                                        id: 'dropped_' + draggableId,
+                                        attr: {tabindex: $parents[1].allAnswersFoundTabindex()},
+                                        css: { 'labeledimages__answer--clickable': allAnswersFound(), 'sticky__drag-item--cursor-pointer': hasFeedback() },
+                                        click: onClick">
+                            <span class="labeledimages__answer__icon">
+                                <span class="iconfont wizard-main-text">&#x2714;</span>
+                            </span>
+                            <span class="labeledimages__answer__text wizard-main-text" data-bind="id: draggableId, text: responseText"></span>
+                        </div>
+                        <!-- /ko -->
+                    </td>
+                </tr>
+            </table>
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+        </div>
+    </div>
+
+    <!-- ko template: { name: "ClassicDragdropTemplate",data:$data}--><!-- /ko -->
+</script>

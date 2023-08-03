@@ -1,0 +1,75 @@
+﻿<script id="DragToPlaceStandardLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper dragtoplace__content-wrapper">
+
+        <div class="exercise__content dragtoplace__content dragtoplace--title__content content--fullscreen-layout">
+            <div class="dragtoplace__images media-image media-image-parent-landmark" role="group" data-bind="id: image().idImage, attr:{ tabindex: tabindexImg(), 'aria-label': image().metadataScreenReaderDescription } ">
+
+                <img class="dragtoplace__image dragtoplace__image--lq" data-bind="event: {load: lowImageLoaded }
+                                    , attr: { src: image().urlLowQuality() }
+                                    , id: image().idLow
+                                    , css: {'dragtoplace__image--hidden': !displayLowImage() }" />
+           
+                <img class="dragtoplace__image dragtoplace__image--hq" data-bind="event: {load: highImageLoaded }
+                                    , attr: { src: image().url() }
+                                    , id: image().id
+                                    , css: {'dragtoplace__image--hidden': !displayHighImage() }" />
+            </div>
+
+            <div class="dragtoplace__hotspots" data-bind="height: imageHeight()">
+
+                <!-- ko foreach: hotspots -->
+                <div role="group"   class="fade-effect" data-bind="id: hotspotId,
+                                                    css: {
+                                                        'dragtoplace__hotspot': visible(),
+                                                        'dragtoplace__hotspot--invisible': !visible(),
+                                                        'dragtoplace__hotspot--circleHotspot': !isRectangleHotspot(),
+                                                    },
+                                                    style: {
+                                                        top: y() + 'px',
+                                                        left: x() + 'px',
+                                                     
+                                                        opacity: isStarted()
+                                                    },
+                                                    height: height() + 'px',
+                                                    width: width() + 'px',
+                                                
+                                                    attr: {
+                                                        tabindex: tabindexItem(),
+                                                        'aria-label': hotspotLabel
+                                                    }">
+
+                    <!-- ko if: fallback && visible() -->
+                    <img src="images/hotspot.png" data-bind="height: height() + 'px', width: width() + 'px'" />
+                    <!-- /ko -->
+
+
+                    <!-- ko foreach: labelItemsFound -->
+                    <div class="classic-sticky__drag-item classic-sticky__drag-item--inline drag-label release"
+                         role="button"
+                         data-bind="visible: dropped(),
+                                        id: 'dropped_' + draggableId,
+                                        attr: {tabindex: $parents[1].allAnswersFoundTabindex()},
+                                        css: { 'labeledimages__answer--clickable': allAnswersFound(), 'sticky__drag-item--cursor-pointer': hasFeedback() ,'classic-sticky__drag-item--cursor-auto' : !hasFeedback()},
+                                        click: onClick">
+                        <span class="labeledimages__answer__icon">
+                            <span class="iconfont wizard-main-text">&#x2714;</span>
+                        </span>
+                        <span class="classic-drag-item__content  wizard-main-text " data-bind="id: draggableId, text: responseText"></span>
+                    </div>
+                    <!-- /ko -->
+
+                </div>
+                <!-- /ko -->
+            </div>
+
+
+        </div>
+        <!-- ko template: { name: "CallToActionFullscreenTemplate",data:$data}--><!-- /ko -->
+    </div>
+
+    <!-- ko template: { name: "ClassicDragdropTemplate",data:$data}--><!-- /ko -->
+
+</script>

@@ -1,0 +1,23 @@
+﻿<script id="CenteredText" type="text/html">
+    <div class="presenter-right-content__media-container"
+         data-bind="css : {
+                        'fade-effect--fast' : $parent.animation != 'none',
+                        'fade-in' : isCurrentMark() && $parent.animation != 'none',
+                        'fade-out': isCurrentMark() == false && $parent.animation != 'none' },
+                    style : {height: $parent.contentHeight()+'px'}">
+
+        <div class="presenter-right-content__media-content needScroll"
+             data-bind="css : {'presenter__mark' : $parent.backgroundCardActivated},
+                        style : { height: mediaContentHeight() +'px', marginTop: -mediaContentHeight()/2 +'px'}">
+
+            <div class="presenter-right-content__media-table">
+                <div class="presenter-right-content__media-table-cell" 
+                     data-bind="attr : {tabIndex : tabIndex},
+                     css: { 'presenter-fadeInText': $parent.animation == 'animated', 
+                            'presenter-animationFirst' : $parent.animation == 'animated'}">
+                    <!--ko template: {name: text.template(), data: text }--><!--/ko-->
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,114 @@
+﻿<script id="SequencerStandardLayout" type="text/html">
+    <div data-bind="attr: { 'class': 'presenter sequencer__animation--' + transitionType() }">
+
+        <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+        <!-- Content -->
+        <!-- Sequencer Content-->
+        <div class="exercise__content-wrapper">
+            <div class="exercise__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+
+                <div class="sequencer__wrapper">
+                    <div class="sequencer__slider" data-bind=" style: { height: availableHeight() + 'px' }, attr: { id: sequencersliderid }, css: { 'sequencer__animation--start': animationCanStart(), 'sequencer__animation--reverse': animationIsReversed() }">
+
+                        <!-- ko foreach: {data: renderedItems, afterAdd: afterItemAdded, beforeRemove: beforeRemovedItem, includeDestroyed : false} 
+                          --><div class="sequencer__slide" data-bind="attr: { id: slideId }, css: {
+                                                                                        'sequencer__slide--come': isSelected(),
+                                                                                        'sequencer__slide--leave': !isSelected(),
+                                                                                        'sequencer__slide--downwards': downwardsway(),
+                                                                                        'sequencer__slide--upwards': upwardsway()
+                                                                                        }">
+                            <div class="scrollbar card__scrollbar">
+                                <div class="track">
+                                    <div class="thumb">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="viewport" data-bind="event: { scroll: centerDots }">
+                                <table class="sequencer__slide-table overview" data-bind="attr: { id: cardId }">
+                                    <tr class="sequencer__slide-table-row">
+
+                                        <!--dotdots -->
+                                        <td class="sequencer__slide-table-cell sequencer__dots-container">
+
+                                            <table class="sequencer__dots-table" data-bind="style: { height: dotsTableHeight() + 'px', marginTop: dotsMarginTop() + 'px' }, event: { scroll: centerDots }">
+                                                <tr>
+                                                    <td class="sequencer__dots-table-cell">
+                                                        <div class="sequencer__dots-manager">
+
+                                                            <!-- ko foreach: dots -->
+                                                            <div class="sequencer__dot" data-bind="css: { 'sequencer__dot--active': index == parent.index },
+                                                                                                   event: { touchend: select },
+                                                                                                   click: select">
+                                                                <div class="sequencer__dot--mask"></div>
+                                                            </div>
+                                                            <!-- /ko -->
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                        </td>
+
+                                        <!-- content -->
+                                        <td class="sequencer__slide-table-cell">
+
+
+                                            <!-- info content -->
+
+                                            <div class="sequencer__slide__card" data-bind="css: 'sequencer__slide__card--' + layout()">
+
+                                                <!-- ko template: { name: layoutTemplate(), data:$data }-->
+                                                <!-- /ko -->
+                                                <!-- ko if: ($index() === ($parent.renderedItems().length - 1)) -->
+                                                <!-- ko template: { name: "CallToActionTemplate", data:$parent }-->
+                                                <!-- /ko -->
+                                                <!-- /ko -->
+                                                <!-- next button sequence -->
+
+
+                                                <div class="sequencer__next-card-button call-to-action" data-bind="visible: (keepCallToActionSpace && !isLastItem) || keepNavigationButtonSpace, css: { 'hideForIE8': hideForIE8() }">
+                                                    <table class="call-to-action__button fade-effect" role="button" data-bind="id: navigationButtonId,
+                                                                                                            css: { 'fade-in': showNavigationButton() && !platformFeatures.getIsIE8(),
+                                                                                                                   'fade-out': !showNavigationButton() && !platformFeatures.getIsIE8() },
+                                                                                                            click: function () { showNavigationButton() && selectNext(true); },
+                                                                                                            clickBubble: false,
+                                                                                                            style: { 'cursor': showNavigationButton() ? 'pointer' : 'default' },
+                                                                                                            attr : { tabindex: showNavigationButton() && tabindexCard(), 'aria-label': navigationButtonLabel } ">
+                                                        <tr class="wizard-main-text">
+                                                            <td class="call-to-action__button--text sequencer__next-card-label" data-bind="text: navigationButtonLabel"></td>
+                                                            <td class="call-to-action__button--icon sequencer__next-card-icon">&#x21d3;</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+
+                                            </div>
+                                            <!-- important for accessibility, provide button to go to previous sequence -->
+                                            <div style="opacity: 0; z-index: -1; width: 1px; height: 1px; background-color: transparent;" role="button" data-bind="id: previousButtonAccessibilityGuid, click: selectPrevious, clickBubble: false, attr : { 'aria-label': localizedText.Accessibility_PreviousSequence(), tabindex: tabindexCard() }"></div>
+                                            <div style="opacity: 0; z-index: -1; width: 1px; height: 1px; background-color: transparent;" role="button" data-bind="id: audioButtonAccessibilityGuid, click: toggleSound, clickBubble: false, attr : { 'aria-label': localizedText.Accessibility_AudioToggle(), tabindex: tabindexSound() }"></div>
+
+                                        </td>
+
+                                        <!--dotdots margin-->
+                                        <td class="sequencer__slide-table-cell sequencer__dots-container"></td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                        </div><!-- /ko -->
+                        <!--end transitionDirection -->
+                    </div>
+
+                    <!-- end transitionType -->
+
+                </div>
+            </div>
+        </div>
+        <!-- end sequencer -->
+    </div>
+</script>

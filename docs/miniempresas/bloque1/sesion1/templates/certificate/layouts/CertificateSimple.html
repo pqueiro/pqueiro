@@ -1,0 +1,62 @@
+﻿<script id="CertificateSimpleLayout" type="text/html">
+    
+    <div class="certificate__wrapper" data-bind="style:{height : certificateHeight()+'px', width : certificateWidth() +'px'},css: { 'certificate__wrapper--left': alignLeft, 'certificate__wrapper--right': alignRight}">
+    
+        <div class="certificate" data-bind="style:{transform: 'scale(' + scaleValue() + ')'}">
+            
+            <div class="certificate__background">
+                <img class="certificate__background-img" data-bind="attr: { src: background().url() }" />
+            </div>
+            <!-- Logo -->
+
+            <div class="certificate__logo  media-image-fit-to-container"
+                 role="group"
+                 data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data:imageLogo() }, attr: { tabindex : logoTabindex, 'aria-label': imageLogo().metadataScreenReaderDescription  }">
+            </div>
+
+            <!-- Learner's -->
+            <div class="certificate__title certificate__title--color certificate__title--font" data-bind="text:certificateTitle"></div>
+
+            <!-- Learner's mention -->
+            <div class="certificate__learners-mention certificate__learners-mention--color">
+                <span class="certificate__mention-name--font" data-bind="text:text1"></span>
+            </div>
+
+            <!-- Username -->
+            <div class="certificate__username certificate__username--color certificate__learner-name--font" data-bind="text:userName"></div>
+            
+            <!-- ko if: !isNotEmpty(userName()) -->
+            <hr class="certificate__underline certificate__username--color certificate__learner-name--font" />
+            <!-- /ko -->
+
+            <!-- Programme's mention -->
+            <div class="certificate__programmes-mention certificate__programmes-mention--color">
+                <span class="certificate__mention-name--font" data-bind="text:text2"></span>
+            </div>
+
+            <!--Module name-->
+            <div class="certificate__module certificate__module--color certificate__program-name--font" data-bind="text:moduleTitle"> </div>
+
+            <!-- Footer-->
+            <div class="certificate__footer certificate__footer--color">
+
+                <div class="certificate__date">
+                    <div class="certificate__date-text certificate__footer--font" data-bind="text:date"></div>
+                    <hr class="certificate__underline-footer" />
+                    <div class="certificate__date-label certificate__footer--font" data-bind="text:localizedText.Certificate_Date"></div>
+                </div>
+
+                <div class="certificate__signature">
+                    <div class="certificate__signature-img media-image-fit-to-container" role="group" data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data:imageSignature() }, attr: { tabindex : signatureTabindex, 'aria-label': imageSignature().metadataScreenReaderDescription  }"></div>
+                    <hr class="certificate__underline-footer" />
+                    <div class="certificate__signature-label certificate__footer--font" data-bind="text:teacherName"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- ko template: { name: "PrintActionTemplate", data:$data}--><!-- /ko -->
+    <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+
+</script>

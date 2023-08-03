@@ -1,0 +1,36 @@
+﻿<script id="FeedBackInlineTemplate" type="text/html">
+    <!-- ko with: $data -->
+    <div class="feedback__inline" data-bind="id: inlineFeedbackId,
+                                             css: {
+                                                 'feedback__inline--invisible': !inlineFeedbackIsVisible(),
+                                                 'feedback__inline--undisplayed': !inlineFeedbackIsVisible() && displayNone(),
+                                                 'feedback__inline--left': inlineFeedbackIsInLeft,
+                                                 'feedback__inline--right': !inlineFeedbackIsInLeft
+                                             }">
+
+        <div class="feedback__inline__triangle defaultCenter" data-bind="css: {'feedback__inline__triangle--left': inlineFeedbackIsInLeft, 'feedback__inline__triangle--right': !inlineFeedbackIsInLeft}"></div>
+        <div class="feedback__inline__content">
+
+            <div role="group" class="feedback__inline__content__cross-button" data-bind="css:{'feedback__inline__content__cross-button--media-only':!(hasFeedbackTitle||hasFeedbackContent)}, attr: { 'aria-label': localizedText.Accessibility_CloseFeedback(), tabindex: tabindexCloseCross() }, click: closeButtonClicked">x</div>
+
+            <!-- ko if: hasFeedbackTitle() -->
+            <h3 class="feedback__inline__content__title" role="group" data-bind="attr: { 'aria-label': feedbackTitle(), tabindex: feedbackTitle()!='' && tabindex() }">
+                <span class="wizard-main-text" data-bind="text: feedbackTitle()"></span>
+            </h3>
+            <!-- /ko -->
+            <!-- ko if: isVideo() -->
+            <!-- ko template:  {name: applicationViewModel.koGetMediaTemplateName, data: feedbackMedia} --><!-- /ko -->
+            <!-- /ko -->
+            <!-- ko if: hasFeedbackContent()-->
+            <div class="feedback__inline__content__text" role="group" data-bind="richtext: feedbackContent(), attr: { 'aria-label': feedbackContentAriaLabel, tabindex: tabindex() }"></div>
+            <!-- /ko -->
+            <!-- ko if: hasFeedbackSound() -->
+            <div class="accessibility__button--hidden" role="group" data-bind="click: feedbackSound.toggle.bind(feedbackSound), clickBubble: false, attr : { 'aria-label': localizedText.Accessibility_AudioToggle(), tabindex: tabindex() }"></div>
+            <!-- /ko -->
+            <!-- ko if: isImage() -->
+            <!-- ko template:  {name: applicationViewModel.koGetMediaTemplateName, data: feedbackMedia} --><!-- /ko -->
+            <!-- /ko -->
+        </div>
+    </div>
+    <!-- /ko -->
+</script>

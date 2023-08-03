@@ -1,0 +1,83 @@
+﻿<script id="IntroStandardLayout" type="text/html">
+    <div class="exercise__content-wrapper intro__content-wrapper">
+        <div class="exercise__content intro__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <div class="exercise__vertical-align intro__vertical-align">
+
+                <!-- Logo -->
+                <div class="intro__logo"
+                     data-bind="visible: !logoTransitionFinished(), style: {opacity : !logoTransitionFinished() && !transitionCss ? '0' : '' }
+                                , id: logoId
+                                , template: { name: applicationViewModel.koGetMediaTemplateName, data: logoImage() }
+                                , css: {
+                                    'fade-effect': transitionCss
+                                    , 'intro__logo--fade-in': transitionCss && logoIsVisible()
+                                    , 'intro__logo--fade-out': transitionCss && !logoIsVisible() } ">
+
+                </div>
+
+
+                <!-- Title -->
+                <div class="intro__inner-content-wrapper">
+                    <h1 class="intro__title"
+                        role="group"
+                        data-nb-word-wrap-allowed="1"
+                        data-stretch-self
+                        data-stretch-keep-same-size-intro-texts
+                        data-stretch-others-selector="[data-stretch-keep-same-size-intro-texts]"
+                        data-stretch-others-context-selector=".intro__inner-content-wrapper"
+                        data-bind="visibility: hasTitle() && logoTransitionFinished()
+                                                                 , id: titleId
+                                , css: { 'fade-effect': animateVisualElements()
+                                        , 'fade-in': titleIsVisible()
+                                        , 'fade-out': transitionCss && !titleIsVisible()
+                                }, attr:{ tabindex : titlesIntroTabindex, 'aria-label': transformStringForAriaLabel(title()) }">
+                        <span data-bind="text: title()" class="wizard-intro-title-text"></span>
+                    </h1>
+
+
+                    <!-- Image -->
+                    <!-- ko if: (image().getJsonUrl() != "") -->
+
+                    <div role="group" 
+                         class="intro__image"
+                         data-bind="visible: hasImage() && logoTransitionFinished()
+                                , id: imageId
+                                , template: { name: applicationViewModel.koGetMediaTemplateName, data: image() }
+                                , css: {
+                                    'fade-effect': transitionCss && animateVisualElements()
+                                    , 'fade-in': imageIsVisible()
+                                    , 'fade-out': transitionCss && !imageIsVisible()
+                                }, attr:{ tabindex : introTabindex, 'aria-label': image().metadataScreenReaderDescription }">
+                    </div>
+
+                    <!-- /ko -->
+                    <!-- Subtitle -->
+                    <h2 class="intro__subtitle"
+                        role="group"
+                        data-nb-word-wrap-allowed="1"
+                        data-stretch-self
+                        data-stretch-keep-same-size-intro-texts
+                        data-stretch-others-selector="[data-stretch-keep-same-size-intro-texts]"
+                        data-stretch-others-context-selector=".intro__inner-content-wrapper"
+                        data-bind="visibility: hasSubtitle() && logoTransitionFinished()
+                            , id: subtitleId
+                            , css: { 'fade-effect': transitionCss && animateVisualElements()
+                                        , 'fade-in': transitionCss && subtitleIsVisible()
+                                        , 'fade-out': transitionCss && !subtitleIsVisible() }
+                            , attr:{ tabindex : introTabindex, 'aria-label': transformStringForAriaLabel(subtitle()) }">
+                        <span data-bind="richtext: subtitle()" class="wizard-intro-subtitle-text"></span>
+                    </h2>
+
+                    <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

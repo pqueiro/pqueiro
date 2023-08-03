@@ -1,0 +1,52 @@
+﻿<script id="AssessmentMatchToTextsItemsFluidBoxRenderer" type="text/html">
+
+    <!-- ko foreach: containers -->
+    <div class="fluid__item fluid__item-multibox">
+        <div class="multiboxes__cell multiboxes__cell--drop-zone drop" data-bind="id: dropId">
+            <!-- ko if: title() != "" -->
+            <h3 class="multiboxes__title__text" data-bind="text: title"></h3>
+            <!-- /ko -->
+
+            <div class="multiboxes__cell multiboxes__cell--dropped-items"
+                 data-bind="id: containerId, visible: !$parent.showCorrectAnswersTable()">
+                <div class="assessmentMatchTo__DroppedZones" data-bind="id: 'droppedzone_'+containerId"></div>
+            </div>
+
+            <div class="assessmentMatchTo__answers-wrapper"
+                 data-bind="id: 'assessmentMatchTo__trueFalseAnswers-wrapper__'+containerId, visible: !$parent.correctAnwsersDisplayed(),
+                                        attr: { 'aria-label': itemScreenReaderDescription, tabindex: tabindexDropzone()},
+                                        click: $parent.isActiveAndAccessibilityEnabled() && $parent.onDropAccessibility($data)">
+
+                <!-- ko foreach: alternativesTrueFalseAnswers() -->
+                <div class="assessmentMatchTo__answer assessmentMatchTo__showAnswers"
+                     role="alert"
+                     data-bind="id: draggableId,
+                                                attr: {'aria-label': labelItemScreenReaderDescription,
+                                                        tabindex: tabindexDragItem()},
+                                                css: {'button--right': correctAnswer(), 'button--wrong': !correctAnswer()}">
+                    <span class="assessmentMatchTo__answer__icon iconfont" data-bind="text: iconTrueFalse"></span>
+                    <span class="assessmentMatchTo__answer__text" data-bind="text: responseText"></span>
+                </div>
+                <!-- /ko -->
+            </div>
+
+            <div class="assessmentMatchTo__answers-wrapper"
+                 data-bind="id: 'assessmentMatchTo__correctAnswers-wrapper__'+containerId, visible: $parent.correctAnwsersDisplayed(),
+                                        attr: { 'aria-label': itemScreenReaderDescription, tabindex: tabindexDropzone()},
+                                        click: $parent.isActiveAndAccessibilityEnabled() && $parent.onDropAccessibility($data)">
+
+                <!-- ko foreach: alternativesCorrectAnswers() -->
+                <div class="assessmentMatchTo__answer assessmentMatchTo__showAnswers"
+                     role="alert"
+                     data-bind="id: draggableId,
+                                                attr: {'aria-label': labelItemScreenReaderDescription,
+                                                        tabindex: tabindexDragItem()},
+                                                css: {'button--correctAnswer': answerFound(), 'button--normalAnswer': !answerFound()}">
+                    <span class="assessmentMatchTo__answer__textOnly" data-bind="text: responseText"></span>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+</script>

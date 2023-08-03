@@ -1,0 +1,66 @@
+<script id="ClassicMCOpeningFromBottomLayout" type="text/html">
+
+    <div class="classicmc--openup__image-wrapper">
+        <!-- Image -->
+        <!-- ko if: (image().getJsonUrl() != " ") -->
+        <div class="classicmc--openup__image"
+             role="group"
+             data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data:image }, height:imageContentHeight() + 'px', 
+                        attr : { tabindex: tabindex(), 'aria-label': image().metadataScreenReaderDescription }">
+        </div>
+        <!-- /ko -->
+    </div>
+
+    <div class="exercise__content-wrapper classicmc--openup classicmc--openup__content-wrapper">
+        <div class="exercise__content classicmc__content classicmc--openup__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+
+            <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+            <p class="classicmc--openup__introduction" role="group" data-bind="richtext: intro.text(), visible: intro.text().length > 32, attr : { tabindex: tabindexIntro(), 'aria-label' : intro.transformStringForAriaLabel() }"></p>
+
+            <div class="classicmc__answers classicmc--openup__answers">
+                <!-- ko foreach: items -->
+                <div role="button" class="classicmc__answer classicmc--openup__answer"
+                     data-bind="id: answerId,
+                                css : { 'classicmc--openup__answer--right button--right':(isCorrect && isClicked),
+                                    'classicmc--openup__answer--wrong button--wrong':(!isCorrect && isClicked),
+                                    'classicmc--openup__answer--last': isLast },
+                                attr : { tabindex: tabindex(), 'aria-label': ariaLabel },
+                                click: onClick">
+
+                    <table class="classicmc__answer-table classicmc--openup__answer-table"
+                           data-bind="css : {
+                                        'classicmc--openup__answer-table--right': (isCorrect && isClicked),
+                                        'classicmc--openup__answer-table--wrong': (!isCorrect && isClicked)
+                                      }">
+                        <tr>
+                            <td class="classicmc--openup__answer-table__icon">
+                                <span class="classicmc--openup__answer-table__icon--visibility"
+                                      data-bind="style: { visibility: isClicked() ? '' : 'hidden' }">
+                                    <span class="iconfont wizard-main-text" data-bind="text: isCorrect ? '&#x2714;' : '&#x58;'"></span>
+                                </span>
+                            </td>
+                            <td class="classicmc--openup__answer-table__text-wrapper">
+                                <div class="classicmc--openup__answer-table__text">
+                                    <span class="wizard-main-text" data-bind="html: text"></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="classicmc--openup__inlinefeedback" data-bind="id: inlinefeedbackGuidId, css : { 'classicmc--openup__inlinefeedback--hidden' : !feedbackVisible() }">
+                        <span class="wizard-main-text" data-bind="html: feedback"></span>
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+
+
+        </div>
+    </div>
+    <!-- ko template: { name: "CallToActionFullscreenTemplate",data:$data}--><!-- /ko -->
+</script>

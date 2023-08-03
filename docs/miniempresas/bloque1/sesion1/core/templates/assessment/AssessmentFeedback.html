@@ -1,0 +1,64 @@
+﻿<script id="AssessmentFeedbackTemplate" type="text/html">
+    <div class="assessment_charm_bar"
+         data-bind="css:{'assessment_charm_bar--hide':!assessmentFeedbackUI.show(),'assessment_charm_bar--right':assessmentFeedbackUI.allResponsesFound()}">
+
+        <!-- FEEDBACK -->
+        <div class="assessment_charm_bar___feedbackanswer__container">
+            <table class="assessment_charm_bar___feedbackanswer"
+                   data-bind="id:assessmentFeedbackUI.assessmentFeedbackTextId,
+                            css:{
+                           'assessment_charm_bar___feedbackanswer--right':assessmentFeedbackUI.allResponsesFound()},
+                            attr: {tabindex: assessmentFeedbackUI.tabIndexCharmbar(), 'aria-label': assessmentFeedbackUI.feedbackAriaLabel()}">
+                <tr>
+                    <!-- ko if: assessmentFeedbackUI.currentFeedbackMediaText() -->
+                    <td class="assessment_charm_bar___feedbackanswer__icon">
+                        <span class="iconfont wizard-main-text" data-bind="text:assessmentFeedbackUI.iconfont()"></span>
+                    </td>
+                    <td class="assessment_charm_bar___feedbackanswer__text"
+                            data-bind=" richtext: assessmentFeedbackUI.currentFeedbackMediaText().text, attr: { 'aria-label': assessmentFeedbackUI.feedbackAriaLabel()}"></td>
+                    <!-- /ko -->
+                </tr>
+            </table>
+        </div>
+
+        <!-- RETRY -->
+        <table role="button"
+               data-bind="visible:assessmentFeedbackUI.toggleRetryButton(),
+                          click: retryProcess,
+                          attr: { 'aria-label': assessmentFeedbackUI.retryButtonAriaLabel(), tabindex: assessmentFeedbackUI.tabIndexCharmbar() }"
+               class="assessment__button assessment_charm_bar___button call-to-action__button assessment_charm_bar___container__bottom__retry">
+            <tr class="wizard-main-text">
+                <td class="assessment__button--icon call-to-action__button--icon iconfont"
+                    aria-hidden="true">
+                    r
+                </td>
+                <td class="assessment__button--text call-to-action__button--text" data-bind="text: assessmentFeedbackUI.retryButtonText()"></td>
+                <td class="assessment__button--timer call-to-action__button--text" data-bind="visible: countDown != null, text: countDown ? countDown.countDownValue():''"></td>
+            </tr>
+        </table>
+        <!-- ATTEMPTS -->
+        <div class="wizard-main-text">
+            <div class="assessment_charm_bar___attempts" data-bind="visible:assessmentFeedbackUI.toggleAttemptLeft">
+                (<span data-bind="text: assessmentFeedbackUI.attemptsLeftText()"></span>)
+            </div>
+        </div>
+        <!-- SHOW SOLUTION -->
+        <div class="assessment__containerShowMeTheAnswerCallToAction ">
+            <table role="button" class="call-to-action__button assessment__buttonShowMeTheAnswer" data-bind="visible: assessmentFeedbackUI.toggleShowSolutionButton(), 
+                    click: displayAnswers,
+                    attr:{ 'aria-label': assessmentFeedbackUI.showSolutionLocalizedText(), 
+                    tabindex: assessmentFeedbackUI.tabIndexShowMeTheAnswer() }">
+                <tr class="wizard-main-text">
+                    <td class="call-to-action__table-cell call-to-action__button--text" data-bind="text: assessmentFeedbackUI.showSolutionLocalizedText()"></td>
+                </tr>
+            </table>
+
+            <div class="assessment__containerCallToAction" data-bind="visible:assessmentFeedbackUI.toggleCallToAction()">
+                <!-- ko with: $parents[1] -->
+                <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+                <!-- /ko -->
+            </div>
+        </div>
+
+    </div>
+</script>

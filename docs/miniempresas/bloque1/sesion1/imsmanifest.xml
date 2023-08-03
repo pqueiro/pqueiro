@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<manifest identifier="Mohive_TB4499" version="2.0" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:imsss="http://www.imsglobal.org/xsd/imsss" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3" xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3" xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>CAM 1.3</schemaversion>
+    <adlcp:location>sco.xml</adlcp:location>
+    <imsmd:lom>
+      <imsmd:general>
+        <imsmd:title>
+          <imsmd:langstring lang="en">Sesi&amp;#243;n 1 BLOQUE 1. MINIEMPRESAS: DE LA IDEA AL PROTOTIPO</imsmd:langstring>
+        </imsmd:title>
+        <imsmd:description>
+          <imsmd:langstring lang="en">De la idea al prototipo</imsmd:langstring>
+        </imsmd:description>
+        <imsmd:keyword>
+          <imsmd:langstring lang="en">Miniempresas</imsmd:langstring>
+        </imsmd:keyword>
+      </imsmd:general>
+      <imsmd:technical>
+        <imsmd:duration>
+          <imsmd:datetime>PT0H50M0S</imsmd:datetime>
+        </imsmd:duration>
+      </imsmd:technical>
+      <imsmd:educational>
+        <imsmd:typicallearningtime>
+          <imsmd:datetime>PT0H50M0S</imsmd:datetime>
+        </imsmd:typicallearningtime>
+      </imsmd:educational>
+    </imsmd:lom>
+  </metadata>
+  <organizations default="TBP4499">
+    <organization identifier="TBP4499">
+      <title>Sesi&amp;#243;n 1 BLOQUE 1. MINIEMPRESAS: DE LA IDEA AL PROTOTIPO</title>
+      <item identifier="TBM4499" identifierref="TB4499" isvisible="true">
+        <title>Sesi&amp;#243;n 1 BLOQUE 1. MINIEMPRESAS: DE LA IDEA AL PROTOTIPO</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="TB4499" type="webcontent" adlcp:scormType="sco" href="index.html">
+      <file href="index.html" />
+    </resource>
+  </resources>
+</manifest>

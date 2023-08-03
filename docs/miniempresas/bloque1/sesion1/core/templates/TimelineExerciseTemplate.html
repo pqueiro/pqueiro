@@ -1,0 +1,20 @@
+﻿<script id="TimelineExerciseTemplate" type="text/html">
+    <td class="frieze__exercise__cell" data-bind="id: exerciseGuid
+                      , css: {
+                            'frieze__exercise__cell--watched': isWatched
+                             , 'frieze__exercise__cell--active': isCurrent
+                             , 'frieze__exercise__cell--locked': isLocked
+                      }">
+        <div class="frieze__exercise" data-bind="click:$parent.gotoPosition.bind($parent), attr : { tabindex : $root.menuTabindex, 'aria-label' : title }">
+            <div class="frieze__exercise__thumb">
+                <div class="frieze__exercise__lock" data-bind="style : {display: isLocked() ? 'block':'none'}"></div>
+                <img style="height: 90px;" class="frieze__exercise__img"
+                     data-bind="attr:{'src': thumbnail}, css:{
+                                    'frieze__exercise__img--watched': isWatched , 'frieze__exercise__img--locked' : isLocked()}" alt="" />
+                <div class="frieze__exercise__mask" data-bind="text: ($index() + 1)"></div>
+            </div>
+            <p class="frieze__exercise__label" data-bind="text:title"></p>
+
+        </div>
+    </td>
+</script>

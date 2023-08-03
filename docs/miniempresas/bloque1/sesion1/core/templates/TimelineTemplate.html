@@ -1,0 +1,70 @@
+﻿<script id="TimelineTemplate" type="text/html">
+    <a href="javascript:;" id="menu" class="menu iconfont" tabindex="1001" role="button" data-bind="click: onFriezeMenuClick
+                                                            , attr: { 'tabindex': applicationViewModel.accessibilityViewModel.accessibilityFeaturesActivated() ? '1002' : '-1',
+                                                                      'aria-hidden': applicationViewModel.accessibilityViewModel.accessibilityFeaturesActivated() ? 'false' : 'true',
+                                                                      'aria-label': localizedText.Accessibility_Timeline() }
+                                                            , visible: menuButtonVisible
+                                                            , css : {'fade-in': menuButtonVisible(),'fade-out': !menuButtonVisible()}">&#x2630;</a>
+
+    <div id="mask" class="frieze__mask"></div>
+
+    <!-- frieze block -->
+    <div id="frieze" class="frieze" data-bind="visible: ((friezeVisible()
+                                                            || (applicationViewModel.navigationManager.currentExercise()
+                                                                && applicationViewModel.navigationManager.currentExercise().contentViewModel()))
+                                                        && !(applicationViewModel.navigationManager.currentExercise()
+                                                            && applicationViewModel.navigationManager.currentExercise().contentViewModel()
+                                                            && applicationViewModel.navigationManager.currentExercise().contentViewModel().feedbackVisible())),
+                                               attr: {'aria-hidden': friezeVisible() ? 'false' : 'true' }">
+
+        <div id="progress" class="frieze__progress" data-bind="text: applicationViewModel.progressbarViewModel.currentProgressionLabel"></div>
+
+        <!-- navigation buttons (only on desktop!) -->
+        <a onclick="return false;"
+           href="javascript: return false;"
+           id="friezenavigationprevious"
+           class="frieze__navigationholder frieze__navigationholder--previous"
+           data-bind="visible : applicationViewModel.isDesktopMode " tabindex="-1">
+            <div class="frieze__navigationholder__icon frieze__navigationholder__icon--previous iconfont">&#x21d0;</div>
+        </a>
+
+        <a onclick="return false;"
+           href="javascript: return false;"
+           id="friezenavigationnext"
+           class="frieze__navigationholder frieze__navigationholder--next"
+           data-bind="visible : applicationViewModel.isDesktopMode " tabindex="-1">
+            <div class="frieze__navigationholder__icon frieze__navigationholder__icon--next iconfont">&#x21d2;</div>
+        </a>
+
+        <!-- frieze content -->
+        <div id="friezescrollhide" class="friezescrollhide">
+            <div id="friezeinner" class="frieze__friezeinner">
+                <table id="friezechapters" class="frieze__friezechapters">
+
+                    <tr class="frieze__table-header" data-bind="" id="friezeTH">
+                        <!-- ko if: platformFeatures.getIsDesktopMode() -->
+                        <th class="frieze__header__chapters frieze__begin">&nbsp;</th>
+                        <!-- /ko -->
+                        <!-- ko foreach: timelineGroups() -->
+                        <th class="frieze__header__chapters" data-bind="attr:{id:timelineGroupId,'colSpan':exercises.length,'class':cssClassValues}">
+                            <div class="frieze__header__chapters__title" data-bind="text:title, attr:{'title':titleTooltip}, width:titleMaxWidth() + 'px'"></div>
+                        </th>
+                        <!-- /ko -->
+                        <th class="frieze__header__chapters frieze__end">&nbsp;</th>
+                    </tr>
+
+                    <tr>
+
+                        <!--ko if: platformFeatures.getIsDesktopMode() -->
+                        <td class="frieze__begin frieze__exercise__cell">&nbsp;</td>
+                        <!-- /ko -->
+                        <!-- ko template: { name: function(exercise) { return 'TimelineExerciseTemplate'; }, foreach: exercises() }-->
+                        <!-- /ko -->
+
+                        <td class="frieze__end frieze__exercise__cell">&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</script>

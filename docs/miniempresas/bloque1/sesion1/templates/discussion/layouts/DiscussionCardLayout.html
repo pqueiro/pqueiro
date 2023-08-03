@@ -1,0 +1,52 @@
+﻿<!-- ***************************************************
+     *   Template : SequencerItemDiscussionTemplate    *
+     *************************************************** -->
+
+<script id="SequencerItemDiscussion" type="text/html">
+    <div class="discussion-card-content-wrapper" data-bind="style: {height: cardContentHeight()}">
+
+        <div class="discussion-card-content media-image-fit-to-container"
+             data-bind="attr: { tabindex: tabindex, 'aria-label': mediaImage().metadataScreenReaderDescription }
+                            ,id:containerId">
+            <!-- in landscape mode, we need to fix the image height instead of the whole content height -->
+            <!-- ko if: platformFeatures.getIsPhoneLandscape()-->
+            <div data-bind="style: {height: limitedImageHeight()}" class="media-image-fit-to-container">
+                <!-- ko template: {name: applicationViewModel.koGetMediaTemplateName, data: mediaImage} --><!-- /ko -->
+            </div>
+            <!-- /ko -->
+            <!-- ko ifnot: platformFeatures.getIsPhoneLandscape()-->
+            <!-- ko template: {name: applicationViewModel.koGetMediaTemplateName, data: mediaImage} --><!-- /ko -->
+            <!-- /ko -->
+            <div class="discussion-card__speech" data-bind="style: {
+                                                top: bubbleTop()
+                                            , right: bubbleRight()
+                                            , bottom: bubbleBottom()
+                                            , left: bubbleLeft()
+
+                                            }
+                                        , visible: mediaText().text()!='' && cardIsVisible()
+                                        , attr: {
+                                            tabindex: tabindex
+                                            , 'aria-label': ariaLabelContent
+                                            , 'class': 'discussion-card__speech '+bubbleOrientation()+' '+bubbleType()+' '+bubbleDiagonal()
+                                        }
+                                        ,id:bubbleId">
+
+                <div class="discussion-card__speech-text" data-bind="template:{
+                                                                    name: applicationViewModel.koGetMediaTemplateName,
+                                                                    data: mediaText
+                                                                }"></div>
+                <div class="discussion-card__speech-top-corner"></div>
+                <div class="discussion-card__speech-bottom-corner"></div>
+                <!-- ko ifnot: platformFeatures.getIsPhone()-->
+                <div class="discussion-card__speech-spike" data-bind="id:spikeId"></div>
+                <!-- /ko -->
+                <!-- ko if: platformFeatures.getIsPhone()-->
+                <div class="discussion-card__speech-spike" data-bind="id:spikeId,style:{left:spikeLeft()}"></div>
+                <!-- /ko -->
+            </div>
+        </div>
+        
+    </div>
+</script>
+

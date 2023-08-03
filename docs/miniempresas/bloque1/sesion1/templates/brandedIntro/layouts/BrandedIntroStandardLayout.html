@@ -1,0 +1,73 @@
+﻿<script id="BrandedIntroStandardLayout" type="text/html">
+    <div class="brandedintro__content-wrapper exercise__content-wrapper">
+        <div class="brandedintro__content exercise__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+
+            <div class="brandedintro__logo fade-effect--fast"
+                 data-bind="visible: $parent.isActive(),css:{'brandedintro__logo--fade-out':brandAnimationFinished()}">
+
+                <video x5-video-player-type="h5" class="brandedVideo playing" data-bind="id: brandedVideoId" playsinline>
+                    <source data-bind="attr:{'src': brandedVideoFilePath()}" type="video/mp4">
+                </video>
+                <a class="brandedVideo-control js-video-control playing " href="#" role="button" 
+                   data-bind="id: brandedVideoControlId,
+                        click: playBrandedVideo,
+                        attr:{ tabindex :startTabIndex, 'aria-label': localizedText.Accessibility_VideoPlayerPlay() }">
+                </a>
+            </div>
+
+            <div class="brandedintro__intro fade-effect--slow"
+                 data-bind="css:{'fade-in':brandAnimationFinished(),
+                                 'fade-out':!brandAnimationFinished()}">
+                <div class="brandedintro__intro__vertical-align">
+                    <div class="brandedintro__intro__horizontal-align">
+
+                        <h1 class="brandedintro__intro__title"
+                            role="group"
+                            data-nb-word-wrap-allowed="1"
+                            data-stretch-self
+                            data-stretch-keep-same-size-brandedintro-texts
+                            data-stretch-others-selector="[data-stretch-keep-same-size-brandedintro-texts]"
+                            data-stretch-others-context-selector=".brandedintro__intro__horizontal-align"
+                            data-bind="visible: hasTitle()
+                                , id: titleId
+                                , attr:{ tabindex : titlesIntroTabindex, 'aria-label': title() }">
+                            <span class="brandedintro__intro__title-text" data-bind="text: title()"></span>
+                        </h1>
+
+                        <!-- Image -->
+                        <!-- ko if: (image().getJsonUrl() != "") -->
+                        <div class="brandedintro__intro__gutter" />
+                        <div class="brandedintro__intro__image"
+                             data-bind="visible: hasImage()
+                                , id: imageId
+                                , template: { name: applicationViewModel.koGetMediaTemplateName, data: image() }
+                                , attr:{tabindex : introTabindex, 'aria-label': image().metadataDescription}">
+                        </div>
+                        <!-- /ko -->
+                        <!-- ko if: hasSubtitle() -->
+                        <!-- Subtitle -->
+                        <h2 class="brandedintro__intro__subtitle"
+                            role="group"
+                            data-nb-word-wrap-allowed="1"
+                            data-stretch-self
+                            data-stretch-keep-same-size-brandedintro-texts
+                            data-stretch-others-selector="[data-stretch-keep-same-size-brandedintro-texts]"
+                            data-stretch-others-context-selector=".brandedintro__intro__horizontal-align"
+                            data-bind="visible: hasSubtitle()
+                            , id: subtitleId
+                            , attr:{tabindex : introTabindex, 'aria-label': subtitle() }">
+                            <span class="brandedintro__intro__subtitle-text" data-bind="richtext: subtitle()"></span>
+                        </h2>
+                        <div class="brandedintro__intro__gutter" />
+                        <!-- /ko -->
+                        <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

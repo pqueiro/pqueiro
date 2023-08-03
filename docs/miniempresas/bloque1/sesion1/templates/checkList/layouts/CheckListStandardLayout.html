@@ -1,0 +1,84 @@
+<script id="CheckListStandardLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper checklist__content-wrapper">
+        <div class="exercise__content checklist__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <!-- ko if: !StringHelper.isNullOrEmpty(introduction.text()) -->
+            <div class="checklist__introduction" 
+                 role="group" 
+                 data-nb-word-wrap-allowed="0" 
+                 data-stretch-parent=".exercise__content" 
+                 data-bind="attr:{ tabindex: tabindexIntro(), 'aria-label' : introduction.transformStringForAriaLabel() }">
+                <p class="checklist__introduction__text" 
+                   data-bind="richtext:introduction.text()"></p>
+            </div>
+            <!-- /ko -->
+            <!-- ko foreach:items() -->
+            <table class="checklist__table" 
+                   data-bind="id: id,  
+                                css : {'checklist__table--clickable' : isVisited() && sound , 
+                                        'checklist__table--active':isVisited() }">
+                <tr>
+                    <!-- ko if: image.url() != '' -->
+                    <td class="checklist__cell--image" data-bind="click: sound != null && isVisited() ? select : null, css : { 'checklist__cell--image--active' : isVisited(), 'checklist__imagePolaroid': image.isPolaroid() }, 
+                        attr:{ tabindex: isVisited() ? tabindexItem : -1 }" role="button">
+                        <div class="image imageNormal media-image-parent-landmark" 
+                             data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: image }
+                                        , attr: {'aria-label': image.metadataScreenReaderDescription}" />
+                    </td>
+                    <!-- /ko -->
+                    <td class="checklist__cell--text" 
+                        data-bind="click: sound && isVisited() ? select : null, 
+                                    css : { 'checklist__cell__text--active' : isVisited(), 'checklist__cell__text--inactive' : !isVisited(), 'checklist__cell__text--noimage' : image.url() == ''}">
+                        <h3 class="checklist__text__title"
+                            data-nb-word-wrap-allowed="0"
+                            data-stretch-parent=".exercise__content"
+                            role="group"
+                            data-bind="attr:{ tabindex: isVisited() ? tabindexItem : -1, 'aria-label':title() }, css : { 'checklist__text__title--active' : isVisited(), 'checklist__imagePolaroid': image.isPolaroid() }">
+                            <span data-bind="text:title()" class="text wizard-main-text"></span>
+                        </h3>
+                        <div class="checklist__description" 
+                             role="group" 
+                             data-nb-word-wrap-allowed="0" 
+                             data-stretch-parent=".exercise__content" 
+                             data-bind="attr:{ tabindex: isVisited() ? tabindexItem : -1, 'aria-label': description.transformStringForAriaLabel() }">
+                            <span data-bind="richtext:description.text()" class="text"></span>
+                        </div>
+                    </td>
+                    <td class="checklist__cell--checkbox" 
+                        role="button"
+                        aria-label="Validate concept"
+                        data-bind="click: isVisited() ? check : null, 
+                                    attr:{ tabindex: isVisited() ? tabindexItem : -1}">
+                        <div class="checklist__checkbox__wrapper wizard-main-text">
+                            <div class="checklist__checkbox iconfont"
+                                 aria-hidden="true"
+                                 data-bind="css : { 'checklist__checkbox--active': isVisited(),
+                                                    'checklist__checkbox--sonar-animation': sonarLaunched() },
+                                            text:isChecked() ? '&#x29bf;' : '&#x4f;'"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- /ko -->
+            <!-- ko if: !StringHelper.isNullOrEmpty(conclusion.text()) -->
+            <div class="checklist__conclusion" 
+                 role="group" 
+                 data-bind="css: {  'checklist__conclusion--active': isConclusionShown(), 'checklist__conclusion--inactive': !isConclusionShown() }, 
+                            attr:{ tabindex: isConclusionShown() ? tabindexConclusion() : -1, 'aria-label' : conclusion.transformStringForAriaLabel()}" 
+                 data-nb-word-wrap-allowed="0" 
+                 data-stretch-parent=".exercise__content">
+                <p class="checklist__conclusion__text" 
+                   data-bind="richtext: conclusion.text()"></p>
+            </div>
+            <!-- /ko -->
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+        </div>
+    </div>
+</script>

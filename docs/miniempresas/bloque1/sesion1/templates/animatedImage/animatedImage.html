@@ -1,0 +1,71 @@
+﻿<script id="AnimatedImageTemplate" type="text/html">
+    <!-- ko with: contentViewModel() -->
+    <!-- ko template: { name: "ExerciseTitleComponent",data: $data}--><!-- /ko -->
+
+    <table class="animatedImage" data-bind="style: { height: $parent.height() + 'px', width: $parent.width() + 'px' }">
+        
+        <!-- Intro -->
+        <tr>
+            <td>
+                <div class="introduction" data-bind="attr: { id: introductionId, tabindex: tabindex }, richtext: exerciseIntro"></div>
+            </td>
+        </tr>
+
+        <!-- Content-->
+        <tr>
+            <td align="center" style:"position:relative;">
+
+                <div class="content" data-bind="attr: { id: contentId }">
+
+                    <!-- ko foreach: animatedImageItems -->
+                    <div class="animatedItem" data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: mediaImage }, visible: isVisible, css: { 'noCalibration': noCalibration }" />
+                    <!-- /ko -->
+
+                     <div   class="animatedItemMask" data-bind="click: function (data, event) { contentClickHandler(event); }, event: { mousemove: function (data, event) { contentMouseMoveHandler(event); } }">
+                     </div>
+
+                    <!-- Player Controls -->
+                    <div class="controls fade-effect" data-bind="css: { 'fade-out': hideControls }">
+
+                        <div class="play-control" data-bind="attr: { 'class': playControlClasses, tabindex: tabindex }, click: function (data, event) { playPause(event); }">
+                            <div></div>
+                        </div>
+
+                        <div class="progress-control">
+
+                            <div class="progress-holder" >
+                                <div class="load-progress"></div>
+                                <div class="play-progress"></div>
+                                <div class="seek-handle-container">
+                                    <div class="seek-handle" style="left: 0%;" data-bind="style:{left: progress}"></div> 
+                                </div>
+                            </div>
+                        
+                           <div class="replay" data-bind="click: function (data, event) { replay(event); }"></div>
+
+                        </div>
+                      
+                    </div>
+
+                </div>
+               
+
+            </td>
+        </tr>
+
+        <!-- CONCLUSION -->
+        <tr>
+            <td>
+                <div class="conclusion fade-effect" data-bind="attr: { id: conclusionId },css: { 'fade-out': !conclusionIsVisible() }">
+                    <div data-bind="richtext: exerciseConclusion">
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+    <!-- /ko -->
+    <!-- ko template: { name: "CallToActionFullscreenTemplate",data:$data}--><!-- /ko -->
+</script>
+
+

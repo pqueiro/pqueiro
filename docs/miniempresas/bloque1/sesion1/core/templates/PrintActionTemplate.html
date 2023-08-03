@@ -1,0 +1,17 @@
+﻿<script id="PrintActionTemplate" type="text/html">
+    <div class="call-to-action print__button">
+        <table class="call-to-action__table animation-fade-in">
+            <tr>
+                <td>
+                    <table role="button" class="call-to-action__button"
+                           data-bind="click:function(data, event) {window.print();}">
+                        <tr class="wizard-main-text">
+                            <td class="call-to-action__table-cell call-to-action__button--icon iconfont" aria-hidden="true">J</td>
+                            <td class="call-to-action__table-cell call-to-action__button--text" data-bind="text:localizedText.CallToAction_Print"></td>  
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</script>

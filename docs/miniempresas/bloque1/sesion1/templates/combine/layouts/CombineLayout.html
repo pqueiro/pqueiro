@@ -1,0 +1,62 @@
+﻿<script id="CombineLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}-->
+    <!-- /ko -->
+
+    <div class="exercise__content-wrapper combine__content-wrapper">
+        <div class="exercise__content combine__content" data-bind="id: combinecontainerId,
+                        css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+
+            <!-- ko if: introduction.text() != "" -->
+            <p class="combine__introduction" data-nb-word-wrap-allowed="0" role="group"
+                data-stretch-parent=".exercise__content" data-bind="attr: { tabindex: tabindexIntro, 'aria-label': introAriaLabel }">
+                <span data-bind="richtext: introduction.text()" />
+            </p>
+            <!-- /ko -->
+
+            <table class="combine__table" role="presentation">
+                <tr class="combine__emptyline">
+                    <td class="combine__table__cell combine__empty__cell combine__gutter-left" />
+                    <td class="combine__table__cell combine__empty__cell combine__stretchable-column" data-bind="id: labelColumnId" />
+                    <td class="combine__table__cell combine__empty__cell combine__gutter-column" />
+                    <td class="combine__table__cell combine__empty__cell combine__stretchable-column" data-bind="id: dropZoneColumnId" />
+                    <td class="combine__table__cell combine__empty__cell combine__gutter-right" />
+                </tr>
+                <!-- ko foreach: { data: items } -->
+                <tr role="button"
+                    data-bind="id: trDropZoneId, 
+                                attr: {  tabindex: tabindexDropItem(), 
+                                        'aria-label': isAlternativeVisible() ? text + ' ' + localizedText.Accessibility_DropZone()  : text + ' ' + responseText,
+                                        role: isAlternativeVisible() ? 'button' : 'group'}, 
+                                click: $parent.isActiveAndAccessibilityEnabled() && selectDropBox">
+                    <td class="combine__table__cell combine__gutter-left" /> <!-- Left gutter -->
+                    <td class="combine__table__cell combine__sentence--left">
+                        <div data-nb-word-wrap-allowed="1" data-bind="attr: { 'data-stretch-td': parent.labelColumnId }">
+                            <span class="wizard-main-text" data-bind="text: text" />
+                        </div>
+                    </td>
+                    <td class="combine__table__cell"></td> <!-- Middle gutter -->
+                    <td class="combine__table__cell" role="group" data-bind="id: tdDropZoneId">
+                        <div class="dropzone" data-nb-word-wrap-allowed="1"
+                             data-bind="visible: isAlternativeVisible(), id: dropZoneId, style: { height: tdDropZoneHeight() }, attr: { 'data-stretch-td': parent.dropZoneColumnId }">
+                            <span class="dropzone-text">placeholder</span>
+                        </div>
+                        <div class='sticky__drag-item--dragged combine__sentence--right' data-nb-word-wrap-allowed="1"
+                             data-bind="id: droppedElementId, visible: !isAlternativeVisible(), attr: { 'data-stretch-td': parent.dropZoneColumnId }">
+                            <span class="wizard-main-text" data-bind="text: responseText"></span>
+                        </div>
+                    </td>
+                    <td class="combine__table__cell combine__gutter-right" /> <!-- Right gutter -->
+                </tr>
+                <!-- /ko -->
+            </table>
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}-->
+            <!-- /ko -->
+        </div>
+    </div>
+
+    <!-- ko template: { name: "ClassicDragdropTemplate",data:$data}--><!-- /ko -->
+</script>

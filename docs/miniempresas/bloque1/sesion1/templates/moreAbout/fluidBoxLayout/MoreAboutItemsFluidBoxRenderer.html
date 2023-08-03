@@ -1,0 +1,28 @@
+﻿<script id="MoreAboutItemsFluidBoxRenderer" type="text/html">
+    <!-- ko foreach: items() -->
+    <div class="fluid__item fluid__item-moreabout">
+        <!-- Particular case : the title above feedback image is never display in the case the main image is a polaroid and the image feedback is not a polaroid. For more informations, see IN:39431 -->
+        <h3 class="fluid__item-title media__title" data-bind="text: itemText(),
+                                                attr:{ tabindex: tabindex()}"></h3>
+
+        <div class="moreabout-phone__image-container">
+            <div class="fluid__item-image__wrapper"
+                 data-bind="id: id()">
+                <div class="fluid__item-image media-image-parent-landmark"
+                     role="button"
+                     data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: media }
+                                                    , css: { 'play-media': itemHasFeedback }
+                                                    , click: onClick
+                                                    , attr:{ tabindex: tabindex()}" />
+                <div class="iconfont fluid__item__icon"
+                     data-bind="id: iconId(),
+                                            css: {'moreabout__item__icon--visible': showValidationIcon(),
+                                                  'moreabout__item__icon--animate': animateValidationIcon()}">
+                    &#x2713;
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /ko -->
+</script>

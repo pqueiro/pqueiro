@@ -1,0 +1,44 @@
+﻿<!-- Media + Title -->
+<script id="FlashMediaWithTitleFullscreenLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper flash__content-wrapper">
+        <div class="exercise__content flash__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+
+            <div class="flash__mask--global-container" role="button" data-bind="click: displayHTMLAnimation, visible: hasSwipeMask(), attr: { tabindex: tabindex }">
+                <div class="flash__mask--vertical-align-container">
+                    <div class="flash__mask--vertical-align-content">
+                        <div class="flash__mask--button-image"></div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="flash__table">
+                <tr>
+                    <!-- ko if:showPreviousArrow() -->
+                    <td class="previous gotoexercise-flash-template nav-buttons nav-button__previous fade-effect fade-in" data-bind="visible: !hasSwipeMask()">
+                        <div id="previousButtonFlashTemplate">
+                            <a href="javascript:;" data-bind="click:previousButtonClick" class="flash_button--icon nav-button__previous-icon nav-button__icon iconfont">&#x3c;</a>
+                        </div>
+                    </td>
+                    <!-- /ko -->
+                    <td>
+                        <div class="flash__media flash__media--without-text" role="group" data-bind="visible: !hasSwipeMask(), attr: { tabindex: tabindex, 'aria-label': ariaLabel }, template: { name: applicationViewModel.koGetMediaTemplateName, data: mediaToDisplay() }" />
+                    </td>
+                    <!-- ko if:showNextArrow() -->
+                    <td class="next flash__table-cell--next nav-buttons nav-button__next fade-effect fade-in" data-bind="visible: !hasSwipeMask()">
+                        <div id="nextButtonFlashTemplate">
+                            <a class="flash__button--icon nav-button__next-icon nav-button__icon iconfont" href="javascript:;" data-bind="click:nextButtonClick">&#x3e;</a>
+                        </div>
+                    </td>
+                    <!-- /ko -->
+                </tr>
+            </table>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,100 @@
+﻿<script id="InfoTextWithImageOnRightLayout" type="text/html">
+    <!-- InfoTextWithImageOnRightLayout -->
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+    <div class="layout-ready"></div>
+    <div class="exercise__content-wrapper">
+        <div class="exercise__content info--right__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <table class="info--right__table">
+
+                <tr class="info--right__gutter">
+                    <td class="info-gutter-before"></td>
+                    <td class="info--right__content-column" data-bind="id: colContentId"></td>
+                    <td class="info--right__gutter"></td>
+                    <td class="info--right__illustration-column"></td>
+                    <td class="info-gutter-after"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="info--right__table-cell" colspan="3">
+                        <!-- ko if: introductionMedia() -->
+                        <p class="info__introduction"
+                           role="group"
+                           data-bind="template: {name: applicationViewModel.koGetMediaTemplateName, data: introductionMedia}, attr: { tabindex : infoTabindex, 'aria-label' : ariaLabelIntroductionMedia }"></p>
+                        <!-- /ko -->
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr class="info--right__gutter">
+                    <td></td>
+                    <td colspan="3">&nbsp;</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="info--right__table-cell">
+                        <div class="info__contentText" data-nb-word-wrap-allowed="3" data-stretch-source-node-selector=".richText"
+                             data-bind="attr: { 'data-stretch-td': colContentId, tabindex : infoTabindex, 'aria-label' : ariaLabelContentMedia },
+                                        css: { 'fade-out': !contentVisible(), 'fade-effect': animateVisualElements() }">
+                            <!--ko template: {name: applicationViewModel.koGetMediaTemplateName, data: contentMedia }--><!--/ko-->
+                        </div>
+                    </td>
+                    <td class="info--right__table-cell"></td>
+                    <td class="info--right__table-cell">
+
+                        <div class="info--right__illustration" data-bind="css: {'fade-out': !graphicVisible(), 'fade-effect': animateVisualElements()}">
+
+                            <!-- ko if: (graphicTitle() != "" && (media().type == MediaType.image && !media().isPolaroid()) -->
+                            <div class="info-illustration-title" data-bind="visible: graphicTitle() != '', attr: { tabindex : infoTabindex, 'aria-label' : graphicTitle() }">
+                                <h3 class="media__title">
+                                    <span class="wizard-main-text" data-bind="text: graphicTitle()"></span>
+                                </h3>
+                            </div>
+                            <!-- /ko -->
+                            <!-- ko if: !StringHelper.isNullOrEmpty(media()) -->
+                            <div data-bind="template: {name: applicationViewModel.koGetMediaTemplateName, data: media}, attr: { tabindex : infoTabindex }"></div>
+                            <!-- IN:52258, zoom image disabled on this template -->
+                            <!-- /ko -->
+                            <!-- ko if: (graphicCaption() != null && graphicCaption() != '') -->
+                            <div class="info-illustration-caption" data-bind="visible: graphicCaption() != '', attr: { tabindex : infoTabindex, 'aria-label' : graphicCaption() }">
+                                <h4 class="media__caption">
+                                    <span class="wizard-main-text" data-bind="text: graphicCaption()"></span>
+                                </h4>
+                            </div>
+                            <!-- /ko -->
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr class="info--right__gutter">
+                    <td></td>
+                    <td colspan="3">&nbsp;</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="info--right__table-cell" colspan="3">
+                        <!--ko if: hasConclusion() -->
+                        <div class="info__conclusion" data-bind="visible: conclusionMedia(),
+                                                                css: { 'fade-out': !conclusionVisible(), 'fade-effect': animateVisualElements() },
+                                                                template: {name: applicationViewModel.koGetMediaTemplateName, data: conclusionMedia}, attr: { tabindex : infoTabindex, 'aria-label' : ariaLabelConclusionMedia }">
+                        </div>
+                        <!-- /ko -->
+                    </td>
+                    <td></td>
+                </tr>
+
+            </table>
+
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+        </div>
+    </div>
+</script>

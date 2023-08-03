@@ -1,0 +1,341 @@
+<!doctype html>
+<!--[if IE 8]>    <html class="lt-ie10 lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+<head>
+
+    <!--
+
+        DEVELOPERS
+
+        WHEN CHANGING THIS FILE, DO NOT FORGET index.debug.html
+
+        -->
+
+    <meta charset="utf-8">
+    <!-- Force latest available IE rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="X-UA-TextLayoutMetrics" content="gdi" />
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title data-bind="text:courseName"></title>
+    <link rel="stylesheet" href="css/core.css" />
+    <link href="core/lib/slick/slick-theme.css" rel="stylesheet" />
+    <link href="core/lib/slick/slick.css" rel="stylesheet" />
+    <!--[if gt IE 9]><!-->
+    <link href="core/lib/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet">
+    <!--<![endif]-->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/Favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/Favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/Favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/Favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/Favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/Favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/Favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/Favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/Favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" href="images/Favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="images/Favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/Favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="images/Favicon/favicon-192x192.png" sizes="192x192">
+    <link rel="manifest" href="images/Favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="images/Favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body role="application" data-bind="style: { fontSize: fontSize()+'px', height:height()+'px' }, css: {'accessibility-features-activated': accessibilityViewModel.accessibilityFeaturesActivated()}">
+
+    <!-- ko template: {name: 'AccessibilityTemplate', data: $data } --><!-- /ko -->
+
+    <!-- displayed until module is ready -->
+    <div class="body-overlay" data-bind="visible: !moduleIsReady()">
+        <img src="images/spinner.gif" />
+    </div>
+
+    <!--ko with: sliderViewModel -->
+    <!-- ko template: {name: sliderTemplateName, data: $data, afterRender: function(){loadSlider();} } --><!-- /ko -->
+    <!-- /ko -->
+    <!--ko with: modalBoxViewModel -->
+    <!-- ko template: {name: 'ModalBoxTemplate', data: $data } --><!-- /ko -->
+    <!-- /ko -->
+    <!--ko with: timelineViewModel -->
+    <!-- ko template: {name: 'TimelineTemplate', data: $data } --><!-- /ko -->
+    <!-- /ko -->
+    <!--ko with: progressbarViewModel -->
+    <!-- ko template: {name: 'ProgressbarTemplate', data: $data } --><!-- /ko -->
+    <!-- /ko -->
+    <!-- Audio players -->
+    <audio id="audio-player" preload="auto" tabindex="-1"></audio>
+
+    <!-- preload -->
+    <div id="preload" style="width:100%; height:inherit; position:fixed; top:100%"
+         data-bind="foreach: { data: applicationViewModel.navigationManager.lifecycleManager.loadedExercises()}">
+
+        <div class="exercise" data-bind="outerTemplate:{data:$data}">
+        </div>
+    </div>
+
+    <!-- Lib -->
+    <script src="core/lib/modernizr.custom.49569.js"></script>
+    <script src="core/lib/jquery-1.11.3.js"></script>
+    <script src="core/lib/jquery.raf.js"></script>
+
+    <script src="core/lib/jquery-ui.min.js"></script>
+    <script src="core/lib/knockout-3.4.0.min.js"></script>
+    <script src="core/lib/jquery.mohive.js"></script>
+    <script src="core/lib/jquery.dotdotdot-1.5.2.js"></script>
+    <script src="core/lib/slick/slick.js"></script>
+
+    <script src="core/lib/swfobject.js"></script>
+    <script src="core/lib/webkitdragdrop.js"></script>
+    <script src="core/lib/mathjax/MathJax.js?config=TeX-MML-AM_HTMLorMML-full"></script>
+
+    <script src="core/lib/video.js"></script>
+    <script src="core/lib/jquery.tinyscrollbar.js"></script>
+    <script src="core/lib/jquery.transform.min.js"></script>
+    <!--[if gt IE 8]><!-->
+    <script src="core/lib/progressbar.js"></script>
+    <script src="core/lib/hammer.js"></script>
+    <!--<![endif]-->
+    <!--[if gt IE 9]><!-->
+    <script src="core/lib/perfect-scrollbar/perfect-scrollbar.jquery.min.js"></script>
+    <!--<![endif]-->
+
+    <script>
+        // WARNING : Do not modify the following line, it will change by server before export.
+        var trackingEnabled = true;
+        var exportScormVersion = "2004";
+        var isDemoMode = false;
+        var exportVersionOnS3 = "";
+    </script>
+
+    <script src="mohiveRuntime.min.js"></script>
+    <!-- LOADING TEMPLATES -->
+    <script>
+        // promise of a deferred which is resolved when all templates have been loaded
+        // so we can attache behavior to be executed when all tempaltes have been loaded like this :
+        // allTemplatesLoaded.then(function(){ // do something });
+        var whenAllTemplatesLoaded = (function () {
+
+            // If exportVersionOnS3 is not empty, runtime is running from S3 : insure that this is last published version on S3.
+            // Else, redirect on proxy 'index.html' file.
+            if (exportVersionOnS3 != "") {
+                // Gets last published version value.
+                $.ajax({
+                    url: "../lastPublishedVersion.json",
+                    async: false,
+                    dataType: 'json',
+                    success: function (data) {
+                        // Redirect if the current course is not the last published version.
+                        if (data.lastPublishedVersion != exportVersionOnS3) {
+                            window.location.href = "../index.html";
+                        }
+                    },
+                    error: function () {
+                        // Redirect if error
+                        window.location.href = "../index.html";
+                    }
+                });
+            }
+
+            // will hold all the promises generated by all $.ajax requests for each template
+            var templatesPromises = [];
+
+            var body = $("body");
+            var load = function (url) {
+
+                var promise = $.ajax(url, {
+                    async: true,
+                    success: function (data) {
+                        body.append(data);
+                    }
+                }).promise();
+
+                templatesPromises.push(promise);
+            };
+
+            var templates = [
+                "core/templates/AccessibilityTemplate.html",
+                "core/templates/assessment/AssessmentSubmitButtonTemplate.html",
+                "core/templates/assessment/AssessmentFeedback.html",
+                "core/templates/BalloonScrollableTemplate.html",
+                "core/templates/BalloonTemplate.html",
+                "core/templates/EmptyExerciseTemplate.html",
+                "core/templates/EmptyMediaTemplate.html",
+                "core/templates/TimelineTemplate.html",
+                "core/templates/TimelineExerciseTemplate.html",
+                "core/templates/ProgressbarTemplate.html",
+                "core/templates/FeedbackTemplate.html",
+                "core/templates/FeedbackInlineTemplate.html",
+                "core/templates/ImageTemplate.html",
+                "core/templates/LoadingTemplate.html",
+                "core/templates/MediaFlashTemplate.html",
+                "core/templates/MediaHtmlTemplate.html",
+                "core/templates/ModalBoxTemplate.html",
+                "core/templates/TranscriptTemplate.html",
+                "core/templates/TooltipTemplate.html",
+                "core/templates/NoteScrollableTemplate.html",
+                "core/templates/NotFoundTemplate.html",
+                "core/templates/TextScrollableTemplate.html",
+                "core/templates/TextTemplate.html",
+                "core/templates/NoteTemplate.html",
+                "core/templates/VideoTemplate.html",
+                "core/templates/OuterTemplate.html",
+                "core/templates/CallToActionTemplate.html",
+                "core/templates/PrintActionTemplate.html",
+                "core/templates/CallToActionFullscreenTemplate.html",
+                "core/templates/SlickTemplate.html",
+                "core/templates/CKSliderTemplate.html",
+                "core/templates/ClassicDragdropTemplate.html",
+                "core/templates/PuzzleDragDropTemplate.html",
+                "components/ExerciseTitleComponent.html",
+                "core/templates/TooltipTemplate.html"
+            ];
+
+            for (var i = 0, j = templates.length; i < j; load(templates[i++]));
+
+            var layouts = [
+                // ABOUT IMAGES
+                'templates/aboutImages/layouts/AboutImagesStandardLayout.html'
+                , 'templates/aboutImages/fluidBoxLayout/AboutImagesItemsFluidBoxRenderer.html'
+                // ANIMATED IMAGES
+                // BRANDED INTRO
+                , 'templates/brandedIntro/layouts/BrandedIntroStandardLayout.html'
+                // BRANDED OUTRO
+                , 'templates/brandedOutro/layouts/BrandedOutroStandardLayout.html'
+                // BULLET POINT
+                , 'templates/bulletPoint/layouts/BulletPointStandardLayout.html'
+                // CLASSICMC
+                , 'templates/classicMC/layouts/ClassicMCStandard.html'
+                , 'templates/classicMC/layouts/ClassicMCOpeningFromBottom.html'
+                // Certificate
+                , 'templates/certificate/layouts/CertificateSimple.html'
+                // COMBINE
+                , 'templates/combine/layouts/CombineLayout.html'
+                // CHECKLIST
+                , 'templates/checkList/layouts/CheckListStandardLayout.html'
+                // CONCEPT
+                , 'templates/conceptList/layouts/ConceptListStandardLayout.html'
+                // DRAG TO PLACE
+                , 'templates/dragToPlace/layouts/DragToPlaceStandardLayout.html'
+                // ELABORATE
+                , 'templates/elaborate/layouts/ElaborateStandardLayout.html'
+                // EMBEDDED CONTENT
+                , 'templates/embeddedContent/layouts/embeddedContentFullscreenlayout.html'
+                , 'templates/embeddedContent/layouts/embeddedContentWithTextLayout.html'
+                , 'templates/embeddedContent/layouts/embeddedContentWithTitleFullscreenLayout.html'
+                , 'templates/embeddedContent/layouts/embeddedContentWithTitleTextLayout.html'
+                // ENDING
+                , 'templates/ending/layouts/EndingStandardLayout.html'
+                // EVALUATE MEDIA
+                , 'templates/evaluateMedia/layouts/EvaluateMediaStandardLayout.html'
+                , 'templates/evaluateMedia/fluidBoxLayout/EvaluateMediaItemsFluidBoxRenderer.html'
+                // FILL IN BLANKS
+                , 'templates/fillInBlanks/layouts/FillInBlanksStandardLayout.html'
+                , 'templates/fillInBlanks/layouts/FillInBlanksIE8Layout.html'
+                // FLASH TEMPLATE
+                , 'templates/flashTemplate/layouts/FlashTemplateFullscreenlayout.html'
+                , 'templates/flashTemplate/layouts/FlashTemplateWithTextLayout.html'
+                , 'templates/flashTemplate/layouts/FlashTemplateWithTitleFullscreenLayout.html'
+                , 'templates/flashTemplate/layouts/FlashTemplateWithTitleTextLayout.html'
+                // IEXPLORE
+                , 'templates/iExplore/layouts/iExploreWithoutTitleLayout.html'
+                , 'templates/iExplore/layouts/iExploreTitleLayout.html'
+                // INFO
+                , 'templates/info/layouts/TextWithImageOnBottom.html'
+                , 'templates/info/layouts/TextWithImageOnLeft.html'
+                , 'templates/info/layouts/TextWithImageOnRight.html'
+                , 'templates/info/layouts/TextWithImageOnTop.html'
+                // INTRO
+                , 'templates/intro/layouts/IntroStandardLayout.html'
+                // LABELED IMAGES
+                , 'templates/labeledImages/layouts/LabeledImagesStandardLayout.html'
+                , 'templates/labeledImages/fluidBoxLayout/LabeledImagesItemsFluidBoxRenderer.html'
+                // MATRIX ABOUT
+                , 'templates/matrixAbout/layouts/MatrixAboutStandardLayout.html'
+                , 'templates/matrixPuzzle/layouts/MatrixPuzzleStandardLayout.html'
+                // MORE ABOUT
+                , 'templates/moreAbout/layouts/MoreAboutStandardLayout.html'
+                , 'templates/moreAbout/fluidBoxLayout/MoreAboutItemsFluidBoxRenderer.html'
+                // MULTI BOXES
+                , 'templates/multiBoxes/layouts/MultiBoxesClassic.html'
+                , 'templates/multiBoxes/fluidBoxLayout/MultiBoxesItemsFluidBoxRenderer.html'
+                // SEQUENCER
+                , 'templates/sequencer/layouts/SequencerStandardLayout.html'
+                , 'templates/sequencer/layouts/SequencerFullscreenLayout.html'
+                // Sequencer inner templates
+                , 'templates/sequencer/layouts/SequencerTemplatebottomright.html'
+                , 'templates/sequencer/layouts/SequencerTemplatetopleft.html'
+                // SPACER
+                , 'templates/spacer/layouts/SpacerStandardLayout.html'
+                // VIDEO
+                , 'templates/video/layouts/VideoWithTitleLayout.html'
+                , 'templates/video/layouts/VideoFullscreenLayout.html'
+                // IMAGE
+                , 'templates/image/layouts/ImageTitleLayout.html'
+                , 'templates/image/layouts/ImageWithoutTitleLayout.html'
+                // WHATIF
+                , 'templates/whatIf/layouts/WhatIfStandardLayout.html'
+                , 'templates/whatIf/layouts/WhatIfOpenUpLayout.html'
+                // PRESENTER
+                , 'templates/presenter/layouts/PresenterStandardLayout.html'
+                , 'templates/presenter/layouts/MediaOnLeft.html'
+                , 'templates/presenter/layouts/MediaOnRight.html'
+                , 'templates/presenter/layouts/MediaOnTop.html'
+                , 'templates/presenter/layouts/MediaOnBottom.html'
+                , 'templates/presenter/layouts/CenteredMedia.html'
+                , 'templates/presenter/layouts/CenteredText.html'
+                // PROCESS ABOUT
+                , 'templates/processAbout/layouts/processAboutStandardLayout.html'
+                , 'templates/processAbout/fluidBoxLayout/ProcessAboutItemsFluidBoxRenderer.html'
+                // PROCESS PUZZLE
+                , 'templates/processPuzzle/layouts/processPuzzleStandardLayout.html'
+                , 'templates/processPuzzle/fluidBoxLayout/ProcessPuzzleItemsFluidBoxRenderer.html'
+                // COMMUN ABOUT IMAGES / PROCESS / FLUIDBOX
+                , 'templates/commons/processCommon/layouts/ProcessCommonLayout.html'
+                , 'templates/commons/fluidBoxLayout/FluidBoxLayout.html'
+                , 'templates/commons/fluidBoxLayout/FluidBoxDragAndDropLayout.html'
+                , 'templates/commons/fluidBoxLayout/FluidBoxPuzzleDragAndDropLayout.html'
+                // DISCUSSION
+                , 'templates/discussion/layouts/DiscussionCardLayout.html'
+                // ASSESSMENT MCQ
+                , 'templates/assessmentMCQ/layouts/AssessmentMCQMediaOnTheLeftLayout.html'
+                , 'templates/assessmentMCQ/layouts/AssessmentMCQMediaOnTheRightLayout.html'
+                // ASSESSMENT RESULT
+                , 'templates/assessmentResult/layouts/AssessmentResultStandardLayout.html'
+                // ASSESSMENT MATCH TO
+                , 'templates/assessmentMatchTo/layouts/AssessmentMatchTo.html'
+                , 'templates/assessmentMatchTo/fluidBoxLayout/AssessmentMatchToImagesItemsFluidBoxRenderer.html'
+                , 'templates/assessmentMatchTo/fluidBoxLayout/AssessmentMatchToTextsItemsFluidBoxRenderer.html'
+                // ASSESSMENT CLICKABLE ZONES
+                , 'templates/assessmentClickableZones/layouts/assessmentClickableZonesWithoutTitleLayout.html'
+                , 'templates/assessmentClickableZones/layouts/assessmentClickeZonesTitleLayout.html'
+            ];
+
+            for (var i = 0, j = layouts.length; i < j; load(layouts[i++]));
+
+            return $.when.apply($, templatesPromises); // $.when returns a promise summing all deferreds completions
+
+        })();
+
+        whenAllTemplatesLoaded.then(function () {
+            // On IE8, we need to add a setTimeout to avoid compatibility mode
+            // [IN:048571]
+            if (navigator.userAgent.indexOf("MSIE 8") != -1) {
+                setTimeout(function () {
+                    main();
+                }, 500);
+            }
+            else {
+                main();
+            }
+        });
+    </script>
+    <!-- LOADING TEMPLATES END -->
+    <!-- 2-level frieze block -->
+    <script id="TwoLevelModule" type="text/html">
+    </script>
+
+    <!-- TEMPLATES PLACEHOLDER -->
+</body>
+</html>

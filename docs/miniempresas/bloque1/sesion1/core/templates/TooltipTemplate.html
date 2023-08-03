@@ -1,0 +1,16 @@
+﻿<script id="TooltipTemplate" type="text/html">
+    <!-- data = TooltipViewModel -->
+    <div class="overlay-tooltip fade-effect--fast" data-bind="id: id, click: function(obj,event){applicationViewModel.tooltipManager.hideTooltip(); uiManager.stopPropagation(event)}, 
+         css :  { 'fade-in': $parent.tooltipOverlayFadeIn(),'fade-out': !$parent.tooltipOverlayFadeIn(), 'overlay-tooltip--zoomin' :$parent.tooltipOverlayFadeIn()},
+         visible: $parent.tooltipOverlayVisible()">;
+        
+        <div class="tooltip">
+            <div class="tooltip__title wizard-main-text" data-bind="text: text"></div>
+            <div class="tooltip__popup">
+                <div class="tooltip__arrow"></div>
+                <span class="tooltip__content wizard-main-text" data-bind="text: content"></span>
+                <span class="tooltip__close">×</span>
+            </div>
+        </div>
+    </div>
+</script>

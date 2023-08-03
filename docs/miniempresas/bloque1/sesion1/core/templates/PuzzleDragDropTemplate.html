@@ -1,0 +1,72 @@
+﻿<script id="PuzzleDragdropTemplate" type="text/html">
+    <div class="sticky__exercise-container ">
+        <!-- Class name is important to clone the content to the sticky footer-->
+
+        <div class="sticky sticky--hide sticky--puzzle" data-bind="css: stickyColumnNumberClass()">
+            <div class="content--large-layout sticky__box sticky__box--puzzle" data-bind="css: 'sticky-' + dragItemType()">
+                <table class="sticky-puzzle__container">
+                    <tr data-bind="foreach: { data: dragItemsList }">
+                        <td class="puzzle-sticky__drag-item-wrapper">
+                            <div class="puzzle-sticky__drag-item release drag-label"
+                                 role="button"
+                                 data-bind="id: draggableId,
+                                            style : { display:answerFound()?'none':'inline-block'},
+                                            attr: { tabindex: dragTabindex, 'aria-label': dragAriaLabel },
+                                            click: selectDragItem,
+                                            css: 'drag-item__' + $parent.dragItemType() ">
+
+                                <!-- ko if: platformFeatures.getIsIE8() -->
+                                <table class="puzzle-sticky__drag-item-table">
+                                    <tr>
+                                        <td class="puzzle-drag-item__icon-cell">
+                                            <div class="iconfont puzzle-drag-item__icon"
+                                                 data-bind="css: { 'puzzle-drag-item__icon--external': isImageDroppable } ">&#x62;</div>
+                                            
+                                        </td>
+                                        <td class="puzzle-drag-item__content">
+                                            <div data-bind="visible : isTitleDroppable">
+                                                <h3 class="puzzle-drag-item__title media__title">
+                                                    <span class="wizard-main-text" data-bind="text: title"></span>
+                                                </h3>
+                                            </div>
+                                            <div class="items-images images" data-bind="visible : isImageDroppable">
+                                                <div class="image imageNormal media-image-parent-landmark"
+                                                     data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: imageDraggable }" />
+                                                
+                                            </div>
+                                            <div data-bind="visible : isCaptionDroppable">
+                                                <h4 class="puzzle-drag-item__caption media__caption">
+                                                    <span class="wizard-main-text" data-bind="text: caption"></span>
+                                                </h4>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- /ko -->
+
+                                <!-- ko if: platformFeatures.getIsIE8() == false -->
+                                <div class="puzzle-sticky__drag-item-table">
+                                    <div class="puzzle-drag-item__content">
+                                        <div data-bind="visible : isTitleDroppable">
+                                            <div class="wizard-main-text" data-bind="text: title"></div>
+                                        </div>
+                                        <div class="items-images images" data-bind="visible : isImageDroppable">
+                                            <div class="image imageNormal media-image-parent-landmark"
+                                                 data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: imageDraggable }" />
+                                        </div>
+                                        <div data-bind="visible : isCaptionDroppable">
+                                            <div class="wizard-main-text" data-bind="text: caption"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /ko -->
+
+                            </div>
+                        </td>
+                        <td class="sticky-puzzle__spacer" data-bind="visible: $index() != ($parent.dragItemsList().length-1)"></td> <!-- ignore spacer on last element-->
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</script>

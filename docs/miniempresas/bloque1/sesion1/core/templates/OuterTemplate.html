@@ -1,0 +1,83 @@
+﻿<script id="OuterTemplate" type="text/html">
+    <!-- This HTML positions the background, the logo the scroll bar (for tiny scroll bar / desktop only), the viewport, the feedback -->
+
+    <!-- ko with: contentViewModel() -->
+    <!-- ko with: baseContentBackgroundViewModel -->
+    <!-- EXERCISE BACKGROUND -->
+    <div class="exercise__background"
+         data-bind="visibility: !$parent.parent.isLocked(),
+                    id: background.id,
+                    style: { backgroundImage: !useImageTag() ? 'url(' + background.url() + ')' : 'none', 
+                             backgroundPosition: backgroundPosition(), 
+                             backgroundSize: backgroundSize }">
+        <!-- ko if: useImageTag() && hasBackground() -->
+        <!-- ko with: background -->
+        <img class="exercise__background-img" data-bind="event: {load: bgLoaded, error: bgError }
+                                        , attr: { src: url() } "/>
+        <!-- /ko -->
+        <!-- /ko -->
+    </div>
+    <!-- /ko -->
+    <!-- /ko -->
+
+    <!-- EXERCISE CONTENT -->
+    <div class="scrollbar exercise__scrollbar">
+        <div class="track">
+            <div class="thumb">
+            </div>
+        </div>
+    </div>
+
+    <div class="viewport" data-bind="css: {'viewport--forcedRelative': applicationViewModel.platformFeatures.getIsDeviceForced()}">
+        <!-- ko with: contentViewModel() -->
+        <!-- ko if: showLogoOnBottomRight() -->
+        <div class="exercise__logo-wrapper">
+            <img class="exercise__logo-img" data-bind="attr:{src : headerLogo()}"/>
+        </div>
+        <!-- /ko-->
+        <!-- /ko -->
+
+
+        <div class="overview" data-bind="exerciseTemplate: {data: $data}">
+        </div>
+    </div>
+
+    <!-- /Exercise content -->
+    <div class="template-ready" style="display: none;"></div>
+    <div class="exercise__lock" data-bind="style : {display: isLocked() ? 'block':'none'}"> </div>
+
+
+    <!-- ko with: contentViewModel() -->
+    <div class="feedback feedback--hidden" data-bind="css: { 'feedback--hidden': !feedbackVisible(), 'feedback--visible': feedbackVisible(), 'feedback--visual': feedbackIsVisual(), 'feedback--text-only': !feedbackIsVisual() }">
+        <div data-bind="template: { name: 'FeedBackTemplate', data: $data }"></div>
+    </div>
+
+    <!-- Tooltip -->
+    <!-- ko if: $data.tooltipViewModel() != null -->
+    <!-- ko template: {name: 'TooltipTemplate', data: tooltipViewModel()} --><!-- /ko -->
+    <!-- /ko -->
+
+    <!-- Feedback Template (used for assessment) -->
+    <!-- giving the good context to the feedback template -->
+
+    <!-- CASE : data exercise template which contains an assessmentManager object. (ex : Assessment MCQ)  -->
+    <!-- ko if: $data.hasOwnProperty('assessmentManager') -->
+    <!-- ko with: assessmentManager -->
+    <!-- ko template:{name:"AssessmentFeedbackTemplate",data:$data} --><!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+
+    <!-- OTHER CASE : data exercise template which contains a specific behavior for assessment (ex : FillInBlanks, see IFillBlanksCommon.ts)  -->
+    <!-- ko ifnot: $data.hasOwnProperty('assessmentManager') -->
+        <!-- ko if: (($data.hasOwnProperty('behavior')) && (behavior.hasOwnProperty('assessmentManager') )) -->
+        <!-- ko with: behavior.assessmentManager -->
+        <!-- ko template:{name:"AssessmentFeedbackTemplate",data:$data} -->
+        <!-- /ko -->
+        <!-- /ko -->
+        <!-- /ko -->
+    <!-- /ko -->
+
+
+    <!-- /ko -->
+    <!-- /ko -->
+</script>

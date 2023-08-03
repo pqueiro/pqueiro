@@ -1,0 +1,24 @@
+﻿<script id="CallToActionFullscreenTemplate" type="text/html">
+    <!-- ko if:  parent.hasCallToAction() -->
+
+    <div data-bind="css: { 'call-to-action__overlay--full': parent.showCallToAction() }, style: { 'zIndex': parent.showCallToAction() ? '999998' : '-1'}">
+
+        <div class="call-to-action call-to-action--full fade-effect fade-out" data-bind="css: { 'fade-in': parent.showCallToAction(), 'fade-out': !parent.showCallToAction() }, click: function(data,event){parent.callToActionCancelClick(event)}">
+            <table class="call-to-action__button-wrapper">
+                <tr>
+                    <td class="call-to-action__table-cell">
+                        <table role="button" class="call-to-action__button" data-bind="attr:{ tabindex: parent.showCallToAction() && parent.isCurrent() ? tabindexCalltoAction : -1, 'aria-label': parent.callToActionText}, click: function(data,event){parent.callToActionClick(event)}, clickBubble: false">
+                            <tr class="wizard-main-text">
+                                <td class="call-to-action__table-cell call-to-action__button--text" data-bind="text:parent.callToActionText"></td>
+                                <td class="call-to-action__table-cell call-to-action__button--icon iconfont" aria-hidden="true">&#x27a7;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+ 
+    <!-- /ko -->
+</script>

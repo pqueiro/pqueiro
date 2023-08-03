@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+
+	<general>
+		<title>
+			<string>Sesi&#243;n 1 BLOQUE 1. MINIEMPRESAS: DE LA IDEA AL PROTOTIPO</string>
+		</title>
+		<catalogentry>
+			<catalog>Mohive eLPS 4</catalog>
+			<entry>
+				<string>4499</string>
+			</entry>
+		</catalogentry>
+		<description>
+			<string>De la idea al prototipo</string>
+		</description>
+		<keyword>
+			<string>Miniempresas</string>
+		</keyword>
+	</general>
+	<lifecycle>
+		<version>
+			<string>1.0</string>
+		</version>
+		<status>
+			<source>
+				<string>LOMv1.0</string>
+			</source>
+			<value>
+				<string>Final</string>
+			</value>
+		</status>
+	</lifecycle>
+	<metaMetadata>
+		<metadataSchema>LOMv1.0</metadataSchema>
+		<metadataSchema>SCORM_CAM_v1.3</metadataSchema>
+	</metaMetadata>
+	<technical>
+		<format>text/html</format>
+		<location>Course/asset/main.html</location>
+		<otherplatformrequirements>
+			<string>Flash 7</string>
+		</otherplatformrequirements>
+	</technical>
+	<educational>
+		<typicalLearningTime>
+			<duration>PT0H50M0S</duration>
+		</typicalLearningTime>
+	</educational>
+	<rights>
+		<cost>
+			<source>
+				<string>LOMv1.0</string>
+			</source>
+			<value>
+				<string>no</string>
+			</value>
+		</cost>
+		<copyrightandotherrestrictions>
+			<source>
+				<string>LOMv1.0</string>
+			</source>
+			<value>
+				<string>no</string>
+			</value>
+		</copyrightandotherrestrictions>
+	</rights>
+	<classification>
+		<purpose>
+			<source>
+				<string>LOMv1.0</string>
+			</source>
+			<value>
+				<string>Educational Objective</string>
+			</value>
+		</purpose>
+		<description>
+			<string>De la idea al prototipo</string>
+		</description>
+		<keyword>
+			<string>Toolbox</string>
+		</keyword>
+	</classification>
+</lom>

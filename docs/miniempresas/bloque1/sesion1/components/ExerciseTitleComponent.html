@@ -1,0 +1,87 @@
+﻿<script id="ExerciseTitleComponent" type="text/html">
+    <div class="header-wrapper">
+
+        <!-- ko if: isNotEmpty(headerLogo()) && logoPosition().indexOf("above") != -1 -->
+        <div class="header__logo__container--above" data-bind="css: 'header__logo__container--' + logoPosition() ">
+
+            <img class="header__logo" data-bind="attr:{src : headerLogo()}" />
+
+        </div>
+        <!-- /ko -->
+        <div class="header" data-bind="style: { backgroundImage: getHeaderBackgroundUrl() ? 'url(' + getHeaderBackgroundUrl() + ')' : '' },
+                                        css: { 'header-empty': !(isNotEmpty(title()) || isNotEmpty(instruction()))}">
+            <!-- This template is not used in Title, Spacer and Ending layouts -->
+            <!-- header background -->
+            <table style="width:100%" class="header__structure">
+                <tr>
+
+                    <!-- ko if: isNotEmpty(headerLogo()) && logoPosition() == "top-left" -->
+                    <td class="header__logo__container header__logo__container--left">
+
+                        <img class="header__logo" data-bind="attr:{src : headerLogo()}" />
+
+                    </td>
+                    <!-- /ko -->
+
+                    <td class="header__title__container"
+                        data-bind="css: { 'header__title__container--logoleft': logoPosition() == 'top-left' && isNotEmpty(headerLogo()), 'header__title__container--logoright': logoPosition == 'top-right' && isNotEmpty(headerLogo) } ">
+                        <!-- ko if: isNotEmpty(title()) -->
+                        <div class="header__title-background">
+                            <h1 class="header__title"  data-stretch-parent=".header"  
+                                data-nb-word-wrap-allowed="1" role="group"
+                                data-bind="attr:{tabindex : tabindexTitleComponent, 'aria-label': title},css: {'right': logoPosition() == 'top-left' }" >
+                                <span class="header__title-text wizard-header-title-text" data-bind="text:title"></span>
+                                <!-- ko if: !isNotEmpty(instruction()) -->
+                                <span class="header__title-bottom"></span>
+                                <!-- /ko -->
+                            </h1>
+                        </div>
+                        <!-- /ko -->
+                        <!-- ko if: isNotEmpty(question()) -->
+                        <div class="header__question__wrapper">
+                            <h1 class="header__question" data-stretch-parent=".header" data-nb-word-wrap-allowed="1" 
+                                data-bind="attr:{tabindex : tabindexTitleComponent, 'aria-label': question}" role="group">
+                                <span class="header__question-text wizard-header-title-text" data-bind="text:question"></span>
+                                <!-- ko if: !isNotEmpty(instruction()) -->
+                                <span class="header__title-bottom"></span>
+                                <!-- /ko -->
+                            </h1>
+                        </div>
+                        <!-- /ko -->
+                        <!-- ko if: isNotEmpty(instruction()) && !isInstructionSeparate() -->
+                        <h2 class="header__instruction" data-stretch-parent=".header" data-nb-word-wrap-allowed="2" 
+                            data-bind="attr:{tabindex : tabindexTitleComponent, 'aria-label': instruction}" role="group">
+                            <span class="header__instruction-top"></span>
+                            <span class="header__instruction-text header__instruction-text--together wizard-header-instruction-text"
+                                  data-bind="text:instruction,
+                                                css: { 'header__instruction-text--separate' : isNotEmpty(instruction()) && isInstructionSeparate(),
+                                                        'header__instruction-text--separate--openup': isNotEmpty(instruction()) && isInstructionSeparate() && isLayoutOpenup()}"></span>
+                            <span class="header__instruction-bottom"></span>
+                        </h2>
+                        <!-- /ko -->
+                    </td>
+
+                    <!-- ko if: isNotEmpty(headerLogo()) -->
+                    <!-- ko if: (logoPosition() == "top-right" || !isNotEmpty(logoPosition())) -->
+                    <td class="header__logo__container header__logo__container--right">
+
+                        <img class="header__logo" data-bind="attr:{src : headerLogo()}" />
+
+                    </td>
+                    <!-- /ko -->
+                    <!-- /ko -->
+                </tr>
+            </table>
+        </div>
+
+        <!-- ko if: isNotEmpty(instruction()) && isInstructionSeparate() -->
+        <h2 class="header__instruction" role="group"
+            data-bind="attr: {tabindex : tabindexTitleComponent, 'aria-label': instruction}, 
+            css: { 'header__instruction--separate' : isNotEmpty(instruction()) && isInstructionSeparate() }">
+            <span class="header__instruction-text wizard-header-instruction-text" data-bind="text:instruction"></span>
+        </h2>
+        <!-- /ko -->
+
+    </div>
+
+</script>

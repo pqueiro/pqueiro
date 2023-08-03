@@ -1,0 +1,55 @@
+﻿<!-- Media + Text + Title -->
+<script id="EmbeddedContentTitleTextLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper">
+        <div class="exercise__content"
+             data-bind="css: layoutSizeGroupClassName()">
+
+            <table class="embeddedContent__table">
+                <tr>
+                    <td>
+                        <div class="embeddedContent__vertical-align">
+                            <div class="embeddedContent__media embeddedContainer"
+                                 role="button"
+                                 data-bind="click: clickAccessibilityEmbeddedContent, attr: { tabindex: tabindex, 'aria-label': ariaLabel}">
+
+                                <!-- ko if: platformFeatures.getIsIE8() -->
+                                    <div class="embeddedContent__ie8-container ">
+                                        <div class="embeddedContent__ie8-content"></div>
+                                    </div>
+                                <!-- /ko -->
+
+                                <a role="button" href="javascript:;" class="feedback__content__cross-button iconfont"
+                                   data-bind="visible: platformFeatures.getIsMobileDevice() && !mobileMaskVisible(),
+                                            click: function() { toggleMaskMobileVisibility(); }">&#215;</a>
+
+                                <div class="embeddedContent__mobileMaskContainer" role="button" data-bind="click: toggleMaskMobileVisibility,
+                                                                                    visible: mobileMaskVisible(),
+                                                                                    attr: { tabindex: tabindex }">
+                                    <div class="embeddedContent__container--vertical">
+                                        <div class="embeddedContent__content-vertical">
+                                            <div class="embedded__mask--button-image"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--
+                            These two blocks are display-inline so be careful !
+                            Do not remove these comments
+                            -->
+                            <div class="embeddedContent__text-wrapper" data-bind="visible: richtextContent().text != '', ">
+                                <div class="embeddedContent__text--template"
+                                     data-nb-word-wrap-allowed="3" data-stretch-self
+                                     role="group"
+                                     data-bind="attr: { tabindex: tabindex, 'aria-label': ariaLabelText }, template: { name: applicationViewModel.koGetMediaTemplateName, data: richtextContent }" />
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</script>

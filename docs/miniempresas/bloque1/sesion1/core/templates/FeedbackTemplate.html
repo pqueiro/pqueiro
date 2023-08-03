@@ -1,0 +1,79 @@
+<script id="FeedBackTemplate" type="text/html">
+    <!-- ko if: $data.feedback -->
+    <!-- all part of the feedback can be close below if the feedback is an only image. -->
+    <a class="feedback__overlay" role="button" data-bind="click: function(data, event) { $data.feedback.onCloseClick(data, event); }, visible:$data.feedback.isImage() || $data.feedback.feedbackBackground() "></a>
+
+    <!-- ko with: $data.feedback -->
+    <div class="feedback__background-image media-image media-image-parent-landmark media-image-fit-to-container">
+        <!-- ko if: feedbackBackground() && isVisual() -->
+        <!-- ko template: {name: applicationViewModel.koGetMediaTemplateName, data: feedbackBackground() } -->
+        <!-- /ko -->
+        <!-- /ko -->
+    </div>
+
+    <div class="feedback__content">
+
+
+        <a role="button" href="javascript:;" class="feedback__content__cross-button iconfont"
+           data-bind="visible: isVisual(), 
+           attr: { tabindex: tabindexCloseCross, 'aria-label': localizedText.Accessibility_CloseFeedback() }, 
+           click: function() { onCloseClick(); }">&#215;</a>
+
+        <div class="feedback__content__medias media-image-fit-to-container media-video-fit-to-container" data-bind="attr: { tabindex: tabindex }">
+
+
+            <!-- ko if: isImage() && feedbackImage() -->
+            <!-- ko template:  { name: feedbackImage().template(), data: feedbackImage() } -->
+            <!-- /ko -->
+            <!-- /ko -->
+
+            <!-- ko if: isVideo() && feedbackVideo() -->
+            <!-- ko template:  { name: feedbackVideo().template(), data: feedbackVideo() } -->
+            <!-- /ko -->
+            <!-- /ko -->
+
+            <!-- ko if: isHTMLAnimation() && feedbackHTMLAnimation() -->
+            <!-- ko template:  { name: feedbackHTMLAnimation().template(), data: feedbackHTMLAnimation() } -->
+            <!-- /ko -->
+            <!-- /ko -->
+
+            <!-- ko if: hasFeedbackSound() -->
+            <div class="accessibility__button--hidden" style="bottom: 10px;" role="button"
+                 data-bind="click: feedbackSound.toggle.bind(feedbackSound), 
+                            clickBubble: false,
+                            attr : { 'aria-label': localizedText.Accessibility_AudioToggle(), tabindex : tabindex }">
+            </div>
+            <!-- /ko -->
+        </div>
+
+        <div class="feedback__content__text-wrapper"
+             data-bind="attr: { tabindex: ariaLabel() ? tabindex : -1, 'aria-label': ariaLabel() }, 
+                        css: {'feedback__content__text-wrapper--hidden': !feedbackTextVisible()}">
+
+            <div class="feedback__expandText__button" data-bind="visible: needExpandText(), click: function() { toggleTextContainerHeight(); } ">
+                <div class="feedback__expandText__arrow">
+                    <!-- ko if: platformFeatures.getIsIE8() == false -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="4320 3978 30 30">
+                        <g id="Groupe_276" data-name="Groupe 276" transform="translate(4105 3931)">
+                            <rect id="Rectangle_375" data-name="Rectangle 375" class="rect" width="30" height="30" transform="translate(215 47)" />
+                            <g id="Groupe_275" data-name="Groupe 275" transform="translate(216 54)" class="arrow">
+                                <path id="Tracé_147" data-name="Tracé 147" d="M26.663,15.337,28,14.006,13.993,0,0,13.993l1.337,1.344L14,2.675Z" />
+                            </g>
+                        </g>
+                    </svg>
+                    <!-- /ko -->
+                </div>
+            </div>
+
+
+            <a role="button" href="javascript:;" class="feedback__content__cross-button iconfont"
+               data-bind="visible: !isVisual(), 
+                           attr: { tabindex: tabindexCloseCross, 'aria-label': localizedText.Accessibility_CloseFeedback() }, 
+                           click: function() { onCloseClick(); }">&#215;</a>
+            <div class="feedback__content__text" data-bind="richtext: feedbackText()">
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+    <!-- /ko -->
+</script>

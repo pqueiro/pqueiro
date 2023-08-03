@@ -1,0 +1,83 @@
+﻿<script id="AccessibilityTemplate" type="text/html">
+    <!-- Accessibility -->
+    <div id="accessibilityToolbar"
+         class="accessibility__buttons"
+         data-bind="visible : applicationViewModel.accessibilityViewModel.accessilityToolbarVisible() && platformFeatures.getIsDesktopMode(),
+                                    aria-hidden: applicationViewModel.navigationManager.historyExercises().length === 1 ? 'false' : 'true' ">
+
+        <div id="accessibilityKeyboardNavButton"
+             class="accessibility__button accessibility__button-features button iconfont"
+             role="button"
+             tabindex="0"
+             title="Keyboard navigation"
+             data-bind="visible: applicationViewModel.navigationManager.historyExercises().length === 1
+                                    , attr: { 'aria-label': applicationViewModel.accessibilityViewModel.keyboardNavButtonAriaLabel() }
+                                    , click:  function(){applicationViewModel.accessibilityViewModel.toggleAccessibleFeature()}
+                                    , css: {  'accessibility__button--active' : applicationViewModel.accessibilityViewModel.accessibilityFeaturesActivated()
+                                    , 'accessibility__button--inactive' : !applicationViewModel.accessibilityViewModel.accessibilityFeaturesActivated() }">&#x61;</div>
+
+        <div class="accessibility__button accessibility__button-transcript button iconfont"
+             role="button"
+             data-bind="visible: applicationViewModel.navigationManager.historyExercises().length === 1 || applicationViewModel.transcriptViewModel.transcriptActivated()
+                                    , attr: { 'aria-label': applicationViewModel.accessibilityViewModel.transcriptButtonAriaLabel(),
+                                              'tabindex': applicationViewModel.accessibilityViewModel.accessibilityFeaturesActivated() ? '0' : '-1',
+                                               'aria-hidden': applicationViewModel.accessibilityViewModel.accessibilityFeaturesActivated() === true ? 'false' : 'true' }
+                                    , click: function(){applicationViewModel.transcriptViewModel.toggleTranscriptActivation()}
+                                    , css: { 'accessibility__button--active' : applicationViewModel.transcriptViewModel.transcriptVisible()
+                                    , 'accessibility__button--inactive' : !applicationViewModel.transcriptViewModel.transcriptVisible() }">&#x73;</div>
+    </div>
+
+
+    <!-- Glossary with all tooltips of the current exercise -->
+    <!-- ko if : applicationViewModel.navigationManager.currentExercise()
+              && applicationViewModel.navigationManager.currentExercise().contentViewModel() -->
+
+        <!-- ko with : applicationViewModel.navigationManager.currentExercise().contentViewModel() -->
+
+            <!-- ko if : isActiveAndAccessibilityEnabled -->
+        
+                <div id="js-accessibility__glossary" class="accessibility__glossary" 
+                     data-bind="visible: applicationViewModel.tooltipManager.glossary().length > 0">
+                    <p class="accessibility__glossary__intro" 
+                       tabindex="20"
+                       data-bind="event: { focus: focusInGlossary, blur: blurInGlossary }, text: localizedText.Accessibility_GlossaryBegin">
+                    </p>
+                    <dl class="accessibility__glossary__list">
+                        <!-- ko foreach : applicationViewModel.tooltipManager.glossary() -->
+                            <dt class="accessibility__glossary__text"
+                                tabindex="20"
+                                data-bind="text: text,
+                                           event: { focus: $parent.focusInGlossary, blur: $parent.blurInGlossary }"></dt>
+                            <dd class="accessibility__glossary__content" 
+                                tabindex="20" 
+                                data-bind="text: content,
+                                           event: { focus: $parent.focusInGlossary, blur: $parent.blurInGlossary }"></dd>
+                        <!-- /ko -->
+                    </dl>
+                    <p class="accessibility__glossary__end" 
+                       tabindex="20"
+                       data-bind="event: { focus: focusInGlossary, blur: blurInGlossary }, text: localizedText.Accessibility_GlossaryEnd">
+                    </p>
+                </div>
+            <!-- /ko -->
+        <!-- /ko -->
+    <!-- /ko -->
+
+
+    <!-- hidden button to play opening sound (only in accessibility mode) -->
+    <div class="accessibility__sound"
+         role="button"
+         data-bind="click: function(){applicationViewModel.accessibilityViewModel.playOpeningSound()}
+                                    , attr:{ 'aria-label': localizedText.Accessibility_OpeningSoundToggle()
+                                            , 'tabindex' : applicationViewModel.accessibilityViewModel.accessibilityFeaturesActivated()
+                                                            && applicationViewModel.navigationManager.currentExercise()
+                                                            && applicationViewModel.navigationManager.currentExercise().contentViewModel()
+                                                            && applicationViewModel.navigationManager.currentExercise().contentViewModel().hasOpeningSound() ? 30 : -1}"></div>
+
+    <!--ko with: applicationViewModel.transcriptViewModel -->
+    <!-- ko template: {name: 'TranscriptTemplate', data: $data } --><!-- /ko -->
+    <!-- /ko -->
+
+    <!-- accessibility alert -->
+    <div class="accessibility__alert"></div>
+</script>

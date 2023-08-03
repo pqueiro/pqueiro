@@ -1,0 +1,30 @@
+﻿<script id="FluidBoxLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper">
+        <div class="exercise__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <!-- ko if: hasExerciseIntro() -->
+            <div class="process-about__introduction"
+                 - role="group"
+                 - data-bind="richtext: helper.exerciseIntro.text()"></div>
+            
+            <!-- /ko -->
+            <div class="fluid__container">
+                <!-- ko template: { name: getItemsFluidBoxRenderer() ,data:$data}--><!-- /ko -->
+            </div>
+            <!-- ko if: getItemsFluidBoxRenderer().indexOf("Assessment") -->
+                <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+            <!-- /ko -->
+            <!-- ko if: $parent.assessmentManager -->
+            <div class="assessment_submit_button--center"
+                 data-bind="template: { name: 'AssessmentSubmitButtonTemplate', data: $data }"></div>
+            <!-- /ko -->
+        </div>
+
+    </div>
+</script>

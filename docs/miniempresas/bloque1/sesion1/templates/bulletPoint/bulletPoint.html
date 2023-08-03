@@ -1,0 +1,66 @@
+﻿<script id="BulletPointTemplate" type="text/html">
+    <!-- ko with: contentViewModel() -->
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper bullet__content-wrapper">
+        <div class="exercise__content bullet__content">
+            <!-- ko if: introItem() && introItem().text != "" -->
+            <!-- ko with: introItem() -->
+            <div class="bullet__introduction" role="group" data-nb-word-wrap-allowed="0" data-stretch-parent=".exercise__content" data-bind="css: {
+                                                          'bullet__points--visited': isVisited()
+                                                        , 'bullet__points--first': isFirst()
+                                                        , 'bullet__points--last': isLast()
+                                                        , 'bullet__points--active': isActive()
+                                                        , 'bullet__points--not-started': !hasStarted()
+                                                    }, click: manuallyPlaySound, id: id, attr:{ tabindex: $parent.tabindex(), 'aria-label': ariaLabelItem }">
+                <p class="bullet__introduction__text" data-bind="richtext:text"></p>
+            </div>
+            <!-- /ko -->
+            <!-- /ko -->
+            <!-- ko foreach:bulletPoints() -->
+            <table class="bullet__points" data-bind="css: { 
+                                                        'bullet__points--visited': isVisited()
+                                                        , 'bullet__points--first': isFirst()
+                                                        , 'bullet__points--last': isLast()
+                                                        , 'bullet__points--active': isActive()
+                                                        , 'bullet__points--not-started': !hasStarted()
+                                                        , 'bullet__points--forced-ending': isEndingForced()
+                                                        , 'bullet__points--previous-forced-ending': isPreviousEndedForced()
+                                                        , 'bullet__points--no-transition-delay': wasPreviousForcedEnding()
+                                                        , 'bullet__points--clickable':$parent.allBulletHasBeenRead()
+                                                    }, id: id, click: manuallyPlaySound
+                                                    , attr:{ tabindex: $parent.tabindex(), 'aria-label': ariaLabelItem, role: sound? 'button': 'icon' }">
+                <tr>
+                    <td class="bullet__points__icon" role="button">
+                        <div class="bullet_points_bar-wrapper">
+                            <div class="bullet_points_bar"></div>
+                        </div>
+                        <img class="bullet__points__icon--img" alt="bullet point's icon" data-bind="attr: { src: bulletImageUrl }" />
+                        <span class="bullet__points__icon--icon iconfont">&#x2022;</span>
+                    </td>
+                    <td class="bullet__points__text ">
+                        <div role="group" data-nb-word-wrap-allowed="0" data-stretch-parent=".exercise__content">
+                            <span data-bind="richtext:text" class="text"></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!-- /ko -->
+            <!-- ko if: conclusionItem() && conclusionItem().text != "" -->
+            <!-- ko with: conclusionItem() -->
+            <div class="bullet__conclusion" role="group" data-nb-word-wrap-allowed="0" data-stretch-parent=".exercise__content" data-bind="css: {
+                                                          'bullet__points--visited': isVisited()
+                                                        , 'bullet__points--first': isFirst()
+                                                        , 'bullet__points--last': isLast()
+                                                        , 'bullet__points--active': isActive()
+                                                        , 'bullet__points--not-started': !hasStarted()
+                                                    }, id: id, attr:{ tabindex: $parent.tabindex(), 'aria-label': ariaLabelItem}">
+                <p class="bullet__conclusion__text" data-bind="richtext: text"></p>
+            </div>
+            <!-- /ko -->
+            <!-- /ko -->
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+        </div>
+    </div>
+    <!-- /ko -->
+</script>

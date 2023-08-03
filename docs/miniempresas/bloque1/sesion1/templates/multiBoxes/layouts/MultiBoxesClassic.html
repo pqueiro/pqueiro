@@ -1,0 +1,57 @@
+﻿<script id="MultiBoxesClassicLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper multiboxes__content-wrapper">
+        <div class="exercise__content multiboxes__content" 
+             data-bind="css: {'multiboxes--exercise-finished': allAnswersFound(), 
+                                'multiboxes--dragging-item' : isDragging(),
+                                'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                                'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                                'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                                'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <div class="multiboxes__vertical-align exercise__vertical-align">
+
+                <table class="multiboxes__table">
+
+                    <tr>
+
+                        <!-- ko foreach: containers -->
+                        <td class="multiboxes__cell multiboxes__cell--title">
+                            <div class="multiboxes__decoration"></div>
+                            <h3 class="multiboxes__title__text">
+                                <span class="wizard-main-text" data-bind="text: title"></span>
+                            </h3>
+                            <hr />
+                        </td>
+                        <!-- /ko -->
+                    </tr>
+
+                    <tr class="multiboxes__row--drop-zones">
+                        <!-- ko foreach: containers -->
+                        <td class="multiboxes__cell multiboxes__cell--drop-zone drop"
+                            role="button"
+                            data-bind="id: containerId,
+                                        attr: { tabindex: tabindex(), 'aria-label': itemScreenReaderDescription },
+                                        click: $parent.isActiveAndAccessibilityEnabled() && onDrop()">
+                            <div class="multiboxes__answers-wrapper"
+                                 data-bind="foreach: { data: foundAlternatives }">
+                                <div class="multiboxes__answer sticky__drag-item--dragged">
+                                    <span class="multiboxes__answer__icon" data-bind="visible: answerFound">
+                                        <span class="iconfont wizard-main-text">&#x2714;</span>
+                                    </span>
+                                    <span class="multiboxes__answer__text wizard-main-text" data-bind="id: alternativeId , text: responseText"></span>
+                                    <div class="multiboxes__clearboth" />
+                                </div>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                    </tr>
+                </table>
+            </div>
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+        </div>
+    </div>
+
+    <!-- ko template: { name: "ClassicDragdropTemplate",data:$data}--><!-- /ko -->
+</script>

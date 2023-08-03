@@ -1,0 +1,29 @@
+﻿<script id="MultiBoxesItemsFluidBoxRenderer" type="text/html">
+    <!-- ko foreach: containers -->
+    <div class="fluid__item fluid__item-multibox">
+        <div class="multiboxes__cell multiboxes__cell--drop-zone drop"
+             role="button"
+             data-bind="id: containerId,
+                                    attr: { tabindex: tabindex(), 'aria-label': itemScreenReaderDescription },
+                                    click: $parent.isActiveAndAccessibilityEnabled() && onDrop">
+
+
+            <div class="multiboxes__decoration"></div>
+            <h3 class="multiboxes__title__text"
+                data-bind="text: title"></h3>
+            <hr />
+
+            <div class="multiboxes__answers-wrapper"
+                 data-bind="foreach: { data: foundAlternatives }">
+                <div class="multiboxes__answer sticky__drag-item--dragged">
+                    <span class="multiboxes__answer__icon iconfont"
+                          data-bind="visible: answerFound">&#x2714;</span>
+                    <span class="multiboxes__answer__text"
+                          data-bind="id: alternativeId , text: responseText"></span>
+                    <div class="multiboxes__clearboth" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+</script>

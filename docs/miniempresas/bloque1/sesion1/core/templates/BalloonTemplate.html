@@ -1,0 +1,10 @@
+﻿<script id="BalloonTemplate" type="text/html">
+    <div class="text__effect--phylactery" data-bind="attr: { 'id':id },
+                    visible:isVisible,
+                    css: 'text__position--' + balloonPosition">
+
+        <div data-bind="richtext:text()"></div>
+
+        <div class="text__effect__triangle--phylactery" data-bind=" css: 'text__effect__triangle--phylactery-' + balloonPosition"></div>
+    </div>
+</script>

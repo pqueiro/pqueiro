@@ -1,0 +1,100 @@
+﻿<script id="EvaluateMediaStandardLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper">
+        <div class="exercise__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+
+            <table class="evaluatemedia__table" data-bind="css: {'evaluatemedia__table--has-polaroid': hasPolaroidItems(),
+                                                                'evaluatemedia__table--1col': items().length == 1,
+                                                                'evaluatemedia__table--2col': items().length == 2,
+                                                                'evaluatemedia__table--3col': items().length == 3,
+                                                                'evaluatemedia__table--4col': items().length == 4  }, id: boxesId ">
+
+                <tr class="evaluatemedia__row evaluatemedia__row--titles" data-bind="foreach: items">
+                    <td class="evaluatemedia__cell evaluatemedia__cell--title" data-bind="event: { mouseover: select, mouseout: handleMouseout }">
+                        <!-- ko if: graphicTitle() != '' && image() && !image().isPolaroid() -->
+                        <h3 class="evaluatemedia__item__title media__title" 
+                            role="group" 
+                            data-bind="attr: { tabindex: tabindex, 'aria-label': graphicTitle }, 
+                                       id: graphicTitleId(), 
+                                       visible: graphicTitle() != ''">
+                            <span class="wizard-main-text" data-bind="text: graphicTitle"></span>
+                        </h3>
+                        <!-- /ko -->
+                    </td>
+                </tr>
+
+                <tr class="evaluatemedia__row evaluatemedia__row--images " data-bind="foreach: items">
+                    <!-- ko if: image() && image().url() != '' -->
+                    <td  class="evaluatemedia__cell evaluatemedia__cell--image">
+                        <div data-bind="id: imageId, css: { 'play-media': hasFeedback() },
+                                    attr: { tabindex: tabindex,
+                                            role: hasFeedback() ? 'button' : 'group',
+                                            'aria-label': image().metadataScreenReaderDescription },
+                                    template: {name: applicationViewModel.koGetMediaTemplateName, data: image},
+                                    click: startFeedback,
+                                    event: { mouseover: select, mouseout: handleMouseout }"></div>
+                    </td>
+                   
+                    <!-- /ko -->
+                </tr>
+
+                <tr class="evaluatemedia__row evaluatemedia__row--captions" data-bind="foreach: items">
+                    <td class="evaluatemedia__cell evaluatemedia__cell--caption" data-bind=" event: { mouseover: select, mouseout: handleMouseout }">
+                        <!-- ko if: graphicCaption() != '' -->
+                        <h4 class="evaluatemedia__item__caption media__caption" 
+                            role="group" 
+                            data-bind="attr: { tabindex: tabindex, 'aria-label': graphicCaption },
+                                       id: graphicCaptionId(), 
+                                       visible: graphicCaption != ''">
+                            <span class="wizard-main-text" data-bind="text: graphicCaption"></span>
+                        </h4>
+                        <!-- /ko -->
+                    </td>
+                </tr>
+
+                <tr class="evaluatemedia__row evaluatemedia__row--answers" data-bind="foreach: items">
+                    <td class="evaluatemedia__cell evaluatemedia__cell--answers" data-bind="css: {'evaluatemedia__item__answers--visible': showFeedbackOverlay(), 'evaluatemedia__item__answers--hidden': !showFeedbackOverlay()},
+                        event: { mouseover: select, mouseout: handleMouseout }">
+
+                        <!-- ko foreach: anwsers -->
+                        <a href="javascript:;" role="button" class="evaluatemedia__item__button button"
+                           data-bind="css: { 'evaluatemedia__item__button--answerfound': isAnswerFound() && !isCorrect()
+                                        , 'button--right': isCorrect() && isChecked()
+                                        , 'button--wrong': !isCorrect() && isChecked()
+                                        , 'button--selected': isChecked()
+}
+                                , click: select
+                                , attr: { tabindex: $parent.tabindex, 'aria-label': ariaLabel }
+                                , id: id() ">
+
+                            <span class="button__iconfont evaluatemedia__icon" 
+                                  data-bind="visible: isChecked()">
+                                <span class="iconfont wizard-main-text" data-bind="text: isCorrect() ? '&#x2714;' : '&#x58;'"></span>
+                            </span>
+                            <span class="evaluatemedia__answer__text wizard-main-text" data-bind="text: text"></span>
+                        </a>
+                        <!-- /ko -->
+
+                        <div role="group" class="evaluatemedia__feedback" data-bind="attr: { tabindex: responseText.text() != '' && tabindexAnswerFound, 'aria-label': responseText.transformStringForAriaLabel() }, css: { 'evaluatemedia__feedback--visible':correctAnswerFound()}">
+                            <p data-bind="richtext: responseText.text()" class="evaluatemedia__feedback__text"></p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- begin feeback layout -->
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+        </div>
+    </div>
+    <!-- This image is used to preload feedback image -->
+    <!-- ko foreach: items -->
+    <img class="preload-image" data-bind="attr: { 'src': feedbackType == MediaType.image ? feedbackImage().url() : '' }" />
+    <!-- /ko -->
+    <!-- end feedback layout -->
+</script>

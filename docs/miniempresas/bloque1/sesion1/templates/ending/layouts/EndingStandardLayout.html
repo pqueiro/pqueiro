@@ -1,0 +1,39 @@
+<script id="EndingStandardLayout" type="text/html">
+    <div class="exercise__content-wrapper ending__content-wrapper">
+        <div class="exercise__content ending__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+                <!-- ko if:skinImageUrl != null -->
+                <div class="ending__skin-image-wrapper">
+                    <img class="ending__skin-img" data-bind="attr:{src:skinImageUrl}" />
+                </div>
+                <!-- /ko -->
+                <div class="exercise__vertical-align ending__vertical-align">
+
+                    <!-- Title -->
+                    <!-- ko if: !StringHelper.isNullOrEmpty(title()) -->
+                    <h1 role="group" data-nb-word-wrap-allowed="1" data-stretch-self class="ending__title" data-bind="attr: { tabindex : endingTitleTabindexes, 'aria-label': title() }">
+                        <span class="ending__title__text wizard-ending-title-text" data-bind="text: title()"></span>
+                    </h1>
+                    <!-- /ko -->
+                    <!-- Image -->
+                    <!-- ko if: (image() && image().hasUrl()) -->
+                    <div class="ending__image media-image-fit-to-container" role="group"
+                         data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data:image }, 
+                                    attr: { tabindex : endingTabindexes, 'aria-label': image().metadataScreenReaderDescription  }">
+                    </div>
+                    <!-- /ko -->
+                    <!-- Subtitle -->
+                    <!-- ko if: !StringHelper.isNullOrEmpty(richText) -->
+                    <p role="group" class="ending__subtitle" data-nb-word-wrap-allowed="1" data-stretch-self data-bind="attr: { tabindex : endingTabindexes, 'aria-label': transformStringForAriaLabel(richText) }">
+                        <span class="ending__subtitle__text" data-bind="richtext:richText"></span>
+                    </p>
+                    <!-- /ko -->
+                    <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+                </div>
+            </div>
+      
+    </div>
+</script>

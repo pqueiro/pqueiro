@@ -1,0 +1,164 @@
+﻿<script id="MatrixAboutStandardLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper">
+        <div class="exercise__content matrix__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <!-- ko if: introduction.transformStringForAriaLabel() != '' -->
+            <div class="matrix__introduction" 
+                 role="group" 
+                 data-bind="attr: { tabindex: introTabindex, 'aria-label': introLabel }">
+                <p class="matrix__introduction__text" 
+                   data-bind="richtext:introduction.text()"></p>
+            </div>
+            <!-- /ko -->
+            <table class="matrix__table">
+                <tbody>
+                    <!-- This row is used to set the width of the columns when using a table-layout fixed -->
+                    <tr>
+                        <td class="matrix__gutter--width"></td>
+                        <td class="matrix__column-content--width"></td>
+                        <td class="matrix__axis--width"></td>
+                        <td class="matrix__column-content--width"></td>
+                        <td class="matrix__gutter--width"></td>
+                    </tr>
+                    <!-- GUTTER NORTH -->
+                    <tr>
+                        <td rowspan="4" class="matrix__gutter-north__lateral"></td>
+
+                        <td colspan="3" class="matrix__gutter-north__middle">
+                            <div class="matrix__axis-label-north wizard-main-text" data-bind="text:axisNorth"></div>
+                            <div class="matrix__arrow-north"></div>
+                        </td>
+
+                        <td rowspan="4" class="matrix__gutter-north__lateral"></td>
+                    </tr>
+                    <!-- NORTH TITLES -->
+                    <tr>
+                        <td class="matrix__title matrix__north-west-title">
+                            <h3 class="matrix__title__text media__title">
+                                <span class="wizard-main-text" data-bind="text:areaNorthWest.title"></span>
+                            </h3>
+                        </td>
+                        <!-- VERTICAL AXIS NORTH -->
+                        <td rowspan="3" class="matrix__axis matrix__arrow matrix__arrow-north"></td> 
+
+                        <td class="matrix__title matrix__north-east-title">
+                            <h3 class="matrix__title__text media__title">
+                                <span class="wizard-main-text" data-bind="text:areaNorthEast.title"></span>
+                            </h3>
+                        </td>
+                    </tr>
+                    <!-- NORTH IMAGES -->
+                    <tr>
+                        <td class="matrix__image matrix__north-west-image">
+                            <div class="matrix__image__wrapper" data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: areaNorthWest.image }"></div>
+                        </td>
+                        <td class="matrix__image matrix__north-east-image">
+                            <div class="matrix__image__wrapper" data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: areaNorthEast.image }"></div>
+                        </td>
+                    </tr>
+                    <!-- NORTH CAPTION-->
+                    <tr>
+                        <td class="matrix__caption matrix__north-west-caption">
+                            <h4 class="matrix__caption__text media__caption">
+                                <span class="wizard-main-text" data-bind="text:areaNorthWest.caption"></span>
+                            </h4>
+                        </td>
+                        <td class="matrix__caption matrix__north-east-caption">
+                            <h4 class="matrix__caption__text media__caption">
+                                <span class="wizard-main-text" data-bind="text:areaNorthEast.caption"></span>
+                            </h4>
+                        </td>
+                    </tr>
+                    <!-- HORIZONTAL AXIS -->
+                    <tr>
+                        <td>
+                            <div class="matrix__axis-label__wrapper matrix__axis-label-west__wrapper">
+                                <div class="matrix__arrow matrix__arrow-west matrix__axis-label-west__text">
+                                    <div class="matrix__axis-label__text wizard-main-text" data-bind="text:axisWest"></div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td class="matrix__axis"></td>
+                        <td class="matrix__axis"></td>
+                        <td class="matrix__axis"></td>
+
+                        <td>
+                            <div class="matrix__axis-label__wrapper matrix__axis-label-east__wrapper">
+                                <div class="matrix__arrow matrix__arrow-east matrix__axis-label-east__text">
+                                    <div class="matrix__axis-label__text wizard-main-text" data-bind="text:axisEast"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- SOUTH TITLE -->
+                    <tr>
+                        <td rowspan="4"></td>
+                        <td class="matrix__title matrix__south-west-title">
+                            <h3 class="matrix__title__text media__title">
+                                <span class="wizard-main-text" data-bind="text:areaSouthWest.title"></span>
+                            </h3>
+                        </td>
+                        <!-- VERTICAL AXIS SOUTH-->
+                        <td rowspan="3" class="matrix__axis matrix__arrow matrix__arrow-south"></td>
+
+                        <td class="matrix__title matrix__south-east-title">
+                            <h3 class="matrix__title__text media__title">
+                                <span class="wizard-main-text" data-bind="text:areaSouthEast.title"></span>
+                            </h3>
+                        </td>
+                        <td rowspan="4"></td>
+                    </tr>
+                    <!-- SOUTH IMAGES -->
+                    <tr>
+                        <td class="matrix__image matrix__south-west-image">
+                            <div class="matrix__image__wrapper" data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: areaSouthWest.image }"></div>
+                        </td>
+                        <td class="matrix__image matrix__south-east-image">
+                            <div class="matrix__image__wrapper" data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: areaSouthEast.image }"></div>
+                        </td>
+                    </tr>
+                    <!-- SOUTH CAPTIONS -->
+                    <tr>
+                        <td class="matrix__caption matrix__south-west-caption">
+                            <h4 class="matrix__caption__text media__caption">
+                                <span class="wizard-main-text" data-bind="text:areaSouthWest.caption"></span>
+                            </h4>
+                        </td>
+                        <td class="matrix__caption matrix__south-east-caption">
+                            <h4 class="matrix__caption__text media__caption">
+                                <span class="wizard-main-text" data-bind="text:areaSouthEast.caption"></span>
+                            </h4>
+                        </td>
+                    </tr>
+                    <!-- GUTTER SOUTH -->
+                    <tr>
+                        <td colspan="3" >
+                            <div class="matrix__arrow-south"></div>
+                            <div class="matrix__axis-label-south wizard-main-text" data-bind="text:axisSouth"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- ko if: conclusion.transformStringForAriaLabel() != '' -->
+            <div class="matrix__conclusion" 
+                 role="group" 
+                 data-bind="attr: { tabindex: concluTabindex, 'aria-label': concluLabel }">
+                <p class="matrix__conclusion__text" data-bind="richtext: conclusion.text()"></p>
+            </div>
+            <!-- /ko -->
+            <div class="maskNorthWest rightfeedback matrix__mask" role="group" data-bind="id: areaNorthWest.maskId, attr: { tabindex: areaNorthWest.tabindexItem, 'aria-label': areaNorthWest.ariaLabelItem }, click:function(){areaNorthWest.feedbackManagment(areaNorthWest); return true;}, template:{name: 'FeedBackInlineTemplate', data:areaNorthWest.feedback}"></div>
+            <div class="maskNorthEast leftfeedback matrix__mask" role="group" data-bind="id: areaNorthEast.maskId, attr: { tabindex: areaNorthEast.tabindexItem, 'aria-label': areaNorthEast.ariaLabelItem }, click:function(){ areaNorthEast.feedbackManagment(areaNorthEast); return true;},  template:{name: 'FeedBackInlineTemplate', data:areaNorthEast.feedback} "></div>
+            <div class="maskSouthWest rightfeedback matrix__mask" role="group" data-bind="id: areaSouthWest.maskId, attr: { tabindex: areaSouthWest.tabindexItem, 'aria-label': areaSouthWest.ariaLabelItem }, click:function(){areaSouthWest.feedbackManagment(areaSouthWest); return true;},  template:{name: 'FeedBackInlineTemplate', data:areaSouthWest.feedback}"></div>
+            <div class="maskSouthEast leftfeedback matrix__mask" role="group" data-bind="id: areaSouthEast.maskId, attr: { tabindex: areaSouthEast.tabindexItem, 'aria-label': areaSouthEast.ariaLabelItem }, click:function(){ areaSouthEast.feedbackManagment(areaSouthEast); return true;},  template:{name: 'FeedBackInlineTemplate', data:areaSouthEast.feedback} "></div>
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+        </div>
+    </div>
+</script>

@@ -1,0 +1,224 @@
+﻿<script id="MatrixPuzzleStandardLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper">
+        <div class="exercise__content matrix__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <!-- ko if: introduction.transformStringForAriaLabel() != '' -->
+            <div class="matrix__introduction"
+                 role="group"
+                 data-bind="attr: { tabindex: introTabindex, 'aria-label': introLabel }">
+                <p class="matrix__introduction__text"
+                   data-bind="richtext:introduction.text()"></p>
+            </div>
+            <!-- /ko -->
+            <table class="matrix__table" data-bind="css: dragItemType ">
+                <tbody>
+                    <!-- This row is used to set the width of the columns when using a table-layout fixed -->
+                    <tr>
+                        <td class="matrix__gutter--width"></td>
+                        <td class="matrix__column-content--width"></td>
+                        <td class="matrix__axis--width"></td>
+                        <td class="matrix__column-content--width"></td>
+                        <td class="matrix__gutter--width"></td>
+                    </tr>
+                    <!-- GUTTER NORTH -->
+                    <tr>
+                        <td rowspan="4" class="matrix__gutter-north__lateral"></td>
+
+                        <td colspan="3" class="matrix__gutter-north__middle">
+                            <div class="matrix__axis-label-north wizard-main-text" data-bind="text:axisNorthLabel"></div>
+                            <div class="matrix__arrow-north"></div>
+                        </td>
+
+                        <td rowspan="4" class="matrix__gutter-north__lateral"></td>
+                    </tr>
+                    <!-- NORTH TITLES -->
+                    <tr>
+                        <td class="matrix__title matrix__north-west-title" data-bind="id : areaNorthWest.titleDropZoneId">
+                            <h3 class="matrix__title__text media__title" 
+                                data-bind="css:{'dropzone--top' :areaNorthWest.isAllDroppable && !areaNorthWest.answerFound(),
+                                                'dropzone' : !areaNorthWest.isAllDroppable && areaNorthWest.isTitleDroppable && !areaNorthWest.answerFound(), 
+                                                'matrix__answer--visible' : areaNorthWest.answerFound()}, 
+                                           style:{height : !areaNorthWest.isTitleDroppable || (areaNorthWest.isTitleDroppable && areaNorthWest.answerFound())  ?  '' : maxHeightDropTitle() }">
+                                <span class="wizard-main-text"data-bind="text:areaNorthWest.title"></span>
+                            </h3>
+                        </td>
+                        <!-- VERTICAL AXIS NORTH -->
+                        <td rowspan="3" class="matrix__axis matrix__arrow matrix__arrow-north"></td>
+
+                        <td class="matrix__title matrix__north-east-title" data-bind="id : areaNorthEast.titleDropZoneId">
+                            <h3 class="matrix__title__text media__title" 
+                                data-bind="css:{'dropzone--top' :areaNorthEast.isAllDroppable && !areaNorthEast.answerFound(),
+                                                dropzone : !areaNorthEast.isAllDroppable && areaNorthEast.isTitleDroppable && !areaNorthEast.answerFound(), 
+                                                'matrix__answer--visible' : areaNorthEast.answerFound()}, 
+                                           style:{height : !areaNorthEast.isTitleDroppable || (areaNorthEast.isTitleDroppable && areaNorthEast.answerFound())  ? '' :  maxHeightDropTitle() }">
+                                <span class="wizard-main-text"data-bind="text:areaNorthEast.title"></span>
+                            </h3>
+                        </td>
+                    </tr>
+                    <!-- NORTH IMAGES -->
+                    <tr>
+                        <td class="matrix__image matrix__north-west-image" data-bind="id : areaNorthWest.imageDropZoneId">
+                            <div class="" data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: areaNorthWest.imageArea },css:{'dropzone--middle' :areaNorthWest.isAllDroppable && !areaNorthWest.answerFound() ,dropzone : !areaNorthWest.isAllDroppable && areaNorthWest.isImageDroppable &&!areaNorthWest.answerFound() , 'matrix__answer--visible' : areaNorthWest.answerFound()}, style:{minHeight : !areaNorthWest.isImageDroppable || (areaNorthWest.isImageDroppable && areaNorthWest.answerFound())  ? '' :  maxHeightDropImage() }"></div>
+                        </td>
+                        <td class="matrix__image matrix__north-east-image" data-bind="id : areaNorthEast.imageDropZoneId">
+                            <div class="" data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: areaNorthEast.imageArea },css:{'dropzone--middle' :areaNorthEast.isAllDroppable && !areaNorthEast.answerFound() ,dropzone : !areaNorthEast.isAllDroppable && areaNorthEast.isImageDroppable && !areaNorthEast.answerFound(), 'matrix__answer--visible' : areaNorthEast.answerFound()}, style:{minHeight : !areaNorthEast.isImageDroppable || (areaNorthEast.isImageDroppable && areaNorthEast.answerFound() )  ? '' :  maxHeightDropImage() }"></div>
+                        </td>
+                    </tr>
+                    <!-- NORTH CAPTION -->
+                    <tr>
+                        <td class="matrix__caption matrix__north-west-caption" data-bind="id : areaNorthWest.captionDropZoneId">
+                            <h4 class="matrix__caption__text media__caption" 
+                                data-bind="css:{'dropzone--bottom' :areaNorthWest.isAllDroppable && !areaNorthWest.answerFound(),
+                                                 dropzone : !areaNorthWest.isAllDroppable && areaNorthWest.isCaptionDroppable && !areaNorthWest.answerFound(), 
+                                                'matrix__answer--visible' : areaNorthWest.answerFound()}, 
+                                           style:{height : !areaNorthWest.isCaptionDroppable || (areaNorthWest.isCaptionDroppable && areaNorthWest.answerFound()) ? '' : maxHeightDropCaption() }">
+                                <span class="wizard-main-text" data-bind="text:areaNorthWest.caption"></span>
+                            </h4>
+                        </td>
+                        <td class="matrix__caption matrix__north-east-caption" data-bind="id : areaNorthEast.captionDropZoneId">
+                            <h4 class="matrix__caption__text media__caption" 
+                                data-bind="css:{'dropzone--bottom' :areaNorthEast.isAllDroppable && !areaNorthEast.answerFound(),
+                                                 dropzone : !areaNorthEast.isAllDroppable && areaNorthEast.isCaptionDroppable && !areaNorthEast.answerFound(),
+                                                'matrix__answer--visible' : areaNorthEast.answerFound()}, 
+                                           style:{height : !areaNorthEast.isCaptionDroppable || (areaNorthEast.isCaptionDroppable && areaNorthEast.answerFound() )  ? '' : maxHeightDropCaption() }">
+                                <span class="wizard-main-text" data-bind="text:areaNorthEast.caption"></span>
+                            </h4>
+                        </td>
+                    </tr>
+                    <!-- HORIZONTAL AXIS -->
+                    <tr>
+                        <td>
+                            <div class="matrix__axis-label__wrapper matrix__axis-label-west__wrapper">
+                                <div class="matrix__arrow matrix__arrow-west matrix__axis-label-west__text">
+                                    <div class="matrix__axis-label__text wizard-main-text" data-bind="text:axisWestLabel"></div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td class="matrix__axis"></td>
+                        <td class="matrix__axis"></td>
+                        <td class="matrix__axis"></td>
+
+                        <td>
+                            <div class="matrix__axis-label__wrapper matrix__axis-label-east__wrapper">
+                                <div class="matrix__arrow matrix__arrow-east matrix__axis-label-east__text">
+                                    <div class="matrix__axis-label__text wizard-main-text" data-bind="text:axisEastLabel"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- SOUTH TITLE -->
+                    <tr>
+                        <td rowspan="4"></td>
+                        <td class="matrix__title matrix__south-west-title" data-bind="id : areaSouthWest.titleDropZoneId,">
+                            <h3 class="matrix__title__text media__title" 
+                                data-bind="css:{'dropzone--top' :areaSouthWest.isAllDroppable && !areaSouthWest.answerFound(),
+                                                 dropzone : !areaSouthWest.isAllDroppable && areaSouthWest.isTitleDroppable && !areaSouthWest.answerFound(), 
+                                                'matrix__answer--visible' : areaSouthWest.answerFound()},
+                                           style:{height : !areaSouthWest.isTitleDroppable || (areaSouthWest.isTitleDroppable && areaSouthWest.answerFound())  ?  '' : maxHeightDropTitle() }">
+                                <span class="wizard-main-text" data-bind="text:areaSouthWest.title"></span>
+                            </h3>
+                        </td>
+                        <!-- VERTICAL AXIS SOUTH-->
+                        <td rowspan="3" class="matrix__axis matrix__arrow matrix__arrow-south"></td>
+
+                        <td class="matrix__title matrix__south-east-title" data-bind="id : areaSouthEast.titleDropZoneId,">
+                            <h3 class="matrix__title__text media__title" 
+                                data-bind="css: {'dropzone--top' :areaSouthEast.isAllDroppable && !areaSouthEast.answerFound(),
+                                                  dropzone : !areaSouthEast.isAllDroppable && areaSouthEast.isTitleDroppable && !areaSouthEast.answerFound(),
+                                                 'matrix__answer--visible' : areaSouthEast.answerFound()}, 
+                                           style:{height : !areaSouthEast.isTitleDroppable || (areaSouthEast.isTitleDroppable && areaSouthEast.answerFound())  ?  '' : maxHeightDropTitle() }">
+                                <span class="wizard-main-text" data-bind="text:areaSouthEast.title"></span>
+                            </h3>
+                        </td>
+                        <td rowspan="4"></td>
+                    </tr>
+                    <!-- SOUTH IMAGES -->
+                    <tr>
+                        <td class="matrix__image matrix__south-west-image" data-bind="id : areaSouthWest.imageDropZoneId,">
+                            <div class="" data-bind=" template: { name: applicationViewModel.koGetMediaTemplateName, data: areaSouthWest.imageArea },css: { 'dropzone--middle' :areaSouthWest.isAllDroppable && !areaSouthWest.answerFound() ,dropzone : !areaSouthWest.isAllDroppable && areaSouthWest.isImageDroppable && !areaSouthWest.answerFound(), 'matrix__answer--visible' : areaSouthWest.answerFound()}, style:{minHeight : !areaSouthWest.isImageDroppable || (areaSouthWest.isImageDroppable && areaSouthWest.answerFound() )  ? '' :  maxHeightDropImage() }"></div>
+                        </td>
+                        <td class="matrix__image matrix__south-east-image" data-bind="id : areaSouthEast.imageDropZoneId">
+                            <div class="" data-bind=" template: { name: applicationViewModel.koGetMediaTemplateName, data: areaSouthEast.imageArea }, css: { 'dropzone--middle' :areaSouthEast.isAllDroppable && !areaSouthEast.answerFound() ,dropzone : !areaSouthEast.isAllDroppable && areaSouthEast.isImageDroppable && !areaSouthEast.answerFound(),'matrix__answer--visible' : areaSouthEast.answerFound()}, style:{minHeight : !areaSouthEast.isImageDroppable || (areaSouthEast.isImageDroppable && areaSouthEast.answerFound())  ? '' :  maxHeightDropImage() }"></div>
+                        </td>
+                    </tr>
+                    <!-- SOUTH CAPTIONS -->
+                    <tr>
+                        <td class="matrix__caption matrix__south-west-caption media__caption" data-bind="id : areaSouthWest.captionDropZoneId,">
+                            <h4 class="matrix__caption__text" 
+                                data-bind="css: {'dropzone--bottom' :areaSouthWest.isAllDroppable && !areaSouthWest.answerFound(),
+                                                  dropzone : !areaSouthWest.isAllDroppable && areaSouthWest.isCaptionDroppable && !areaSouthWest.answerFound(),
+                                                 'matrix__answer--visible' : areaSouthWest.answerFound()}, 
+                                           style:{height : !areaSouthWest.isCaptionDroppable || (areaSouthWest.isCaptionDroppable && areaSouthWest.answerFound() ) ? '' : maxHeightDropCaption() }">
+                                <span class="wizard-main-text" data-bind="text:areaSouthWest.caption"></span>
+                            </h4>
+                        </td>
+                        <td class="matrix__caption matrix__south-east-caption media__caption" data-bind="id : areaSouthEast.captionDropZoneId,">
+                            <h4 class="matrix__caption__text" 
+                                data-bind="css: {'dropzone--bottom' :areaSouthEast.isAllDroppable && !areaSouthEast.answerFound(),
+                                                  dropzone : !areaSouthEast.isAllDroppable && areaSouthEast.isCaptionDroppable && !areaSouthEast.answerFound(),
+                                                 'matrix__answer--visible' : areaSouthEast.answerFound()}, 
+                                           style:{height : !areaSouthEast.isCaptionDroppable || (areaSouthEast.isCaptionDroppable && areaSouthEast.answerFound() ) ? '' : maxHeightDropCaption() }">
+                                <span class="wizard-main-text" data-bind="text:areaSouthEast.caption"></span>
+                            </h4>
+                        </td>
+                    </tr>
+                    <!-- GUTTER SOUTH -->
+                    <tr>
+                        <td colspan="3">
+                            <div class="matrix__arrow-south"></div>
+                            <div class="matrix__axis-label-south wizard-main-text" data-bind="text:axisSouthLabel"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- ko if: conclusion.transformStringForAriaLabel() != '' -->
+            <div class="matrix__conclusion"
+                 role="group"
+                 data-bind="attr: { tabindex: concluTabindex, 'aria-label': concluLabel }">
+                <p class="matrix__conclusion__text" data-bind="richtext: conclusion.text()"></p>
+            </div>
+            <!-- /ko -->
+            <div class="matrix-puzzle__mask-northwest rightfeedback"
+                 role="group"
+                 data-bind="id: areaNorthWest.maskId,
+                            attr: { tabindex: areaNorthWest.tabindexItem, 'aria-label': areaNorthWest.ariaLabelItem },
+                            css: {matrix__mask : areaNorthWest.answerFound()},
+                            click:function(){areaNorthWest.answerFound() ? areaNorthWest.feedbackManagment() : areaNorthWest.selectDropZone(); return true;},
+                            template:{name: 'FeedBackInlineTemplate', data:areaNorthWest.feedback}"></div>
+            <div class="matrix-puzzle__mask-northeast leftfeedback"
+                 role="group"
+                 data-bind="id: areaNorthEast.maskId,
+                            attr: { tabindex: areaNorthEast.tabindexItem, 'aria-label': areaNorthEast.ariaLabelItem },
+                            css: {matrix__mask : areaNorthEast.answerFound()},
+                            click:function(){ areaNorthEast.answerFound() ? areaNorthEast.feedbackManagment() : areaNorthEast.selectDropZone(); return true;},
+                            template:{name: 'FeedBackInlineTemplate', data:areaNorthEast.feedback} "></div>
+            <div class="matrix-puzzle__mask-southwest rightfeedback"
+                 role="group"
+                 data-bind="id: areaSouthWest.maskId,
+                            attr: { tabindex: areaSouthWest.tabindexItem, 'aria-label': areaSouthWest.ariaLabelItem },
+                            css: {matrix__mask : areaSouthWest.answerFound()},
+                            click:function(){areaSouthWest.answerFound() ? areaSouthWest.feedbackManagment() : areaSouthWest.selectDropZone(); return true;},
+                            template:{name: 'FeedBackInlineTemplate', data:areaSouthWest.feedback}"></div>
+            <div class="matrix-puzzle__mask-southeast leftfeedback"
+                 role="group"
+                 data-bind="id: areaSouthEast.maskId,
+                            attr: { tabindex: areaSouthEast.tabindexItem, 'aria-label': areaSouthEast.ariaLabelItem },
+                            css: {matrix__mask : areaSouthEast.answerFound()},
+                            click:function(){ areaSouthEast.answerFound() ? areaSouthEast.feedbackManagment() : areaSouthEast.selectDropZone(); return true;},
+                            template:{name: 'FeedBackInlineTemplate', data:areaSouthEast.feedback} "></div>
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+        </div>
+    </div>
+
+    <!-- STICKY FOOTER -->
+
+    <!-- ko template: { name: "PuzzleDragdropTemplate",data:$data}--><!-- /ko -->
+</script>

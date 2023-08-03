@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BaseId>Minimalist</BaseId>
+  <CommonProperties>
+    <ColorNavigation>FFFFFF</ColorNavigation>
+    <ColorNavigationIcon>038559</ColorNavigationIcon>
+    <ColorNavigationBorder>F78E1E</ColorNavigationBorder>
+    <ColorTimeline>FFFFFF</ColorTimeline>
+    <LogoIntroFileName>JA triangle rgb.jpg</LogoIntroFileName>
+    <HeaderLogoFileName>logo transparente.gif</HeaderLogoFileName>
+    <HeaderImageFileName />
+    <isHeaderLogoOnRight>true</isHeaderLogoOnRight>
+    <DefaultBackgroundFileName />
+    <BackgroundImagePosition>centered</BackgroundImagePosition>
+    <FontTitle>Arial</FontTitle>
+    <FontBody>Arial</FontBody>
+    <FontInstructions>Arial</FontInstructions>
+    <CertificateTitleFont>Arial</CertificateTitleFont>
+    <CertificateLearnerNameFont>Georgia</CertificateLearnerNameFont>
+    <CertificateProgramNameFont>Arial</CertificateProgramNameFont>
+    <CertificateMentionTextFont>Arial</CertificateMentionTextFont>
+    <CertificateFooterFont>Arial</CertificateFooterFont>
+    <CertificateBackgroundFileName>certificate.png</CertificateBackgroundFileName>
+  </CommonProperties>
+  <Variations>
+    <Variation>
+      <Name>Default</Name>
+      <Guid />
+      <Position>1</Position>
+      <BackgroundVariationFileName />
+      <LogoVariationFileName />
+      <ColorContainers>FFFFFF</ColorContainers>
+      <ColorTitle>7FBD36</ColorTitle>
+      <ColorInstruction>626366</ColorInstruction>
+      <ColorlightBackgroundText>626366</ColorlightBackgroundText>
+      <ColorInstructionLegends>7EB63B</ColorInstructionLegends>
+      <ColorImportantElement>7FBD36</ColorImportantElement>
+      <ColorTrue>7EB63B</ColorTrue>
+      <ColorFalse>CA3C3B</ColorFalse>
+      <ColorTextBloc>747477</ColorTextBloc>
+      <ColorCallToActionText>00763d</ColorCallToActionText>
+      <ColorCallToActionBorder>FFFFFF</ColorCallToActionBorder>
+      <ColorCallToActionBackground>7FBD36</ColorCallToActionBackground>
+      <HeaderHighlightColor>ffffff</HeaderHighlightColor>
+      <HeaderHighlightOpacity>100</HeaderHighlightOpacity>
+      <HeaderImageWizardable>false</HeaderImageWizardable>
+      <HeaderImagePosition />
+      <HeaderBackgroundOpacity>100</HeaderBackgroundOpacity>
+      <WizardHeaderTitleFontSize>150</WizardHeaderTitleFontSize>
+      <WizardHeaderInstructionFontSize>100</WizardHeaderInstructionFontSize>
+      <MainTextFontSize>120</MainTextFontSize>
+      <ColorBubbles>7FBD36</ColorBubbles>
+      <ColorBubblesText>ffffff</ColorBubblesText>
+      <ColorInteractiveElements>FFFFFF</ColorInteractiveElements>
+      <ColorTextInteractiveElements>7FBD36</ColorTextInteractiveElements>
+      <ColorBorderInteractiveElements>626366</ColorBorderInteractiveElements>
+      <IntroTitleColor>7FBD36</IntroTitleColor>
+      <IntroSubtitleColor>626366</IntroSubtitleColor>
+      <IntroBackgroundFileName>Fondo_Pantalla.png</IntroBackgroundFileName>
+      <IntroBackgroundImagePosition>centered</IntroBackgroundImagePosition>
+      <WizardIntroTitleFontSize>0</WizardIntroTitleFontSize>
+      <WizardIntroSubtitleFontSize>0</WizardIntroSubtitleFontSize>
+      <SpacerTitleColor>7FBD36</SpacerTitleColor>
+      <SpacerSubtitleColor>626366</SpacerSubtitleColor>
+      <SpacerBackgroundFileName>Fondo_Pantalla.png</SpacerBackgroundFileName>
+      <SpacerBackgroundImagePosition>centered</SpacerBackgroundImagePosition>
+      <WizardSpacerTitleFontSize>150</WizardSpacerTitleFontSize>
+      <WizardSpacerSubtitleFontSize>120</WizardSpacerSubtitleFontSize>
+      <EndingTitleColor>7FBD36</EndingTitleColor>
+      <EndingSubtitleColor>626366</EndingSubtitleColor>
+      <EndingBackgroundFileName>Background.png</EndingBackgroundFileName>
+      <EndingBackgroundImagePosition>centered</EndingBackgroundImagePosition>
+      <WizardEndingTitleFontSize>150</WizardEndingTitleFontSize>
+      <CertificateTitleColor>00763d</CertificateTitleColor>
+      <CertificateLearnerNameColor>626366</CertificateLearnerNameColor>
+      <CertificateProgramNameColor>00763d</CertificateProgramNameColor>
+      <CertificateMentionTextColor>7FBD36</CertificateMentionTextColor>
+      <CertificateFooterColor>333333</CertificateFooterColor>
+      <LineSpacingIsNormal>false</LineSpacingIsNormal>
+      <Emphasize1isBold>true</Emphasize1isBold>
+      <Emphasize1isItalic>false</Emphasize1isItalic>
+      <Emphasize1isUnderlined>false</Emphasize1isUnderlined>
+      <Emphasize1FontSize>big</Emphasize1FontSize>
+      <Emphasize1Color>00763d</Emphasize1Color>
+      <Emphasize2isBold>true</Emphasize2isBold>
+      <Emphasize2isItalic>false</Emphasize2isItalic>
+      <Emphasize2isUnderlined>false</Emphasize2isUnderlined>
+      <Emphasize2FontSize>big</Emphasize2FontSize>
+      <Emphasize2Color>626366</Emphasize2Color>
+      <Emphasize3isBold>true</Emphasize3isBold>
+      <Emphasize3isItalic>false</Emphasize3isItalic>
+      <Emphasize3isUnderlined>false</Emphasize3isUnderlined>
+      <Emphasize3FontSize>big</Emphasize3FontSize>
+      <Emphasize3Color>7FBD36</Emphasize3Color>
+    </Variation>
+  </Variations>
+</Theme>

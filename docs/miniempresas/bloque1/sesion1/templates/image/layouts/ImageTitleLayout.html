@@ -1,0 +1,27 @@
+﻿<script id="ImageWithTitleFullscreenLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper image__content-wrapper">
+        <div class="exercise__content image__content image--title__content">
+            <div class="image__images media-image media-image-parent-landmark" role="group" data-bind="id: image().idImage, attr:{ tabindex: tabindexImg(), 'aria-label': image().metadataScreenReaderDescription } ">
+
+                <img class="image__image image__image--lq" data-bind="event: {load: lowImageLoaded }
+                                    , attr: { src: image().urlLowQuality() }
+                                    , id: image().idLow
+                                    , css: {'image__image--hidden': !displayLowImage() }" />
+
+                <img class="image__image image__image--hq" data-bind="event: {load: highImageLoaded }
+                                    , attr: { src: image().url() }
+                                    , id: image().id
+                                    , css: {'image__image--hidden': !displayHighImage() }" />
+            </div>
+        </div>
+      
+        <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+       
+    </div>
+
+   
+
+</script>

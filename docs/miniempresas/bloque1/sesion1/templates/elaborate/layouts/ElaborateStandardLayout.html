@@ -1,0 +1,142 @@
+﻿<script id="ElaborateStandardLayout" type="text/html">
+    
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}-->
+    <!-- /ko -->
+    
+    <div class="exercise__content-wrapper">
+        <div class="exercise__content elaborate__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <div class="exercise__vertical-align">
+                <table class="elaborate__table"
+                       data-bind="id: tableId">
+                    <tr>
+                        <td class="elaborate__table__cell elaborate__left-gutter">
+                            <!-- left gutter -->
+                        </td>
+                        <td class="elaborate__table__cell elaborate__table__col--stretchable" data-bind="id: alternativeColumnId" />
+                        <td class="elaborate__table__cell elaborate__table__col--feedback" />
+                        <td class="elaborate__table__cell elaborate__right-gutter">
+                            <!-- right gutter -->
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="elaborate__left-gutter">
+                            <!-- left gutter -->
+                        </td>
+                        <td>
+                            <!-- empty -->
+                        </td>
+                        <!-- IMAGE TITLES -->
+                        <td class="elaborate__table__cell elaborate__table__cell__media__titles"
+                            data-bind="height: { value: titlesMaxHeight(), type: 'inner'}">
+                            <!-- ko foreach: items -->
+                            <!-- ko if: !StringHelper.isNullOrEmpty(graphicTitle())-->
+                            <div class="elaborate__item__illustration__title" role="group"
+                                 data-bind="visibility: isSelected()
+                                           , id: graphicTitleId ">
+                                <h3 class="media__title" role="group" data-bind="attr:{ tabindex: contentTabindex, 'aria-label': graphicTitle() }">
+                                    <span class="wizard-main-text" data-bind="text: graphicTitle()"></span>
+                                </h3>
+                            </div>
+                            <!-- /ko -->
+                            <!-- /ko -->
+                        </td>
+                        <td class="elaborate__right-gutter">
+                            <!-- right gutter -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="elaborate__left-gutter">
+                            <!-- left gutter -->
+                        </td>
+                        <!-- BUTTONS -->
+                        <td class="elaborate-choices elaborate__table__cell">
+                            <!-- ko foreach: items -->
+                            <a href="javascript:;"
+                               class="elaborate__item__button button"
+                               role="button"
+                               data-nb-word-wrap-allowed="1"
+                               data-bind="css: {
+                                                'button--selected elaborate__item__button--selected': isSelected(),
+                                                'itemHover': isHover()
+                                            }
+                                            , click: select
+                                            , event: { mouseover: itemMouseOver, mouseout: itemMouseOut }
+                                            , attr:{ tabindex: buttonTabindex, 'data-stretch-td': parent.alternativeColumnId}">
+                                <span class="elaborate__item__button-text wizard-main-text" data-bind="text: text()"></span>
+                            </a>
+                            <!-- /ko -->
+                        </td>
+
+                        <!-- IMAGE -->
+                        <td class="elaborate__table__cell__illustrations elaborate__table__cell"
+                            data-bind="height: { value: illustrationsMaxHeight(), type: 'inner'}">
+
+                            <!-- shows the original image -->
+                            <div class="elaborate__illustration__slide"
+                                 data-bind="visible: selectedItem() == null">
+
+                                <!-- ko if: image -->
+                                <div role="group" data-bind="template: {name: applicationViewModel.koGetMediaTemplateName, data: image },
+                                                                attr:{ tabindex: imageTabindex, 'aria-label': image().metadataScreenReaderDescription }"></div>
+                                <!-- /ko -->
+                            </div>
+                            <!-- /shows -->
+                            <!-- ko foreach: items() -->
+                            <div class="elaborate__item__illustration"
+                                 data-bind="css: {
+                                                      'elaborate__item__illustration--active': $parent.selectedItem() != null && isSelected()
+                                                    , 'elaborate__item__illustration--inactive': !isSelected()
+                                                    , 'elaborate__item__illustration__force-vertical-stack': !isFirstItem
+                                                }
+                                            , id: illustrationId ">
+                                <!--  1px see [IN:039313] (Textstrecher under ie8 cannot get max-width if the height is 0) -->
+                                <!-- ko if: image().url() != '' -->
+                                <div class="elaborate__item__illustration__image" data-bind="template: {name: applicationViewModel.koGetMediaTemplateName, data: image },
+                                     attr:{ tabindex: contentTabindex, 'aria-label': image().metadataScreenReaderDescription }"></div>
+                                <!-- IN:52258, zoom image disabled on this template -->
+                                <!-- /ko -->
+                                <!-- CAPTION -->
+                                <!-- ko if: graphicCaption() != '' -->
+                                <div class="elaborate__item__illustration__caption" role="group"
+                                     data-stretch-self
+                                     data-nb-word-wrap-allowed="0"
+                                     data-bind="visible: graphicCaption() != '', attr:{ tabindex: contentTabindex, 'aria-label':graphicCaption() }">
+                                    <h4 class="media__caption">
+                                        <span class="wizard-main-text" data-bind="text: graphicCaption()"></span>
+                                    </h4>
+                                </div>
+                                <!-- /ko -->
+                                <!-- RICHTEXT -->
+
+                                <div data-bind="visible: responseText.text() != ''
+                                                       && graphicTitle != ''">
+                                </div>
+
+                                <div class="elaborate__item__illustration__detail"
+                                     data-stretch-self
+                                     data-nb-word-wrap-allowed="0"
+                                     data-bind="visible: responseText != '', attr:{ tabindex: contentTabindex, 'aria-label': responseText.transformStringForAriaLabel() }">
+
+                                    <div data-bind="richtext: responseText.text()"></div>
+                                </div>
+                            </div>
+                            <!-- /ko -->
+                        </td>
+                        <td class="elaborate__right-gutter">
+                            <!-- right gutter -->
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}-->
+            <!-- /ko -->
+        </div>
+      
+    </div>
+</script>

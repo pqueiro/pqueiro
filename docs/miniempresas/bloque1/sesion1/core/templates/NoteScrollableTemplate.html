@@ -1,0 +1,18 @@
+﻿<script id="NoteScrollableTemplate" type="text/html">
+    <div data-bind="attr: {id: id, 'class': cssClassValues }, visible:isVisible">
+        <div class="pin"></div>
+        <div class="scrollbar">
+            <div class="track">
+                <div class="thumb">
+                    <div class="end" />
+                </div>
+            </div>
+        </div>
+
+        <div class="viewport">
+            <div class="overview">
+                <div data-bind="richtext:text()" class="text-content text-note-content"></div>
+            </div>
+        </div>
+    </div>
+</script>

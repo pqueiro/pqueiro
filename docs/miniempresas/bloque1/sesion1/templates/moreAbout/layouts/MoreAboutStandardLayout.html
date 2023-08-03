@@ -1,0 +1,55 @@
+﻿<script id="MoreAboutStandardLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper moreabout__content-wrapper">
+        <div class="exercise__content moreabout__content" data-bind="visible: parent.isVisible(),
+                        css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <div class="vertical-align">
+
+                <!-- ko foreach: rows() -->
+                <table role="group" class="moreabout__item__table" data-bind="css: 'moreabout__item__table--x' + $data.length + '-items' ">
+
+                    <tr class="moreabout__item__titles">
+                        <!-- ko foreach: $data -->
+                        <td class="moreabout__item__cell" role="group" data-bind="id: id() + 'text'">
+                            <h3 class="media__title" role="group" data-bind="attr:{ tabindex: tabindex(), 'aria-label' : $data.itemText()}">
+                                <span class="wizard-main-text" data-bind="text: $data.itemText()"></span>
+                            </h3>
+                        </td>
+                        <!-- /ko -->
+                    </tr>
+
+                    <tr class="moreabout__item__illustrations">
+                        <!-- ko foreach: $data -->
+                        <td class="moreabout__item__cell" data-bind="id: id() + 'illustration' ,
+                                                    click: onClick">
+                            <div role="button" data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: $data.media },
+                                                        css: {'play-media': $data.itemHasFeedback },
+                                                    attr:{ tabindex: tabindex(), 'aria-label' : $data.media.metadataScreenReaderDescription}"
+                                 class="moreabout__item__media" />
+                            <div class="iconfont moreabout__item__icon"
+                                 data-bind="id: iconId(),
+                                            css: {'moreabout__item__icon--visible': showValidationIcon(),
+                                                  'moreabout__item__icon--animate': animateValidationIcon()}">
+                                &#x2713;
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                    </tr>
+                </table>
+                <!-- /ko -->
+                <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+            </div>
+        </div>
+    </div>
+
+    <!-- This image is used to preload feedback image -->
+    <!-- ko foreach: items -->
+    <img class="preload-image" data-bind="attr: { 'src': mediaResponse.type == MediaType.image ? mediaResponse.url() : '' }" />
+    <!-- /ko -->
+    <!-- end feedback layout -->
+</script>

@@ -1,0 +1,67 @@
+﻿<script id="AssessmentResultStandardLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper assessment-result__content-wrapper" data-bind="style:{height:contentHeight()+'px'}">
+        <div class="exercise__content assessment-result__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+
+            <!-- Intervals -->
+            <!-- ko if: currentInterval() -->
+            <div class="assessmentresultitem__container">
+
+                <div class="assessmentresultitem__leftcontent">
+
+                    <div class="assessmentresult__progress-bar" data-bind="id:progressBarId
+                                    ,css:{
+                                        'assessmentresult__progress-bar--startAnimation':!circleAnimationEnded()
+                                        ,'assessmentresult__progress-bar--noimage': !hasImage && circleAnimationEnded()
+                                        ,'fade-out' : hasImage && circleAnimationEnded()
+                                        ,'assessmentresult__progress-bar--displaynone': hasImage && animationEnded()
+                                    }">
+                        <!-- this svg canvas is a hack which allows the above div to have a nice height -->
+                        <!-- ko if: platformFeatures.getIsiOS() -->
+                        <svg viewBox="0 0 100 100" style="position: relative"></svg>
+                        <!-- /ko -->
+                    </div>
+
+                    <!-- ko if: !StringHelper.isNullOrEmpty(currentInterval().media().url()) -->
+                    <div class="assessmentresult__image fade-out" data-bind="id:imageId ,template: { name: applicationViewModel.koGetMediaTemplateName, data:currentInterval().media},
+                                    css:{
+                                        'fade-out':!animationEnded()
+                                    },
+                                    attr: {
+                                        tabindex : assessmentresultTabIndexes(),
+                                        'aria-label': currentInterval().media().metadataDescription
+                                    }">
+                    </div>
+                    <!-- /ko -->
+
+                    <div class="assessmentresult__score-caption fade-out" 
+                         data-bind="id:scoreCaptionId,
+                                    css:{'fade-out':!animationEnded()},
+                                    attr: {tabindex : assessmentresultTabIndexes()}">
+                        <span class="wizard-main-text" data-bind="text:scoreText()"></span>
+                    </div>
+                </div>
+
+                <div class="assessmentresultitem__rightcontent fade-out" data-bind="css:{
+                                        'fade-out':!scoreDisplayed()
+                                    },
+                                    attr: {
+                                        tabindex : assessmentresultTabIndexes()
+                                    }">
+                    <div class="assessmentresultitem__response" data-bind="richtext:currentInterval().response.text()"></div>
+                 
+                </div>
+            </div>
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+            <!-- /ko -->
+        </div>
+    </div>
+
+</script>
+

@@ -1,0 +1,25 @@
+﻿<script id="ModalBoxTemplate" type="text/html">
+    <!-- display:none => very important to not display the overlay during the loading of the main view model. It will be updated by knockout. -->
+    <div id="overlayStartOverResume" class="tablet-overlay" style="display: none;" data-bind="visible:overlayVisible">
+        <div class="tablet-overlay__container">
+            <div class="tablet-overlay__content">
+                <h1 class="tablet-overlay__title">
+                    <span class="wizard-main-text" data-bind="text:applicationViewModel.courseName()"></span>
+                </h1>
+                <h2 class="tablet-overlay__description">
+                    <span class="wizard-main-text" data-bind="text:applicationViewModel.courseDescription()"></span>
+                </h2>
+                <span class="tablet-overlay__progress wizard-main-text" 
+                      data-bind="text: applicationViewModel.progressbarViewModel.currentProgressionLabel()"></span>
+            </div>
+            <div class="tablet-overlay__buttons">
+                <span class="tablet-overlay__button tablet-overlay__button-restart button" data-bind="click:restartModule">
+                    <span class="wizard-main-text" data-bind="text:localizedText.Overlay_StartOverText()"></span>
+                </span>
+                <span class="tablet-overlay__button tablet-overlay__button-resume button" data-bind="click:resumeModule">
+                    <span class="wizard-main-text" data-bind="text:localizedText.Overlay_ResumeText()"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+</script>

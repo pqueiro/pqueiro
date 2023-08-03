@@ -1,0 +1,116 @@
+﻿<script id="IExploreWithoutTitleFullscreenLayout" type="text/html">
+
+    <div class="exercise__content-wrapper iexplore__content-wrapper">
+        <div class="exercise__content iexplore__content" data-bind="css:{callToActionBlurEffect: parent.hasCallToAction() && parent.showCallToAction(),
+                                                                    'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                                                                    'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                                                                    'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                                                                    'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <div class="iexplore__images media-image media-image-parent-landmark" role="group" data-bind="id: image().idImage, attr:{ tabindex: tabindexImg(), 'aria-label': image().metadataScreenReaderDescription } ">
+
+                <img class="iexplore__image iexplore__image--lq" data-bind="event: {load: lowImageLoaded }
+                                    , attr: { src: image().urlLowQuality() }
+                                    , id: image().idLow
+                                    , css: {'iexplore__image--hidden': !displayLowImage() }" />
+
+                <img class="iexplore__image iexplore__image--hq" data-bind="event: {load: highImageLoaded }
+                                    , attr: { src: image().url() }
+                                    , id: image().id
+                                    , css: {'iexplore__image--hidden': !displayHighImage() }" />
+            </div>
+
+            <div class="iexplore__hotspots" data-bind="height: imageHeight(), top: hotspotsTop()">
+
+                <!-- ko foreach: items -->
+                <div role="group" data-bind="id: hotspotId,
+                                                css: {
+                                                    'iexplore__hotspot': visible(),
+                                                    'iexplore__hotspot--invisible': !visible(),
+                                                    'iexplore__hotspot--circleHotspot': !isRectangleHotspot(),
+                                                    'iexplore__hotspot--selected': $parent.displaysInline($data) && inlineFeedback.inlineFeedbackIsVisible(),
+                                                    'leftfeedback': inlineFeedbackIsInLeft(),
+                                                    'rightfeedback': !inlineFeedbackIsInLeft()
+                                                },
+                                                style: {
+                                                    top: y() + 'px',
+                                                    left: x() + 'px',
+                                                    'cursor': isClickable()? 'pointer':'default',
+                                                    opacity: isStarted()
+                                                },
+                                                height: height() + 'px',
+                                                width: width() + 'px',
+                                                click: onClick,
+                                                attr: {
+                                                    tabindex: tabindexItem(),
+                                                    'aria-label': hotspotLabel
+                                                }"
+                     class="fade-effect">
+                    <div class="iexplore__icon" 
+                         data-bind="css: {'iexplore__icon--animate' : animateValidationIcon(),
+                                          'iexplore__icon--visible' : showValidationIcon()}"></div>
+
+                    <!-- ko if: textLabel() != "" && !$parent.showLabelsInList() -->
+                    <div class="iexplore__line" data-bind="css: {
+                                                                    'iexplore__line--north': isNorth,
+                                                                    'iexplore__line--south': isSouth,
+                                                                    'iexplore__line--east': isEast,
+                                                                    'iexplore__line--west': isWest,
+                                                                    'iexplore__line--northeast': isNorthEast,
+                                                                    'iexplore__line--northwest': isNorthWest,
+                                                                    'iexplore__line--southeast': isSouthEast,
+                                                                    'iexplore__line--southwest': isSouthWest,
+                                                                    'iexplore__line--center': isCenter }"></div>
+                    <div class="iexplore__label button" data-bind="css: {
+                                                                    'iexplore__label--selected': hasBeenClicked(),
+                                                                    'iexplore__label--disabled': !isClickable(),
+                                                                    'iexplore__label--north': isNorth,
+                                                                    'iexplore__label--south': isSouth,
+                                                                    'iexplore__label--east': isEast,
+                                                                    'iexplore__label--west': isWest,
+                                                                    'iexplore__label--northeast': isNorthEast,
+                                                                    'iexplore__label--northwest': isNorthWest,
+                                                                    'iexplore__label--southeast': isSouthEast,
+                                                                    'iexplore__label--southwest': isSouthWest,
+                                                                    'iexplore__label--center': isCenter }">
+                        <div data-bind="id: captionId, text: textLabel" class="wizard-main-text"></div>
+                    </div>
+                    <!-- /ko -->
+
+                    
+                    <div class="iexplore__label-number" data-bind="visible:$parent.showLabelsInList() ,
+                                                style: {
+                                                    top: labelNumberTop() + 'px',
+                                                    left: labelNumberLeft() + 'px'},
+                                                text: ($index() + 1),
+                                                css: {'iexplore__label-number__visited--active' : showValidationIcon()}">
+                    </div>
+                   
+                    <!-- ko if: $parent.displaysInline($data) -->
+                    <!-- ko template: { name: "FeedBackInlineTemplate", data: inlineFeedback } --><!-- /ko -->
+                    <!-- /ko -->
+                    <!-- ko if: fallback && visible() -->
+                    <img src="images/hotspot.png" data-bind="height: height() + 'px', width: width() + 'px'" />
+                    <!-- /ko -->
+                </div>
+                <!-- /ko -->
+            </div>
+
+            <!-- ko if: showLabelsInList() -->
+            <div class="iexplore__label-item-container" data-bind="style: {maxHeight: labelListHeight()}">
+                <!-- ko foreach: items -->
+                <div class="iexplore__label-list-item" data-bind="click: onClick">
+                    <div class="iexplore__label-list-item__number" data-bind="text: ($index() + 1)"></div>
+                    <div class="iexplore__label-list-item__content" data-bind="id: captionId, text: textLabel"></div>
+                    <div class="iexplore__label-list-item__visited" data-bind="css: {'iexplore__label-list-item__visited--animate' : animateValidationIcon(),
+                                                                                     'iexplore__label-list-item__visited--visible' : showValidationIcon()}"></div>
+                    <div class="iexplore__label-list-item__more">+</div>
+                </div>
+                <!-- /ko -->
+            </div>
+            <!-- /ko -->
+
+        </div>
+    </div>
+
+    <!-- ko template: { name: "CallToActionFullscreenTemplate",data:$data}--><!-- /ko -->
+</script>

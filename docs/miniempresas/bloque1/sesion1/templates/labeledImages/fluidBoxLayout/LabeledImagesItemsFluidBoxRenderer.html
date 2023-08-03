@@ -1,0 +1,35 @@
+﻿<script id="LabeledImagesItemsFluidBoxRenderer" type="text/html">
+    <!-- ko foreach: items() -->
+    <div class="fluid__item fluid__item-labeledimages">
+        <!-- Particular case : the title above feedback image is never display in the case the main image is a polaroid and the image feedback is not a polaroid. For more informations, see IN:39431 -->
+        <h3 class="fluid__item-title media__title" data-bind="text: title"></h3>
+
+        <div class="labeledimages-phone__image-container">
+            <div class="fluid__item-image__wrapper"
+                 data-bind="id: imageDomId">
+                <div class="fluid__item-image media-image-parent-landmark"
+                     role="button"
+                     data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: image }
+                                                    , click: $parent.isActiveAndAccessibilityEnabled() && selectDropBox
+                                                    , attr:{ tabindex: tabindexDropItem(),
+                                                    'aria-label': localizedText.Accessibility_DropZone()}" />
+            </div>
+        </div>
+
+        <div class="labeledimages__cell labeledimages__cell--dropped-items"
+             data-bind="id: droppedZoneId ">
+            <!-- ko foreach: labelItemsFound -->
+            <div class="labeledimages__answer sticky__drag-item--dragged release"
+                 role="button"
+                 data-bind="visible: dropped(),
+                                    attr: {tabindex: $parents[1].allAnswersFoundTabindex()},
+                                    css: { 'labeledimages__answer--clickable': allAnswersFound(), 'sticky__drag-item--cursor-pointer': hasFeedback() },
+                                    click: onClick">
+                <span class="labeledimages__answer__icon iconfont">&#x2714;</span>
+                <span class="labeledimages__answer__text" data-bind="id: draggableId, text: responseText"></span>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+    <!-- /ko -->
+</script>

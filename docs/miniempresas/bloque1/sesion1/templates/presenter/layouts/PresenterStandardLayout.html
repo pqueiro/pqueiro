@@ -1,0 +1,85 @@
+﻿<!-- PRESENTER-->
+<script id="PresenterStandardLayout" type="text/html">
+    <!-- ko template: { name: "ExerciseTitleComponent", data:$data}--><!-- /ko -->
+    <div class="exercise__content-wrapper">
+        <div class="exercise__content presenter-global-container" data-bind="style: {height: containerHeight()+'px'},
+                        css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <!-- EXERCICE CONTENT-->
+            <div class="presenter-content-container" data-bind="css: { 'presenter-content-container--hasMedia' : hasImage() || hasVideo() },
+                                                                attr: { 'id': contentContainerId }">
+
+                <!-- ko if: (hasSound() && hasImage() || hasVideo()) -->
+                <!-- LEFT PART -->
+                <div class="media-image-fit-to-container presenter-left-content"
+                     data-bind="attr: { 'style' : contentMediaTransformStyle(), 'id': leftContentId },
+                     click: fadeOutButtonsOnMobile">
+                    <div class="presenter-left-content__media media-video-fit-to-container">
+                        <!-- ko if: (hasVideo()) -->
+                        <!-- VIDEO-->
+                        <!-- ko template: { name: "MediaVideoTemplate",data: playableMedia}--><!-- /ko -->
+                        <!-- /ko -->
+                        <!-- ko if: (hasSound() && hasImage()) -->
+                        <!-- IMAGE-->
+                        <!--ko template: { name: "ImageTemplate", data: image }--><!-- /ko -->
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <!-- /ko -->
+
+                <!-- RIGHT PART -->
+                <div class="presenter-right-content" data-bind="css: { 'presenter-right-content--split-screen' : hasImage() || hasVideo(),
+                                        'presenter-right-content--full-screen' : hasImage() == false && hasVideo() == false },
+                                click: marksManagement">
+
+                    <!-- ko if: (currentMark() != null && currentMark().layout != "MediaOnly") -->
+                    <!-- ko template: { name: currentMark().layout, data: currentMark() } --><!-- /ko -->
+                    <!-- /ko -->
+                </div>
+
+            </div>
+        </div>
+
+        
+        <!-- MEDIA CONTROLLERS PART -->
+        <div class="presenter-mediaControler-container" data-bind="attr: {'id': mediaControlerId}">
+            <!-- ko if: (!platformFeatures.isIE8) -->
+                <!-- TIMELINE PART -->
+                <div class="presenter-timeLineContainer">
+                    <div class="presenter-progressBarContainer" data-bind="click: timeLineClick">
+                        <!-- ko foreach: marks() -->
+                        <div class="presenter-progressStep" data-bind="attr: {'id':id}"></div>
+                        <!-- /ko -->
+                        <div class="presenter-progressBar"></div>
+                    </div>
+                    <div class="presenter-timeRemaining"></div>
+                </div>
+            <!-- /ko -->
+
+            <!-- ko if: (!platformFeatures.isIE8 || (platformFeatures.isIE8 && hasSound())) -->
+            <!-- NEW CONTROLERS PART -->
+            <div class="presenter-mediaControler-buttonsContainer" data-bind="attr: {'id': mediaControlerButtonsId}">
+                <!-- BUTTONS PART -->
+                <div class="presenter-mediaControler__button presenter-mediaControler__playpause"
+                     data-bind="attr: {'aria-label': ariaLabelPlay(), tabindex : presenterAudioControlsPlayPauseTabindex }, click: mediaPlayPause,
+                                           css: { 'presenter-mediaControler__play--visible' : playableMedia.isPlaying() == false,
+                                                   'presenter-mediaControler__play--hidden' : playableMedia.isPlaying() }"></div>
+
+                <div class="presenter-mediaControler__button presenter-mediaControler__playpause"
+                     data-bind="attr: { 'aria-label': ariaLabelPause(), tabindex : presenterAudioControlsPlayPauseTabindex }, click: mediaPlayPause,
+                                            css: { 'presenter-mediaControler__pause--visible' : playableMedia.isPlaying(),
+                                                   'presenter-mediaControler__pause--hidden' : playableMedia.isPlaying() == false }"></div>
+
+                <div class="presenter-mediaControler__button presenter-mediaControler__replay--visible"
+                     data-bind="attr: {'aria-label': ariaLabelReplay(), tabindex : presenterMediaControlsReplayTabindex }, click: function(){ reinitialize(true); }"></div>
+
+                <!-- SOUND WAVE -->
+                <div class="presenter-soundWaveContainer"></div>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+    <!-- ko template: { name: "CallToActionFullscreenTemplate",data:$data}--><!-- /ko -->
+</script>

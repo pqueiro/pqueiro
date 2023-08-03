@@ -1,0 +1,15 @@
+﻿<script id="MediaHtmlTemplate" type="text/html">
+
+    <div class="media-html__wrapper" data-bind="attr: {'id': id}, height:iframeHeight(), width:iframeWidth()">
+        <!-- ko if: previewImage() != null -->
+        <!-- This is used by the thumbnail mode -->
+        <!--ko template: {name: 'ImageTemplate', data: previewImage() }--><!--/ko-->
+        <!-- /ko -->
+        <!-- ko if: previewImage() == null -->
+        <iframe class="media-html__iframe" sandbox="allow-popups allow-same-origin allow-scripts allow-popups-to-escape-sandbox" 
+                data-bind="attr:{ tabindex: tabindex, src: url() }, 
+                    css: {'html-animation-loading': isLoading(), 'html-animation-loaded': isLoaded()},
+                          height:iframeHeight(), width:iframeWidth()"></iframe>
+        <!-- /ko -->
+    </div>
+</script>

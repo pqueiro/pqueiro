@@ -1,0 +1,22 @@
+﻿<script id="BrandedOutroStandardLayout" type="text/html">
+    <div class="exercise__content-wrapper brandedoutro__content-wrapper">
+        <div class="exercise__content brandedoutro__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+      
+                <div class="brandedoutro__logo fade-effect--fast" data-bind="visible: $parent.isActive()"  >
+                    <video x5-video-player-type="h5" class="brandedVideo playing" data-bind="id: brandedVideoId" playsinline>
+                        <source data-bind="attr:{'src': brandedVideoFilePath()}" type="video/mp4">
+                    </video>
+                    <a class="brandedVideo-control js-video-control playing " href="#" role="button"
+                       data-bind="id: brandedVideoControlId,
+                        click: playBrandedVideo,
+                        attr:{ tabindex :startTabIndex, 'aria-label': localizedText.Accessibility_VideoPlayerPlay() }">
+                    </a>
+                </div>
+           
+        </div>
+    </div>
+</script>

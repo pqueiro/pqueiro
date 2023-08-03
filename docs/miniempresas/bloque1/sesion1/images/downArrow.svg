@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="976 502 30 50">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #535d5e;
+        opacity: 0.701;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Groupe_1" data-name="Groupe 1" transform="translate(38 -2)">
+    <rect id="Rectangle_1" data-name="Rectangle 1" class="cls-1" width="30" height="50" rx="3" transform="translate(938 504)"/>
+    <path id="Tracé_1" data-name="Tracé 1" class="cls-2" d="M11.055,20.53c3.711-3.316,7.343-6.554,11.055-9.87L21.083,9.475,11.055,18.4,1.026,9.475,0,10.66C3.632,13.976,7.422,17.213,11.055,20.53Zm0-9.475C14.766,7.738,18.4,4.5,22.109,1.184L21.083,0,11.055,8.923,1.026,0,0,1.184C3.632,4.5,7.422,7.738,11.055,11.055Z" transform="translate(942 514)"/>
+  </g>
+</svg>

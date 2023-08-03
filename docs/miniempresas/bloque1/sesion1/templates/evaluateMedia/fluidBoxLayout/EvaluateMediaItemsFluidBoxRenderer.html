@@ -1,0 +1,54 @@
+﻿<script id="EvaluateMediaItemsFluidBoxRenderer" type="text/html">
+    <!-- ko foreach: items -->
+    <div class="fluid__item fluid__item-evaluatemedia">
+        <!-- Particular case : the title above feedback image is never display in the case the main image is a polaroid and the image feedback is not a polaroid. For more informations, see IN:39431 -->
+        <!-- ko if: graphicTitle() != '' && image() && !image().isPolaroid() -->
+        <h3 class="fluid__item-title media__title" data-bind="text: graphicTitle , visible: graphicTitle() != '',
+                                                css: {selected : isSelected()},
+                                                attr:{ tabindex: tabindex, 'aria-label': graphicTitle},
+                                                id: graphicTitleId()"></h3>
+        <!-- /ko -->
+
+        <div class="evaluatemedia-phone__image-container">
+            <!-- ko if: image() && image().url() != '' -->
+            <div class="fluid__item-image__wrapper"
+                 data-bind="id: imageId">
+                <div class="fluid__item-image media-image-parent-landmark"
+                     role="button"
+                     data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: image }
+                                                    , css: { 'play-media': hasFeedback() }
+                                                    , click: startFeedback
+                                                    , attr:{ tabindex: tabindex, role: hasFeedback() ? 'button' : 'group' }" />
+            </div>
+            <!-- /ko -->
+        </div>
+
+
+        <!-- ko if: graphicCaption() != "" -->
+        <h4 class="media__caption phone-media__caption" role="group" data-bind="text: graphicCaption,
+                                                visible: graphicCaption != '',
+                                                id: graphicCaptionId(),
+                                                attr:{ tabindex: tabindex, 'aria-label': graphicCaption}"></h4>
+        <!-- /ko -->
+        <!-- ko foreach: anwsers -->
+        <a href="javascript:;" role="button" class="evaluatemedia__item__button button"
+           data-bind="css: { 'evaluatemedia__item__button--answerfound': isAnswerFound() && !isCorrect()
+                                        , 'button--right': isCorrect() && isChecked()
+                                        , 'button--wrong': !isCorrect() && isChecked()
+                                        , 'button--selected': isChecked()}
+                                , click: select
+                                , attr: { tabindex: $parent.tabindex, 'aria-label': ariaLabel }
+                                , id: id() ">
+
+            <span class="iconfont button__iconfont evaluatemedia__icon" data-bind="text: isCorrect() ? '&#x2714;' : '&#x58;', visible: isChecked()"></span>
+            <span class="evaluatemedia__answer__text" data-bind="text: text"></span>
+        </a>
+        <!-- /ko -->
+
+        <div role="group" class="evaluatemedia__feedback" data-bind="attr: { tabindex: responseText.text() != '' && tabindexAnswerFound, 'aria-label': responseText.transformStringForAriaLabel() }, css: { 'evaluatemedia__feedback--visible':correctAnswerFound()}">
+            <p data-bind="richtext: responseText.text()" class="evaluatemedia__feedback__text"></p>
+        </div>
+    </div>
+
+    <!-- /ko -->
+</script>

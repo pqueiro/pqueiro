@@ -1,0 +1,86 @@
+﻿<script id="InfoTextWithImageOnBottomLayout" type="text/html">
+    <!-- InfoTextWithImageOnBottomLayout -->
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="layout-ready"></div>
+
+    <div class="exercise__content-wrapper">
+    <div class="exercise__content info--bottom__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+
+        <!-- ko if: introductionMedia() -->
+
+        <div class="info--bottom__gap"></div>
+
+        <div class="info__introduction info--bottom__introduction" role="group" data-bind="attr: { tabindex : infoTabindex, 'aria-label' : ariaLabelIntroductionMedia }"
+             data-nb-word-wrap-allowed="2"
+             data-stretch-self
+             data-stretch-keep-same-size
+             data-stretch-others-context-selector=".exercise__content"
+             data-stretch-others-selector="[data-stretch-keep-same-size]">
+            <p data-bind="template: {name: applicationViewModel.koGetMediaTemplateName, data: introductionMedia}"></p>
+        </div>
+
+        <!-- /ko -->
+
+        <div class="info--bottom__gap"></div>
+
+        <div class="info__contentText info--bottom__contentText"
+             data-nb-word-wrap-allowed="2"
+             data-stretch-source-node-selector=".richText"
+             data-stretch-keep-same-size
+             data-stretch-self
+             data-stretch-others-context-selector=".exercise__content"
+             data-stretch-others-selector="[data-stretch-keep-same-size]"
+             data-bind="visible: contentMedia()
+                            , css: { 'fade-out': !contentVisible(), 'fade-effect': animateVisualElements() }, attr: { tabindex : infoTabindex, 'aria-label' : ariaLabelContentMedia }">
+                    <!--ko template: {name: applicationViewModel.koGetMediaTemplateName, data: contentMedia }--><!--/ko-->
+            </div>
+
+            <div class="info--bottom__gap--illustration"></div>
+
+            <div class="info__illustration info--bottom__illustration"
+                 data-bind="css: {'fade-out': !graphicVisible(), 'fade-effect': animateVisualElements()}">
+
+                <!-- ko if: (graphicTitle() != "" && (media().type == MediaType.image && !media().isPolaroid()) -->
+                <div class="info--bottom__illustration-title" data-bind="visible: graphicTitle() != '', attr: { tabindex : infoTabindex, 'aria-label' : graphicTitle() }" data-stretch-keep-same-size>
+                    <h3 class="media__title">
+                        <span class="wizard-main-text" data-bind="text: graphicTitle()"></span>
+                    </h3>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: !StringHelper.isNullOrEmpty(media()) -->
+                <div class="info--bottom__media-wrapper" data-bind="template: {name: applicationViewModel.koGetMediaTemplateName, data: media}, attr: { tabindex : infoTabindex }"></div>
+                <!-- IN:52258, zoom image disabled on this template -->
+                <!-- /ko -->
+                <!-- ko if: (graphicCaption() != null && graphicCaption() != '') -->
+                <div class="info--bottom__illustration-caption" data-bind="visible: graphicCaption() != '', attr: { tabindex : infoTabindex, 'aria-label' : graphicCaption() }" data-stretch-keep-same-size>
+                    <h4 class="media__caption">
+                        <span class="wizard-main-text" data-bind="text: graphicCaption()"></span>
+                    </h4>
+                </div>
+                <!-- /ko -->
+            </div>
+
+            <div class="info--bottom__gap"></div>
+
+            <!--ko if: hasConclusion() -->
+            <div class="info__conclusion info--bottom__conclusion"
+                 data-nb-word-wrap-allowed="2"
+                 data-stretch-keep-same-size
+                 data-stretch-self
+                 data-stretch-others-context-selector=".exercise__content"
+                 data-stretch-others-selector="[data-stretch-keep-same-size]"
+                 data-bind="css: {'fade-out': !conclusionVisible(), 'fade-effect': animateVisualElements()}, attr: { tabindex : infoTabindex, 'aria-label' : ariaLabelConclusionMedia }">
+                <!--ko template: {name: applicationViewModel.koGetMediaTemplateName, data: conclusionMedia}--><!--/ko-->
+            </div>
+            <!-- /ko -->
+
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+        </div>
+    </div>
+
+</script>

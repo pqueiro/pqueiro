@@ -1,0 +1,38 @@
+﻿<!-- Media + Title -->
+<script id="EmbeddedContentWithTitleFullscreenLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper">
+        <div class="exercise__content"
+             data-bind="css: layoutSizeGroupClassName()">
+
+            <div class="embeddedContent__media embeddedContainer"
+                 role="button"
+                 data-bind="click: clickAccessibilityEmbeddedContent, attr: { tabindex: tabindex, 'aria-label': ariaLabel }"> 
+                 
+                 
+                 <!-- ko if: platformFeatures.getIsIE8() -->
+                    <div class="embeddedContent__ie8-container ">
+                        <div class="embeddedContent__ie8-content"></div>
+                    </div>
+                <!-- /ko -->
+
+                <a role="button" href="javascript:;" class="feedback__content__cross-button iconfont"
+                   data-bind="visible: platformFeatures.getIsMobileDevice() && !mobileMaskVisible(),
+                        click: function() { toggleMaskMobileVisibility(); }">&#215;</a>
+
+                <div class="embeddedContent__mobileMaskContainer" role="button" data-bind="click: toggleMaskMobileVisibility,
+                                                                                    visible: mobileMaskVisible(),
+                                                                                    attr: { tabindex: tabindex }">
+                    <div class="embeddedContent__container--vertical">
+                        <div class="embeddedContent__content-vertical">
+                            <div class="embedded__mask--button-image"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</script>

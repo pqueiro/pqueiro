@@ -1,0 +1,81 @@
+<script id="AssessmentMCQMediaOnTheLeftLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper assessment-mcq__content-wrapper">
+        <div class="exercise__content assessment-mcq__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <!-- ko if: questionDetails.text() != "" -->
+            <p class="assessmentmcq__questiondetails"
+               role="group"
+               data-bind="id : questionDetailsId, richtext: questionDetails.text(),
+                          attr : { tabindex: tabindexQuestionDetails(), 'aria-label': questionDetails.transformStringForAriaLabel()  },
+                          css:{'assessmentmcq__questiondetails--noimage':StringHelper.isNullOrEmpty(media().url())}"></p>
+            <!-- /ko -->
+
+            <div class="assessmentmcq__container" data-bind="css:{'assessmentmcq__container--noimage':StringHelper.isNullOrEmpty(media().url())}">
+                <!-- Image -->
+                <!-- ko if: !StringHelper.isNullOrEmpty(media().url()) -->
+                <div class="assessmentmcq__imagecontent"
+                     data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data:media }, attr : { tabindex: isMediaImage ? tabindex() : -1, 'aria-label': media().metadataDescription }">
+                </div>
+                <!-- /ko -->
+
+                <div class="assessmentmcq__textcontent" data-bind="css:{'assessmentmcq__textcontent--noimage':StringHelper.isNullOrEmpty(media().url())}">
+                    <!-- Alternatives -->
+                    <!-- ko foreach: items -->
+                    <table class="assessmentmcq__answer wizard-main-text" role="button"
+                           data-bind="event: { mouseover: showCheckBoxRollOverFontIcon, mouseout: hideCheckBoxRollOverFontIcon },
+                                    attr : { 'aria-label': textAriaLabel(), tabindex: tabindex()}, click: onClick, css:{'assessmentmcq__answer--disable':!parent.isItemsEnable()}">
+                        <tr>
+                            <td class="assessmentmcq__answer__checkbox__solution__td">
+                                <span class="assessmentmcq__answer__checkbox assessmentmcq__answer__checkbox__solution"
+                                      aria-hidden="true"
+                                      data-bind="id : checkBoxSolutionId,
+                                                 css:checkBoxSolutionStyle()">
+                                    <span class="iconfont wizard-main-text" data-bind="text:checkBoxSolutionFontIcon()"></span>
+                                </span>
+                            </td>
+                            <td class="assessmentmcq__answer__checkbox__td">
+                                <span class="assessmentmcq__answer__checkbox iconfont"
+                                      aria-hidden="true"
+                                      data-bind="text:checkBoxFontIcon(),css:{'assessmentmcq__answer--disable':!parent.isItemsEnable()}"></span>
+
+                            </td>
+                            <td class="assessmentmcq__answer__text__td">
+                                <span data-bind="text:text,
+                                                css:{'assessmentmcq__answer--disable':!parent.isItemsEnable()}"></span>
+
+                            </td>
+                        </tr>
+
+                    </table>
+                    <!-- /ko -->
+
+                    <!-- Use by desktop and mobile (only landscape mode) -->
+                    <!-- SUBMIT BUTTON -->
+                    <!-- ko if: assessmentManager -->
+                    <div class="assessmentmcq__submit__button"
+                         data-bind="template: { name: 'AssessmentSubmitButtonTemplate', data: $data }
+                        ,css:{'assessmentmcq__submit__button--noimage':StringHelper.isNullOrEmpty(media().url())}"></div>
+                    <!-- /ko -->
+
+
+                </div>
+            </div>
+
+            <!-- Use only by phones and tablets - portrait mode -->
+            <!-- SUBMIT BUTTON -->
+            <!-- ko if: assessmentManager && (platformFeatures.getIsMobileDevice()) -->
+            <div class="assessmentmcq__submit__button--center assessment_submit_button--center"
+                 data-bind="template: { name: 'AssessmentSubmitButtonTemplate', data: $data }"></div>
+            <!-- /ko -->
+
+        </div>
+
+    </div>
+</script>
+

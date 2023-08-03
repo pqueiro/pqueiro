@@ -1,0 +1,31 @@
+<script id="SpacerStandardLayout" type="text/html">
+    <div class="exercise__content-wrapper spacer__content-wrapper">
+        <div class="exercise__content spacer__content"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <div class="exercise__vertical-align spacer__vertical-align" data-bind="css:{ 
+                                                                    'spacer__vertical-align--top'   : positionTop,
+                                                                    'spacer__vertical-align--bottom' : positionBottom,
+                                                                    'spacer__vertical-align--middle' : positionMiddle}">
+                <!-- Background -->
+                <div class="spacer__background"></div>
+
+                <div class="spacer__inner-content-wrapper">
+                    <!-- Title -->
+                    <h1 data-nb-word-wrap-allowed="1" role="group" data-stretch-parent=".spacer__inner-content-wrapper" class="spacer__title" data-bind="id: titleId, attr:{'aria-label': transformStringForAriaLabel(title()), tabindex : !StringHelper.isNullOrEmpty(title()) && titlesSpacerTabindex}">
+                        <span class="spacer__title__text wizard-spacer-title-text" data-bind="text: title()"></span>
+                    </h1>
+
+                    <!-- Introduction -->
+                    <h2 data-nb-word-wrap-allowed="4" role="group" data-stretch-parent=".spacer__inner-content-wrapper" class="spacer__subtitle" data-bind="id: subtitleId, attr:{'aria-label': transformStringForAriaLabel(subtitle), tabindex : !StringHelper.isNullOrEmpty(subtitle) && titlesSpacerTabindex}">
+                        <span class="spacer__subtitle__text wizard-spacer-subtitle-text" data-bind="text: subtitle"></span>
+                    </h2>
+
+                    <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

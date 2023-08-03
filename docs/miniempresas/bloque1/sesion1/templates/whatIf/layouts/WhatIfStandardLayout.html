@@ -1,0 +1,77 @@
+﻿<script id="WhatIfStandardLayout" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+
+    <div class="exercise__content-wrapper whatif--standard whatif--standard__content-wrapper">
+        <div class="exercise__content whatif__content whatif--standard__content"
+             data-bind="css: {
+                                 'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                                 'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                                 'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                                 'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'
+                             }">
+
+            <!-- Image -->
+            <!-- ko if: (image().getJsonUrl() != "") -->
+            <div class="whatif--standard__image"
+                 data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data:image }, 
+                 attr : { tabindex: tabindex(), 'aria-label': image().metadataScreenReaderDescription }">
+
+            </div>
+            <!-- /ko -->
+
+            <div class="whatif__answers whatif--standard__answers">
+                <!-- ko foreach: items -->
+                <div class="whatif__answer whatif--standard__answer" role="button" 
+                     data-bind="id: answerId(),
+                                css: {
+                                        'whatif--standard__answer--right ': (look() == WhatIfItemLook.SelectedWithoutLinkCorrect 
+                                                                          || look() == WhatIfItemLook.SelectedLinkCorrect
+                                                                          || look() == WhatIfItemLook.SelectedLinkRead),
+                                        'whatif--standard__answer--wrong':  (look() == WhatIfItemLook.SelectedWithoutLinkIncorrect
+                                                                          || look() == WhatIfItemLook.SelectedLinkIncorrect),
+                                        'whatif--standard__answer--read':   (look() == WhatIfItemLook.SelectedWithoutLinkRead),
+                                        'last': isLast 
+                                     },
+                                attr : { tabindex: tabindex(), 'aria-label': ariaLabel },
+                                click: onClick">
+
+                    <table class="whatif__answer-table whatif--standard__answer-table button"
+                           data-bind="css : {
+                                                'whatif__answer whatif--standard__answer-table--right button--right': (look() == WhatIfItemLook.SelectedWithoutLinkCorrect 
+                                                                                                                    || look() == WhatIfItemLook.SelectedLinkCorrect
+                                                                                                                    || look() == WhatIfItemLook.SelectedLinkRead),
+                                                'whatif__answer whatif--standard__answer-table--wrong button--wrong': (look() == WhatIfItemLook.SelectedWithoutLinkIncorrect
+                                                                                                                    || look() == WhatIfItemLook.SelectedLinkIncorrect),
+                                                'whatif__answer whatif--standard__answer-table--read':                (look() == WhatIfItemLook.SelectedWithoutLinkRead),
+                                                'button--selected': isSelected()
+                                            }">
+                        <tr>
+                            <td class="whatif--standard__icon">
+                                <span class="iconfont whatif--standard__answer-table__icon--visibility wizard-main-text" 
+                                      data-bind="id: iconId(),
+                                                 text: isCorrect || parent.isReadMode() ? '&#x2714;' : '&#x58;', 
+                                                 style: { visibility: showIcon() ? '' : 'hidden' },
+                                                 css: {'whatif__icon--animate': animateIcon()}">
+                                </span>
+                            </td>
+                            <td class="whatif--standard__answer-table__text-wrapper">
+                                <div class="answerText" data-nb-word-wrap-allowed="0" data-stretch-parent=".whatif__answers">
+                                    <span class="wizard-main-text" data-bind="html: text"></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- /ko -->
+            </div>
+
+            <!-- ko template: { name: "CallToActionTemplate",data:$data}--><!-- /ko -->
+        </div>
+    </div>
+
+    <!-- This image is used to preload feedback image -->
+    <!-- ko foreach: items -->
+    <img class="preload-image" data-bind="attr: { 'src': feedbackMedia.type == MediaType.image ? feedbackMedia.url() : '' }" />
+    <!-- /ko -->
+</script>

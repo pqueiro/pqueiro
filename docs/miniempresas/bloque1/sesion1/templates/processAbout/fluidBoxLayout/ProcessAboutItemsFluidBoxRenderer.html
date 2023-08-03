@@ -1,0 +1,95 @@
+<script id="ProcessAboutItemsFluidBoxRenderer" type="text/html">
+
+    <!-- Renderer used by small devices (smartphones) in landscape and portrait mode -->
+
+    <!-- ko if: $data.helper.customisedSeparatorsUsed-->
+    <style>
+        /* [IN:49860] font-face for IE8 and IE9 is in processCommon.less and is always loaded */
+        @font-face {
+            font-family: 'Quicksand';
+            src: url('css/fonts/Quicksand Regular/Quicksand Regular.woff') format('woff'); /* Pretty Modern Browsers */
+        }
+    </style>
+    <!-- /ko -->
+
+    <!-- ko foreach: items() -->
+    <div class="fluid__item fluid__item-process-common">
+        <!-- Particular case : the title above feedback image is never display in the case the main image is a polaroid and the image feedback is not a polaroid. For more informations, see IN:39431 -->
+        <!-- ko if: (!isSelected() && !image().isPolaroid()) || (!image().isPolaroid() && !hasPolaroid()) -->
+        <h3 class="process-common__item-title-text media__title" 
+            data-bind="css: {selected : isSelected()},
+                       attr:{ tabindex: itemTabindex}">
+            <span class="wizard-main-text" data-bind="text: title"></span>
+        </h3>
+        <!-- /ko -->
+
+        <div class="process-common-phone__image-container">
+            <div class="fluid__item-image__wrapper"
+                 data-bind="id: id()">
+                <div class="fluid__item-image process-common__item-image--normal process-common__item-image--visible media-image-parent-landmark"
+                     role="button"
+                     data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: image }
+                                                    , css: { 'play-media': hasFeedback(), 'process-common__item-image--visible': !presentingFeedbackImage() }
+                                                    , click: select
+                                                    , attr:{ tabindex: itemTabindex}" />
+            </div>
+
+
+            <!-- On small devices (smartphone) in landscape mode, separators are positioned at the left of the pictures.
+             So we use the previous custom separator in order to have the good one.
+             BUT in RTL mode, we want to use the current custom separator and not the previous one.-->
+            
+            <!-- ko ifnot: applicationViewModel.getIsRTLDirection() -->
+                <!-- ko if: isFirst() == false -->
+                <div class="process-common-phone__arrow-horizontal--found" data-bind="visible: isPortrait() == false">
+                    <!-- The default separator -->
+                    <div class="iconfont process-common__spacer-icon process-common__spacer-icon--phone-horizontal" 
+                            data-bind="visible:parent.ownerViewModel.arrowVisible() && $parent.items()[$index() - 1].customisedSeparator == ''"></div>
+                    <!-- The customised separator -->
+                    <div class="process-common__spacer-customised process-common__spacer-customised--horizontal"
+                         data-bind="visible:parent.ownerViewModel.arrowVisible() && $parent.items()[$index() - 1].customisedSeparator != '',
+                                    text: $parent.items()[$index() - 1].customisedSeparator,
+                                    attr: {tabindex: $parent.items()[$index() - 1].itemTabindex() + 1}"></div>
+                </div>
+                <!-- /ko -->
+            <!-- /ko -->
+
+            <!-- ko if: applicationViewModel.getIsRTLDirection() -->
+                <!-- ko if: isLast() == false -->
+                <div class="process-common-phone__arrow-horizontal--found" data-bind="visible: isPortrait() == false">
+                    <!-- The default separator -->
+                    <div class="iconfont process-common__spacer-icon process-common__spacer-icon--phone-horizontal"
+                         data-bind="visible:parent.ownerViewModel.arrowVisible() && customisedSeparator == ''"></div>
+                    <!-- The customised separator -->
+                    <div class="process-common__spacer-customised process-common__spacer-customised--horizontal"
+                         data-bind="visible:parent.ownerViewModel.arrowVisible() && customisedSeparator != '',
+                                    text: customisedSeparator,
+                                    attr: {tabindex: itemTabindex() + 1}"></div>
+                </div>
+                <!-- /ko -->
+            <!-- /ko -->
+
+            </div>
+
+        <!-- ko if: caption != "" -->
+        <h4 class="media__caption" data-bind="text: caption,
+                                                css: {selected : isSelected() || parent.canDisplayAllCaptions },
+                                                attr:{ tabindex: itemTabindex}"></h4>
+        <!-- /ko -->
+
+        <!-- Small devices (smartphone) in portrait mode.
+             Default separators are rotated to the bottom but custom separators are not rotated. -->
+        <div class="process-common-phone__arrow-vertical" data-bind="visible: isLast() == false && isPortrait()">
+            <!-- The default separator -->
+            <div class="iconfont process-common__spacer-icon process-common__spacer-icon--phone-vertical" 
+                 data-bind="visible:parent.ownerViewModel.arrowVisible() &&  customisedSeparator == ''"></div>
+            <!-- The customised separator -->
+            <div class="process-common__spacer-customised process-common__spacer-customised--vertical"
+                 data-bind="visible:parent.ownerViewModel.arrowVisible() && customisedSeparator != '',
+                            text: customisedSeparator,
+                            attr: {tabindex: itemTabindex() + 1}"></div>
+        </div>
+
+    </div>
+    <!-- /ko -->
+</script>

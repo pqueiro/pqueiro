@@ -1,0 +1,30 @@
+﻿<script id="ClassicDragdropTemplate" type="text/html" >
+    <div class="sticky__exercise-container"><!-- Class name is important to clone the content to the sticky footer-->
+        <div class="sticky sticky--hide sticky__box sticky__box--classic" data-bind="foreach: { data: alternatives } ">
+            <div class="classic-sticky__wrapper" data-bind="id:'wrapper_'+draggableId">
+
+                <!-- ko if: platformFeatures.getIsIE8() -->
+                <table class="classic-sticky__drag-item release drag-label" role="button" data-bind="id: draggableId,
+                                                                            visible: isAlternativeVisible(),
+                                                                            attr: { tabindex: tabindexDragItem(), 'aria-label': labelItemScreenReaderDescription },
+                                                                            click: onSelectForAccessibility">
+                    <tr>
+                        <td class="classic-drag-item__icon iconfont" aria-hidden="true"><div>&#x62;</div></td>
+                        <td class="classic-drag-item__content wizard-main-text" data-bind="text: responseText"></td>
+                    </tr>
+                </table>
+                <!-- /ko -->
+
+                <!-- ko if: platformFeatures.getIsIE8() == false -->
+                <div class="classic-sticky__drag-item release drag-label" role="button" data-bind="id: draggableId,
+                                                                            visible: isAlternativeVisible(),
+                                                                            attr: { tabindex: tabindexDragItem(), 'aria-label': labelItemScreenReaderDescription },
+                                                                            click: onSelectForAccessibility">
+                    <div class="classic-drag-item__content wizard-main-text" data-bind="text: responseText"></div>
+                </div>
+                <!-- /ko -->
+
+            </div>
+        </div>
+    </div>
+</script>

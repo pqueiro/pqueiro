@@ -1,0 +1,873 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mohive's CSS components</title>
+    <link rel="stylesheet" href="../css/core.css">
+    <link rel="stylesheet" href="../css/core-tablet.css">
+    <link id=css rel="stylesheet" href="../../HtmlSkin/xxx/style.css">
+    <style>
+        /* Specific style for this page */
+        body {
+            font-size: 14px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            -moz-user-select: text !important;
+            user-select: text !important;
+            min-width: 1280px;
+        }
+
+        .componenttitle, .component-usage {
+            width: 800px;
+            text-align: center;
+            margin: 20px auto;
+            position: relative;
+            left: 150px;
+            color: #000 !important;
+            text-shadow: none !important;
+        }
+
+        .stylename {
+            margin: 20px;
+            color: #000 !important;
+            text-shadow: none !important;
+        }
+
+        .exercise {
+            position: relative;
+            left: 150px;
+            width: 800px !important;
+            height: 450px !important;
+            margin: 10px auto 30px !important;
+            display: block !important;
+            border: 1px solid black;
+        }
+
+        .components-menu {
+            position: absolute;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 340px;
+            height: 100%;
+            border-right: 1px solid #000;
+            background: #fff;
+            z-index: 2;
+            overflow: auto;
+            padding: 20px;
+        }
+
+            .components-menu h2, .components-menu h3 {
+                margin: 20px 0;
+                color: #000 !important;
+            }
+
+            .components-menu a {
+                display: block;
+                margin: 20px 0;
+                color: blue !important;
+            }
+
+            .components-menu b {
+                color: #000 !important;
+            }
+
+            .components-menu * {
+                text-shadow: none !important;
+                font-family: Arial !important;
+            }
+
+        hr {
+            width: 1000px;
+            position: relative;
+            left: 150px;
+        }
+
+        .component-usage {
+            font-size: 1em;
+        }
+
+        .fade-out {
+            opacity: 1 !important;
+        }
+    </style>
+    <script>
+        function loadcss(name){
+            document.getElementById("remove").hidden = (name === "none");
+            if(!name){
+                name = document.getElementById("skin").value;
+            }
+            document.getElementById("css").href = "../../HtmlSkin/" + name + "/style.css";
+            document.getElementById("current").innerHTML = name;
+        }
+    </script>
+</head>
+<body>
+    <div class="components-menu">
+        <h2>Mohive's CSS components</h2>
+        <br>
+
+        <b>Current skin: </b><b id="current">none</b> <button id=remove onclick="loadcss('none');return false;" hidden>remove</button>
+        <br>
+        <br>
+        <b>Load a skin: </b><button onclick="loadcss('theteam');">TheTeam</button> <b>/</b> <button onclick="loadcss('v3');">V3</button> <b>/</b> <form style="display: inline"><input id="skin" size=5 placeholder="other" style="margin: 0"> <input type=submit onclick="loadcss();return false;" value=ok style="margin: 0; height: 23px;"></form>
+
+        <br>
+        <h3>Summary:</h3>
+        <a href="#slide">Slide, background image</a>
+        <a href="#title">Title, subtitle, instruction</a>
+        <a href="#inlinedrag">Inline draggable elements</a>
+        <a href="#blockdrag">Block draggable elements</a>
+        <a href="#drop">Draggable elements well placed</a>
+        <a href="#dropzone">Drop zones</a>
+        <a href="#input">Inputs</a>
+        <a href="#hotspots">Hotspots</a>
+        <a href="#answers">Multiple answers, inline feedbacks</a>
+        <a href="#feedback">Fullscreen feedback, close button, text</a>
+        <a href="#phylacteries">Phylacteries</a>
+        <a href="#postit">Post-it</a>
+        <a href="#image">Normal image, framed image</a>
+        <a href="#illustrations">Illustrations, captions, legends, feedbacks</a>
+        <a href="#buttons">Buttons</a>
+        <a href="#frieze">Frieze, Navigation</a>
+        <!--<a href="#intro">Intro</a>
+        <a href="#resume">Resume screen</a>-->
+    </div>
+    <ul>
+        <h1 class="componenttitle" id="slide">Slide, background image</h1>
+        <li class="exercise">
+
+            <table class="templatebackground">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div>
+                                <img class="" src="//placehold.it/1600x900" style="top: 0px; left: 0px; width: 800px; height: 450px;">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="scrollbar" style="display: block; height: 450px;">
+                <div class="track" style="height: 450px;">
+                    <div class="thumb" style="top: 100px; height: 200px;">
+                        <div class="end"></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <hr>
+        <h1 class="componenttitle" id="title">Title, subtitle, instruction</h1>
+        <li class="exercise">
+            <div class="title with-block">
+                <div class="titleinner">
+                    <h1>Title with block</h1>
+                    <h2>Subtitle</h2>
+                    <p align="LEFT">Instruction</p>
+                </div>
+            </div>
+        </li>
+        <!--<li class="exercise">
+            <div class="title with-block on-top">
+                <div class="titleinner">
+                    <h1>Title on top of draggable answers</h1>
+                    <h2>Subtitle</h2>
+                    <p align="LEFT">Instruction</p>
+                </div>
+            </div>
+        </li>
+        <li class="exercise">
+            <div class="title with-block last" style="position: absolute; top: 0; height: 130px; ">
+                <div class="titleinner">
+                    <h1>Title that can "float" on top or bottom depending on the skin</h1>
+                    <h2>Subtitle</h2>
+                    <p align="LEFT">Instruction</p>
+                </div>
+            </div>
+
+            <div class="title with-block last" style="position: absolute; bottom: 0">
+                <div class="titleinner">
+                    <h1>Title that can "float" on top or bottom depending on the skin</h1>
+                    <h2>Subtitle</h2>
+                    <p align="LEFT">Instruction</p>
+                </div>
+            </div>
+        </li>-->
+        <li class="exercise">
+            <div class="title without-block">
+                <div class="titleinner">
+                    <h1>Title without block</h1>
+                    <h2>Subtitle</h2>
+                    <p align="LEFT">Instruction</p>
+                </div>
+            </div>
+        </li>
+        <!--<li class="exercise">
+            <div class="title without-block with-decoration">
+                <div class="titleinner">
+                    <h1>Title without block, with decoration</h1>
+                    <h2>Subtitle</h2>
+                    <p align="LEFT">Instruction</p>
+                </div>
+            </div>
+        </li>-->
+        <hr>
+        <h1 class="componenttitle" id="inlinedrag">Inline draggable elements</h1>
+        <li class="exercise">
+
+            <div class="draggable-container inline">
+                <div class="drag release drag-label" id="drag-id_219" style="position: relative; top: 0px; left: 0px; z-index: 0;">
+                    <div class="handle">&#x62;</div>
+                    <span>Item 1</span>
+                </div>
+                <div class="drag release drag-label" id="drag-id_217" style="position: relative; top: 0px; left: 0px; z-index: 0;">
+                    <div class="handle">&#x62;</div>
+                    <span>Item 2</span>
+                </div>
+                <div class="drag release drag-label" id="drag-id_218" style="position: relative; top: 0px; left: 0px; z-index: 0;">
+                    <div class="handle">&#x62;</div>
+                    <span>Item 3</span>
+                </div>
+                <div class="drag release drag-label" id="drag-id_215" style="position: relative; top: 0px; left: 0px; z-index: 0;">
+                    <div class="handle">&#x62;</div>
+                    <span>Item 4</span>
+                </div>
+                <div class="drag release drag-label" id="drag-id_216" style="position: relative; top: 0px; left: 0px; z-index: 0;">
+                    <div class="handle">&#x62;</div>
+                    <span>Item 5</span>
+                </div>
+            </div>
+        </li>
+        <hr>
+        <h1 class="componenttitle" id="blockdrag">Block draggable elements</h1>
+        <li class="exercise">
+
+            <div class="draggable-container block">
+                <div class="drag release drag-label" id="Div1" style="position: relative; top: 0px; left: 0px; z-index: 0;">
+                    <div class="handle">&#x62;</div>
+                    <span>Item 1</span>
+                </div>
+                <!-- others are hidden by javascript -->
+                <div class="drag release drag-label" id="Div1" style="display: none; position: relative; top: 0px; left: 0px; z-index: 0;">
+                    <div class="handle">&#x62;</div>
+                    <span>Item 1</span>
+                </div>
+            </div>
+        </li>
+
+        <hr>
+        <h1 class="componenttitle" id="drop">Draggable elements well placed</h1>
+        <li class="exercise">
+            <table width="80%" height="80%" style="margin: 10%">
+                <tr>
+                    <td width="50%">
+                        <h2>As a block</h2>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="dragged block" id="id_613">Correct!</div>
+                    </td>
+                    <td width="50%">
+                        <h2>As a text</h2>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="drop">
+                            <div class="overview" style="top: 0px;">
+                                <div>
+                                    <div class="dragged inline" style="" id="id_301">Correct!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </li>
+
+        <hr>
+        <h1 class="componenttitle" id="dropzone">Drop zones</h1>
+        <li class="exercise">
+
+            <br>
+            <br>
+            <div class="dropzone" data-bind=" visible:!responseFound()
+                                                       , attr:{'id':dropZoneId}
+                                                       , style:{width:dropWidth() + 'px'}" id="drop-id_77" style="width: 700px; margin-left: 40px;"></div>
+        </li>
+
+        <hr>
+        <h1 class="componenttitle" id="input">Inputs</h1>
+        <li class="exercise">
+
+            <div style="margin-left: 40px;">
+
+                <br>
+                <br>
+                <input data-bind="value:response, valueUpdate:'input'
+                  , event:{focus:select, blur:unselect}
+                  , visible:!validated()
+                  , attr:{id:id, 'size':responseLength}" id="id_101" size="6">
+                <div style="display:inline-block; width: 1.4em;height: 1em;font-size: 1.2em;">
+                    <div class="icon fillintheblanksok" data-bind="visible:selected() , event: { mousedown: validate }" style="display: none;">&#x21;</div>
+                    <div class="icon right" style="visibility: hidden; display: none;" data-bind="visible:!selected() &amp;&amp; !validated() &amp;&amp; !filled()">&#x21;</div>
+                    <div class="icon wrong" data-bind="visible: !selected() &amp;&amp; !correct() &amp;&amp; filled()" style="">&#x58;</div>
+                    <div class="icon right" data-bind="visible: validated()" style="display: none;">&#x2714;</div>
+                </div>
+
+                <br>
+                <br>
+                <input data-bind="value:response, valueUpdate:'input'
+                  , event:{focus:select, blur:unselect}
+                  , visible:!validated()
+                  , attr:{id:id, 'size':responseLength}" id="id_101" size="6">
+                <div style="display:inline-block; width: 1.4em;height: 1em;font-size: 1.2em;">
+                    <div class="icon fillintheblanksok" data-bind="visible:selected() , event: { mousedown: validate }" style="display: none;">&#x21;</div>
+                    <div class="icon right" style="visibility: hidden; display: none;" data-bind="visible:!selected() &amp;&amp; !validated() &amp;&amp; !filled()">&#x21;</div>
+                    <div class="icon wrong" data-bind="visible: !selected() &amp;&amp; !correct() &amp;&amp; filled()" style="display: none;">&#x58;</div>
+                    <div class="icon right" data-bind="visible: validated()" style="">&#x2714;</div>
+                </div>
+
+                <br>
+                <br>
+                <input data-bind="value:response, valueUpdate:'input'
+                  , event:{focus:select, blur:unselect}
+                  , visible:!validated()
+                  , attr:{id:id, 'size':responseLength}" id="id_101" size="6">
+                <div style="display:inline-block; width: 1.4em;height: 1em;font-size: 1.2em;">
+                    <div class="icon fillintheblanksok" data-bind="visible:selected() , event: { mousedown: validate }" style="">&#x21;</div>
+                    <div class="icon right" style="visibility: hidden;" data-bind="visible:!selected() &amp;&amp; !validated() &amp;&amp; !filled()">&#x21;</div>
+                    <div class="icon wrong" data-bind="visible: !selected() &amp;&amp; !correct() &amp;&amp; filled()" style="display: none;">&#x58;/div>
+                    <div class="icon right" data-bind="visible: validated()" style="display: none;">&#x2714;</div>
+                </div>
+            </div>
+        </li>
+
+        <hr>
+        <h1 class="componenttitle" id="hotspots">Hotspots</h1>
+        <li class="exercise">
+
+            <table class="templatebackground">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div>
+                                <img class="" src="//placehold.it/1600x900" style="top: 0px; left: 0px; width: 800px; height: 450px;">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class=iexplore>
+                <a href="javascript;" class="fade-effect dropzone fade-in" style="position: absolute; top: 10px; left: 10px; width: 300px; height: 300px;">
+                    <img src="images/hotspot.png" style="display: none; width: 406px; height: 406px;">
+                </a>
+            </div>
+        </li>
+
+        <hr>
+        <h1 class="componenttitle" id="answers">Multiple answers, inline feedbacks</h1>
+        <li class="exercise">
+            <div class="answers" style="position: absolute; bottom: 0; width: 800px!important;">
+                <div class="scrollbar disable" style="display: block; height: 230px; border-right: 1px solid #000;">
+                    <div class="track" style="height: 230px;">
+                        <div class="thumb" style="top: 0px; height: 100px;">
+                            <div class="end"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="viewport" style="height: 230px;">
+                    <div class="overview" style="top: 0px;">
+                        <div class="answer">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="icon" style="visibility: hidden">&#x2714;</td>
+                                        <td>Item 1 (unread)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="answer right">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="icon">&#x2714;</td>
+                                        <td>Item 2 (correct)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="answer wrong">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="icon">x</td>
+                                        <td>Item 3 (incorrect)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="answer last read">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="icon" style="visibility: hidden">&#x2714;</td>
+                                        <td>Item 4 (read)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="inlinefeedback_id_526" class="inlinefeedback inlinefeedbackvisible">Item 4's feedback</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <hr>
+        <h1 class="componenttitle" id="feedback">Fullscreen feedback, close button, text</h1>
+        <li class="exercise">
+            <div class="feedback feedbackvisible">
+                <div class="feedback">
+                    <div class="feedback">
+                        <a href="javascript:;" class="feedbackclose"></a>
+                        <div class="feedbackmedias">
+                            <img id="id_641" src="//placehold.it/500x450" class="mediafeedback" style="top: 0px; left: 0px; width: 500px; height: 450px;">
+                            <div class="video" style="top: 0px; left: 0px; width: 1733px; height: 975px; visibility: hidden;">
+                                <video class="video-js vjs-mohive-skin" id="id_625" style="width: 1733px; height: 975px;">
+                                    <source src="" type="video/mp4">
+                                    <track kind="captions" default="" src=""></track>
+                                </video>
+                            </div>
+                            <div class="video" style="top: 0px; left: 0px; width: 1733px; height: 975px; display: none;">
+                                <img src="" style="width: 1733px;">
+                            </div>
+                        </div>
+                        <div class="feedbacktext" style="width: 800px;">
+                            <div class="feedbacktextinner">Feedback text</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <hr>
+        <h1 class="componenttitle" id="phylacteries">Phylacteries<!-- (as blocks, like in elaborate)--></h1>
+        <li class="exercise">
+            <div style="height: 100px; position: relative; width: 150px; margin: 10px; margin-left: 100px;">
+                <div class="phylacteryWrapper top block">
+                    <div class="phylactery">
+                        Top
+                    </div>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+            <div style="height: 40px; position: relative; width: 150px; margin: 10px; margin-left: 100px;">
+                <div class="phylacteryWrapper bottom block">
+                    <div class="phylactery">
+                        Bottom
+                    </div>
+                    <div class="triangle "></div>
+                </div>
+            </div>
+            <div style="height: 100px; position: relative; width: 150px; margin: 10px; margin-left: 100px;">
+                <div class="phylacteryWrapper right block">
+                    <div class="phylactery">
+                        Right
+                    </div>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+            <div style="height: 100px; position: relative; width: 150px; margin: 10px; margin-left: 100px;">
+                <div class="phylacteryWrapper left block">
+                    <div class="phylactery">
+                        Left
+                    </div>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+        </li>
+        <!--<h1 class="componenttitle">Phylacteries (floating, like in about images)</h1>
+        <li class="exercise">
+            <div style="height: 100px; position: relative; width: 150px; margin: 10px; margin-left: 100px;">
+                <div class="phylacteryWrapper top block absolute" style="width: 200px;">
+                    <div class="phylactery">
+                        Top
+                    </div>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+            <div style="height: 40px; position: relative; width: 150px; margin: 10px; margin-left: 100px;">
+                <div class="phylacteryWrapper bottom block absolute" style="width: 200px;">
+                    <div class="phylactery">
+                        Bottom
+                    </div>
+                    <div class="triangle "></div>
+                </div>
+            </div>
+            <div style="height: 120px; position: relative; width: 150px; margin: 10px; margin-left: 100px;">
+                <div class="phylacteryWrapper right block absolute" style="width: 200px;">
+                    <div class="phylactery">
+                        Right
+                    </div>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+            <div style="height: 100px; position: relative; width: 150px; margin: 10px; margin-left: 100px;">
+                <div class="phylacteryWrapper left block absolute" style="width: 200px;">
+                    <div class="phylactery">
+                        Left
+                    </div>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+        </li>-->
+        <hr>
+        <h1 class="componenttitle" id="postit">Post-it</h1>
+        <!--<h2 class="component-usage">(Info)</h2>
+        <li class="exercise">
+            <div style="margin: 20px; width: 50%;">
+                <div class="text-note">
+                    <div class="text-content text-note-content">
+                        <textformat leading="2">
+                        <p align="LEFT">
+                            Raptim igitur properantes ut motus sui rumores celeritate nimia praevenirent, vigore corporum ac levitate confisi per flexuosas semitas ad summitates collium tardius evadebant. et cum superatis difficultatibus arduis ad supercilia venissent fluvii Melanis alti et verticosi, qui pro muro tuetur accolas circumfusus, augente nocte adulta terrorem quievere paulisper lucem opperientes. arbitrabantur enim nullo inpediente transgressi inopino adcursu adposita quaeque vastare, sed in cassum labores pertulere gravissimos.<br>
+                            <br>
+                            Iam virtutem ex consuetudine vitae sermonisque nostri interpretemur nec eam, ut quidam docti, verborum magnificentia metiamur virosque bonos eos, qui habentur, numeremus, Paulos, Catones, Galos, Scipiones, Philos; his communis vita contenta est; eos autem omittamus, qui omnino nusquam reperiuntur.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <h2 class="component-usage">(Sequencer)</h2>-->
+        <li class="exercise">
+            <div style="margin: 20px; width: 50%;">
+                <div id="id_58" class="text-note text-scrollbar">
+                    <div class="scrollbar" style="height: 300px; display: block;">
+                        <div class="track" style="height: 300px;">
+                            <div class="thumb" style="top: 0px; height: 200px;">
+                                <div class="end"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="viewport" style="height: 300px;">
+                        <div class="overview" style="top: 0px;">
+                            <div class="text-content text-note-content with-scrollbar">
+                                <p align="LEFT">
+                                    Raptim igitur properantes ut motus sui rumores celeritate nimia praevenirent, vigore corporum ac levitate confisi per flexuosas semitas ad summitates collium tardius evadebant. et cum superatis difficultatibus arduis ad supercilia venissent fluvii Melanis alti et verticosi, qui pro muro tuetur accolas circumfusus, augente nocte adulta terrorem quievere paulisper lucem opperientes. arbitrabantur enim nullo inpediente transgressi inopino adcursu adposita quaeque vastare, sed in cassum labores pertulere gravissimos.<br>
+                                    <br>
+                                    Iam virtutem ex consuetudine vitae sermonisque nostri interpretemur nec eam, ut quidam docti, verborum magnificentia metiamur virosque bonos eos, qui habentur, numeremus, Paulos, Catones, Galos, Scipiones, Philos; his communis vita contenta est; eos autem omittamus, qui omnino nusquam reperiuntur.
+                                    <br>
+                                    Raptim igitur properantes ut motus sui rumores celeritate nimia praevenirent, vigore corporum ac levitate confisi per flexuosas semitas ad summitates collium tardius evadebant. et cum superatis difficultatibus arduis ad supercilia venissent fluvii Melanis alti et verticosi, qui pro muro tuetur accolas circumfusus, augente nocte adulta terrorem quievere paulisper lucem opperientes. arbitrabantur enim nullo inpediente transgressi inopino adcursu adposita quaeque vastare, sed in cassum labores pertulere gravissimos.<br>
+                                    <br>
+                                    Iam virtutem ex consuetudine vitae sermonisque nostri interpretemur nec eam, ut quidam docti, verborum magnificentia metiamur virosque bonos eos, qui habentur, numeremus, Paulos, Catones, Galos, Scipiones, Philos; his communis vita contenta est; eos autem omittamus, qui omnino nusquam reperiuntur.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <hr>
+        <h1 class="componenttitle" id="image">Normal image, framed image</h1>
+        <h2 class="component-usage">(all templates)</h2>
+        <li class="exercise" style="text-align: center">
+            <br>
+            <br>
+            <img src="//placehold.it/150x150">
+            <br>
+            <br>
+            <br>
+            <img class="image-frame" src="//placehold.it/150x150">
+        </li>
+        <hr>
+        <h1 class="componenttitle" id="illustrations">Illustrations, captions, legends, feedbacks</h1>
+        <!--<h2 class="component-usage">Info, Sequencer</h2>-->
+        <li class="exercise">
+            <div class="illustration fade-effect transitionall" id="id_62">
+                <h3 id="id_57">Title</h3>
+                <!-- TAKE CARE : FOLLOWING DIV IS FILLED BY A TEMPLATE MEDIATEMPLATE ! -->
+                <div class="image">
+                    <img id="id_65" src="//placehold.it/150x150">
+                </div>
+                <h4 id="id_59">Caption</h4>
+            </div>
+        </li>
+        <!--<h2 class="component-usage">More about</h2>
+        <li class="exercise">
+            <div style="margin-top: 50px;">
+                <div class="illustration" id="id_302">
+                    <div class="image">
+                        <img id="id_65" src="//placehold.it/150x150">
+                    </div>
+                    <h4>Caption</h4>
+                </div>
+            </div>
+        </li>
+        <h2 class="component-usage">About Images (normal / clicked)</h2>
+        <li class="exercise">
+            <div>
+                <div style="position: relative; width: 100%; height: 200px;">
+                    <div class="aboutImages">
+                        <div class="viewport">
+                            <div class="content">
+                                <div class="illustration">
+                                    <div class="imageWrapper" style="height: 170px;">
+                                        <div class="image imageNormal">
+                                            <img id="id_65" src="//placehold.it/150x150">
+                                        </div>
+                                        <div class="image imageFeedback">
+                                            <img id="id_65" src="//placehold.it/150x150">
+                                        </div>
+                                    </div>
+                                    <h4 data-bind="html: graphicCaption">Caption</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div style="position: relative; width: 100%; height: 200px;">
+                    <div class="aboutImages">
+                        <div class="viewport">
+                            <div class="content selected">
+                                <div class="illustration">
+                                    <div class="imageWrapper" style="height: 170px;">
+                                        <div class="image imageNormal">
+                                            <img id="id_65" src="//placehold.it/150x150">
+                                        </div>
+                                        <div class="image imageFeedback">
+                                            <img id="id_65" src="//placehold.it/150x150">
+                                        </div>
+                                    </div>
+                                    <h4 data-bind="html: graphicCaption">Caption</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <h2 class="component-usage">Elaborate</h2>
+        <li class="exercise">
+            <br>
+            <div class="illustration">
+                <div>
+                    <img id="id_65" src="//placehold.it/150x150">
+                </div>
+
+                <h3>Title</h3>
+            </div>
+        </li>
+        <h2 class="component-usage">Evaluate Media</h2>
+        <li class="exercise">
+            <div class="illustration">
+                <h3 style="height: 25px;">Title</h3>
+                <h4 style="height: 25px;">Caption</h4>
+                <div class="imageWrapper">
+                    <div class="image">
+                        <img id="id_65" src="//placehold.it/150x150">
+                    </div>
+                    <div class="feedbackOverlay" style="top: 0px; left: 0px; height: 218px;"></div>
+                </div>
+            </div>
+        </li>-->
+        <hr>
+        <h1 class="componenttitle" id="buttons">Buttons</h1>
+        <h2 class="component-usage">(Evaluate Media, Elaborate)</h2>
+        <li class="exercise">
+            <div style="margin: 20px; width: 200px;">
+                <br>
+                <a href="javascript:;" class="button" style="margin: 0.5em 0">Button</a>
+                <br>
+                <a href="javascript:;" class="button selected" style="margin: 0.5em 0">Button (clicked)</a>
+                <br>
+                <a href="javascript:;" class="button wrong" style="margin: 0.5em 0">
+                    <span class="icon">&#x58;</span>
+                    <span>Button (wrong)</span>
+                </a>
+                <br>
+                <a href="javascript:;" class="button right" style="margin: 0.5em 0">
+                    <span class="icon">&#x2714;</span>
+                    <span>Button (right)</span>
+                </a>
+            </div>
+        </li>
+        <hr>
+        <h1 class="componenttitle" id="frieze">Frieze, Navigation</h1>
+        <li class="exercise" style="position: relative; overflow: hidden;">
+
+            <table id="tablecontent" class="tablecontent" style="width: 800px; height: 300px; ">
+                <tbody>
+                    <tr>
+                        <td id="previous" class="previous fade-effect fade-out" style="" data-bind="css:{'fade-in': previousButtonVisible(),'fade-out': !previousButtonVisible() ,'visibility-hidden':navigationButtonHidden() }">
+                            <a id="buttonprevious" href="javascript:;" data-bind="click:previousButtonClick">&#x3c;</a>
+                        </td>
+
+                        <td id="tdcontent" class="tdcontent"></td>
+                        <td id="next" class="next fade-effect fade-out" style="" data-bind="css : {'fade-in': nextButtonVisible(),'fade-out': !nextButtonVisible(),'visibility-hidden':navigationButtonHidden(),'locked':isCompleted() }">
+                            <a id="buttonnext" href="javascript:;" data-bind="click:nextButtonClick">&#x3e;</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div id="bottombuttons" class="bottombuttons fade-effect fade-in bottombuttonsopen" data-bind="css : {'fade-in': friezeVisible(),'fade-out': !friezeVisible()}" style="position: absolute;">
+                <a href="javascript:;" id="menu" class="menu" data-bind="click:onFriezeMenuClick">&#x2630;</a>
+            </div>
+
+            <div id="bottombuttons" class="bottombuttons fade-effect fade-in bottombuttonsopen" data-bind="css : {'fade-in': friezeVisible(),'fade-out': !friezeVisible()}" style="position: absolute;">
+                <a href="javascript:;" id="menu" class="menu" data-bind="click:onFriezeMenuClick">&#x2630;</a>
+            </div>
+
+            <div id="frieze" class="frieze friezeopen" style="position: absolute;">
+
+                <!-- navigation buttons (only on desktop!) -->
+
+                <a href="javascript:;" id="friezenavigationprevious" class="friezenavigationholder locked" data-bind="visible : isDesktopMode ">
+                    <div class="friezenavigation friezenavigationprevious">&#x21d0;</div>
+                </a>
+
+                <a href="javascript:;" id="friezenavigationnext" class="friezenavigationholder" data-bind="visible : isDesktopMode ">
+                    <div class="friezenavigation friezenavigationnext">&#x21d2;</div>
+                </a>
+
+                <!-- frieze content -->
+                <div id="friezescrollhide" class="friezescrollhide">
+                    <div id="friezeinner" class="friezeinner" style="width: 1920px;">
+                        <table id="friezechapters" class="friezechapters">
+
+                            <tbody>
+                                <tr data-bind="foreach: course().timelineGroups" id="friezeTH">
+                                    <th data-bind="attr:{'colSpan':exercises.length,'class':cssClassValues}" colspan="1" class="begin">
+                                        <div class="timelineGroupTitle" data-bind="html:title">&nbsp;</div>
+                                    </th>
+
+                                    <th data-bind="attr:{'colSpan':exercises.length,'class':cssClassValues}" colspan="3" class="first">
+                                        <div class="timelineGroupTitle" data-bind="html:title">Chapter title</div>
+                                    </th>
+                                    <th data-bind="attr:{'colSpan':exercises.length,'class':cssClassValues}" colspan="3" class="last">
+                                        <div class="timelineGroupTitle" data-bind="html:title">Chapter title</div>
+                                    </th>
+                                </tr>
+
+                                <tr data-bind="template: { name: course().koGetTimelineExerciseTemplate, foreach: course().exercises()}">
+                                    <td data-bind="css: {begin: isBegin, end: isEnd}" class="begin">
+                                        <div style="width: 40px;"></div>
+                                    </td>
+
+                                    <td data-bind="attr:{'id':exerciseId}
+                                              , css: {begin: isBegin
+                                                     , first: isFirst
+                                                     , last: isLastOfChapter
+                                                     , lastunit : isLastOfCourse
+                                                     , watched: isWatched
+                                                     , current: isCurrent
+                                                     , end: isEnd}" id="0" class="first last current">
+                                        <div class="friezeunit" data-bind="click:displayExercise">
+                                            <div class="friezeunitthumb">
+                                                <img style="height: 90px;" data-bind="attr:{'src': thumbnail}" src="//placehold.it/160x90">
+                                                <div class="friezeunitmask" data-bind="text:index">1</div>
+                                            </div>
+                                            <p class="friezeunitlabel" data-bind="html:title">Title</p>
+                                        </div>
+                                    </td>
+
+                                    <td data-bind="attr:{'id':exerciseId}
+                                              , css: {begin: isBegin
+                                                     , first: isFirst
+                                                     , last: isLastOfChapter
+                                                     , lastunit : isLastOfCourse
+                                                     , watched: isWatched
+                                                     , current: isCurrent
+                                                     , end: isEnd}" id="0" class="first">
+                                        <div class="friezeunit" data-bind="click:displayExercise">
+                                            <div class="friezeunitthumb">
+                                                <img style="height: 90px;" data-bind="attr:{'src': thumbnail}" src="//placehold.it/160x90">
+                                                <div class="friezeunitmask" data-bind="text:index">2</div>
+                                            </div>
+                                            <p class="friezeunitlabel" data-bind="html:title">Title</p>
+                                        </div>
+                                    </td>
+
+                                    <td data-bind="attr:{'id':exerciseId}
+                                              , css: {begin: isBegin
+                                                     , first: isFirst
+                                                     , last: isLastOfChapter
+                                                     , lastunit : isLastOfCourse
+                                                     , watched: isWatched
+                                                     , current: isCurrent
+                                                     , end: isEnd}" id="0" class="">
+                                        <div class="friezeunit" data-bind="click:displayExercise">
+                                            <div class="friezeunitthumb">
+                                                <img style="height: 90px;" data-bind="attr:{'src': thumbnail}" src="//placehold.it/160x90">
+                                                <div class="friezeunitmask" data-bind="text:index">3</div>
+                                            </div>
+                                            <p class="friezeunitlabel" data-bind="html:title">Title</p>
+                                        </div>
+                                    </td>
+
+                                    <td data-bind="attr:{'id':exerciseId}
+                                              , css: {begin: isBegin
+                                                     , first: isFirst
+                                                     , last: isLastOfChapter
+                                                     , lastunit : isLastOfCourse
+                                                     , watched: isWatched
+                                                     , current: isCurrent
+                                                     , end: isEnd}" id="0" class="">
+                                        <div class="friezeunit" data-bind="click:displayExercise">
+                                            <div class="friezeunitthumb">
+                                                <img style="height: 90px;" data-bind="attr:{'src': thumbnail}" src="//placehold.it/160x90">
+                                                <div class="friezeunitmask" data-bind="text:index">4</div>
+                                            </div>
+                                            <p class="friezeunitlabel" data-bind="html:title">Title</p>
+                                        </div>
+                                    </td>
+
+                                    <td data-bind="attr:{'id':exerciseId}
+                                              , css: {begin: isBegin
+                                                     , first: isFirst
+                                                     , last: isLastOfChapter
+                                                     , lastunit : isLastOfCourse
+                                                     , watched: isWatched
+                                                     , current: isCurrent
+                                                     , end: isEnd}" id="0" class="">
+                                        <div class="friezeunit" data-bind="click:displayExercise">
+                                            <div class="friezeunitthumb">
+                                                <img style="height: 90px;" data-bind="attr:{'src': thumbnail}" src="//placehold.it/160x90">
+                                                <div class="friezeunitmask" data-bind="text:index">5</div>
+                                            </div>
+                                            <p class="friezeunitlabel" data-bind="html:title">Title</p>
+                                        </div>
+                                    </td>
+
+                                    <td data-bind="attr:{'id':exerciseId}
+                                              , css: {begin: isBegin
+                                                     , first: isFirst
+                                                     , last: isLastOfChapter
+                                                     , lastunit : isLastOfCourse
+                                                     , watched: isWatched
+                                                     , current: isCurrent
+                                                     , end: isEnd}" id="0" class="">
+                                        <div class="friezeunit" data-bind="click:displayExercise">
+                                            <div class="friezeunitthumb">
+                                                <img style="height: 90px;" data-bind="attr:{'src': thumbnail}" src="//placehold.it/160x90">
+                                                <div class="friezeunitmask" data-bind="text:index">6</div>
+                                            </div>
+                                            <p class="friezeunitlabel" data-bind="html:title">Title</p>
+                                        </div>
+                                    </td>
+
+                                    <td data-bind="css: {begin: isBegin, end: isEnd}" class="end">
+                                        <div style="width: 40px;"></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

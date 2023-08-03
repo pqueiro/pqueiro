@@ -1,0 +1,32 @@
+﻿<script id="AboutImagesItemsFluidBoxRenderer" type="text/html">
+    <!-- ko foreach: items() -->
+    <div class="fluid__item fluid__item-aboutimages">
+        <!-- Particular case : the title above feedback image is never display in the case the main image is a polaroid and the image feedback is not a polaroid. For more informations, see IN:39431 -->
+        <!-- ko if: (!isSelected() && !image().isPolaroid()) || (!image().isPolaroid() && !hasPolaroid()) -->
+        <h3 class="fluid__item-title media__title" data-bind="text: title,
+                                                css: {selected : isSelected()},
+                                                attr:{ tabindex: itemTabindex}"></h3>
+        <!-- /ko -->
+
+        <div class="process-common-phone__image-container">
+            <div class="fluid__item-image__wrapper"
+                 data-bind="id: id()">
+                <div class="fluid__item-image media-image-parent-landmark"
+                     role="button"
+                     data-bind="template: { name: applicationViewModel.koGetMediaTemplateName, data: image }
+                                                    , css: { 'play-media': hasFeedback() }
+                                                    , click: select
+                                                    , attr:{ tabindex: itemTabindex}" />
+            </div>
+        </div>
+
+
+        <!-- ko if: caption != "" -->
+        <h4 class="media__caption" data-bind="text: caption,
+                                                css: {selected : isSelected() || parent.canDisplayAllCaptions },
+                                                attr:{ tabindex: itemTabindex}"></h4>
+        <!-- /ko -->
+
+    </div>
+    <!-- /ko -->
+</script>

@@ -1,0 +1,10 @@
+﻿<script id="TranscriptTemplate" type="text/html">
+    <!-- Transcript -->
+    <div id="transcriptArea" class="accessibility__transcript" tabindex="-1" aria-hidden="true" data-bind="visible: transcriptActivated() && transcriptVisible()">
+        <div class="accessibility__transcript__toolbar">
+            <span>Transcript</span>
+            <div id="minimizeTranscript" class="accessibility__transcript__minimize accessibility__transcript__button" data-bind="click: function(){minimizeTranscript()}" title="Minimize transcript">-</div>
+            <div id="closeTranscript" class="accessibility__transcript__close accessibility__transcript__button" data-bind="click: function(){closeTranscript()}">&#xd7;</div>
+        </div>    
+    <div id="contentTranscript" class="accessibility__transcript__content" data-bind="html: transcriptText()"></div></div>
+</script>

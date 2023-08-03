@@ -1,0 +1,19 @@
+﻿<script id="TextScrollableTemplate" type="text/html">
+    <div data-bind="attr:{'id':id, 'class': cssClassValues}
+						, visible:isVisible">
+
+        <div class="scrollbar">
+            <div class="track">
+                <div class="thumb">
+                    <div class="end" />
+                </div>
+            </div>
+        </div>
+
+        <div class="viewport">
+            <div class="overview"
+                 data-bind="richtext:text()">
+            </div>
+        </div>
+    </div>
+</script>

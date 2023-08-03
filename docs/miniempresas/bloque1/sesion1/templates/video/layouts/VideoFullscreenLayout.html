@@ -1,0 +1,18 @@
+<script id="VideoFullscreenLayout" type="text/html">
+    
+    <div class="exercise__content-wrapper">
+        <div class="exercise__content media-video-fit-to-container media-image-fit-to-container"
+             data-bind="css:{'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                             'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                             'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                             'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <!-- ko template: { name: "MediaVideoTemplate",data:video}--><!-- /ko -->
+        </div>
+    </div>
+
+    <!-- ko template: { name: "CallToActionFullscreenTemplate",data:$data}--><!-- /ko -->
+
+</script>
+
+
+

@@ -1,0 +1,105 @@
+﻿<script id="AssessmentMatchToTemplate" type="text/html">
+
+    <!-- ko template: { name: "ExerciseTitleComponent",data:$data}--><!-- /ko -->
+    <div class="exercise__content-wrapper assessmentMatchTo__content-wrapper">
+        <div class="exercise__content assessmentMatchTo__content"
+             data-bind="css: {'assessmentMatchTo--dragging-item' : isDragging(),
+                              'content--small-layout': layoutSizeGroupClassName() == 'content--small-layout',
+                              'content--large-layout': layoutSizeGroupClassName() == 'content--large-layout',
+                              'content--medium-layout': layoutSizeGroupClassName() == 'content--medium-layout',
+                              'content--fullscreen-layout': layoutSizeGroupClassName() == 'content--fullscreen-layout'}">
+            <div class="assessmentMatchTo__vertical-align exercise__vertical-align">
+
+                <table class="assessmentMatchTo__table">
+                    <tr>
+                        <!-- ko foreach: containers -->
+                        <td class="assessmentMatchTo__cell assessmentMatchTo__cell--title">
+                            <div class="assessmentMatchTo__decoration"></div>
+                            <!-- ko if: title() != "" -->
+                            <h3 class="assessmentMatchTo__title__text">
+                                <span class="wizard-main-text" data-bind="text: title"></span>
+                            </h3>
+                            <hr/>
+                            <!-- /ko -->
+                        </td>
+                        <!-- /ko -->
+                    </tr>
+
+                    <tr>
+                        <!-- ko foreach: containers -->
+                        <td class="assessmentMatchTo__cell assessmentMatchTo__cell--image" data-bind="id: dropId">
+                            <div class="assessmentMatchTo__decoration"></div>
+                            <!-- ko if: $parent.hasImage() -->
+                            <div data-bind="template: {name: applicationViewModel.koGetMediaTemplateName, data: image}"></div>
+                            <hr/>
+                            <!-- /ko -->
+                        </td>
+                        <!-- /ko -->
+                    </tr>
+
+                    <tr class="assessmentMatchTo__row--alternativesDropped-zones" data-bind="visible: !showCorrectAnswersTable()">
+                        <!-- ko foreach: containers -->
+                        <td class="assessmentMatchTo__column--alternativesDropped-zones" role="button"
+                            data-bind="id: containerId,
+                                    attr: { 'aria-label': itemScreenReaderDescription,
+                                            tabindex: tabindexDropzone()},
+                                    click: $parent.isActiveAndAccessibilityEnabled() && $parent.onDropAccessibility($data)">
+                            <div class="assessmentMatchTo__DroppedZones" data-bind="id: 'droppedzone_'+containerId"></div>
+                        </td>
+                        <!-- /ko -->
+                    </tr>
+
+                    <tr class="assessmentMatchTo__row--drop-zones" id="assessmentMatchTo__dropZonesTrueFalse" data-bind="visible: showCorrectAnswersTable()">
+                        <!-- ko foreach: containers -->
+                        <td class="assessmentMatchTo__cell">
+                            <div class="assessmentMatchTo__answers-wrapper"
+                                 data-bind="id: 'assessmentMatchTo__trueFalseAnswers-wrapper__'+containerId, visible: !$parent.correctAnwsersDisplayed(),
+                                        attr: { 'aria-label': itemScreenReaderDescription, tabindex: tabindexDropzone()},
+                                        click: $parent.isActiveAndAccessibilityEnabled() && $parent.onDropAccessibility($data)">
+                                
+                                <!-- ko foreach: alternativesTrueFalseAnswers() -->
+                                <div class="assessmentMatchTo__answer assessmentMatchTo__showAnswers"
+                                     role="alert"
+                                     data-bind="id: draggableId,
+                                                attr: {'aria-label': labelItemScreenReaderDescription,
+                                                        tabindex: tabindexDragItem()},
+                                                css: {'button--right': correctAnswer(), 'button--wrong': !correctAnswer()}">
+                                    <span class="assessmentMatchTo__answer__icon">
+                                        <span class="iconfont wizard-main-text" data-bind="text: iconTrueFalse"></span>
+                                    </span>
+                                    <span class="assessmentMatchTo__answer__text wizard-main-text" data-bind="text: responseText"></span>
+                                </div>
+                                <!-- /ko -->
+                            </div>
+
+                            <div class="assessmentMatchTo__answers-wrapper"
+                                 data-bind="id: 'assessmentMatchTo__correctAnswers-wrapper__'+containerId, visible: $parent.correctAnwsersDisplayed(),
+                                        attr: { 'aria-label': itemScreenReaderDescription, tabindex: tabindexDropzone()},
+                                        click: $parent.isActiveAndAccessibilityEnabled() && $parent.onDropAccessibility($data)">
+
+                                <!-- ko foreach: alternativesCorrectAnswers() -->
+                                <div class="assessmentMatchTo__answer assessmentMatchTo__showAnswers"
+                                     role="alert"
+                                     data-bind="id: draggableId,
+                                                attr: {'aria-label': labelItemScreenReaderDescription,
+                                                        tabindex: tabindexDragItem()},
+                                                css: {'button--correctAnswer': answerFound(), 'button--normalAnswer': !answerFound()}">
+                                    <span class="assessmentMatchTo__answer__textOnly wizard-main-text" data-bind="text: responseText"></span>
+                                </div>
+                                <!-- /ko -->
+                            </div>
+
+                        </td>
+                        <!-- /ko -->
+                    </tr>
+                </table>
+               
+                <!-- ko if: assessmentManager -->
+                <div class="assessment_submit_button--center"
+                        data-bind="template: { name: 'AssessmentSubmitButtonTemplate', data: $data }"></div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+    <!-- ko template: { name: "ClassicDragdropTemplate",data:$data}--><!-- /ko -->
+</script>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="15525 2295 79.689 81.542">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.5;
+      }
+
+      .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="groupe-55" transform="translate(14810 1367)">
+    <g id="groupe-51" transform="translate(580.176 726.099)">
+      <ellipse id="ellipse-5" class="cls-1" cx="39.845" cy="40.771" rx="39.845" ry="40.771" transform="translate(134.824 201.901)"/>
+    </g>
+    <g id="groupe-54" transform="translate(0 0.31)">
+      <g id="rectangle-16" class="cls-2" transform="translate(757.419 949.69)">
+        <rect class="cls-3" width="10.946" height="38.31" rx="5.473"/>
+        <rect class="cls-4" x="1.5" y="1.5" width="7.946" height="35.31" rx="3.973"/>
+      </g>
+      <g id="rectangle-16-2" data-name="rectangle-16" class="cls-2" transform="translate(741 949.69)">
+        <rect class="cls-3" width="10.946" height="38.31" rx="5.473"/>
+        <rect class="cls-4" x="1.5" y="1.5" width="7.946" height="35.31" rx="3.973"/>
+      </g>
+    </g>
+  </g>
+</svg>
