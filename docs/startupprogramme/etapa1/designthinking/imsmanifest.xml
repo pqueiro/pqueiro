@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest identifier="_5iFFILWVznZ_course_id" version="1.3" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3" xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3" xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3" xmlns:imsss="http://www.imsglobal.org/xsd/imsss" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd
+                        http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd
+                        http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd
+                        http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd
+                        http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>CAM 1.3</schemaversion>
+    <adlcp:location>metadata.xml</adlcp:location>
+  </metadata>
+  <organizations default="Design_Thinking_ORG">
+    <organization identifier="Design_Thinking_ORG" adlseq:objectivesGlobalToSystem="false">
+      <title>Design Thinking</title>
+      <item identifier="prueba_2_articulate_SCO" identifierref="__5iFFILWVznZ_course_id_RES" isvisible="true">
+        <title>Design Thinking</title>
+      </item>
+      <metadata>
+        <adlcp:location>metadata.xml</adlcp:location>
+      </metadata>
+      <imsss:sequencing>
+        <imsss:controlMode choice="true" flow="true" />
+        <imsss:deliveryControls tracked="true" completionSetByContent="false" objectiveSetByContent="false" />
+      </imsss:sequencing>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__5iFFILWVznZ_course_id_RES" type="webcontent" adlcp:scormType="sco" href="index_lms.html">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/5ZqyMMmKotG_80_DX1548_DY1548_CX250_CY168.png" />
+      <file href="mobile/5zq8HQAkjT3_80_DX498_DY498_CX215_CY102.png" />
+      <file href="mobile/6pZmuU7j6Ey_80_DX744_DY744_CX585_CY389.jpg" />
+      <file href="mobile/68O5YnVPvnW_80_DX736_DY736_CX578_CY237.jpg" />
+      <file href="story_content/video_6CDbR78PuxS_22_48_958x540.mp4" />
+      <file href="mobile/poster_5zh2ZqPEGHI_video_6CDbR78PuxS_22_48_958x540.jpg" />
+      <file href="mobile/5zq8HQAkjT3_80_DX498_DY498_CX171_CY81.png" />
+      <file href="story_content/video_5q9MYaPbaaR_22_48_946x506.mp4" />
+      <file href="mobile/poster_6RTLV2ghntH_video_5q9MYaPbaaR_22_48_946x506.jpg" />
+      <file href="mobile/5ZqyMMmKotG_80_DX1548_DY1548_CX242_CY163.png" />
+      <file href="mobile/6XB6Ah2qObU_80_DX856_DY856_CX428_CY327.jpg" />
+      <file href="mobile/5yWvo1Wd8I8_80_DX774_DY774_CX387_CY175.jpg" />
+      <file href="mobile/5bHBlh6VK88_80_DX786_DY786_CX426_CY324.jpg" />
+      <file href="mobile/5W6JxEgiCa5_80_DX858_DY858_CX470_CY318.jpg" />
+      <file href="mobile/6Ry7cIXXsLB_80_DX454_DY454_CX188_CY289.jpg" />
+      <file href="mobile/5v3RRXGzy6C_80_DX454_DY454_CX210_CY346.jpg" />
+      <file href="mobile/5zq8HQAkjT3_80_DX498_DY498_CX390_CY185.png" />
+      <file href="mobile/5ZqyMMmKotG_80_DX1550_DY1550_CX1219_CY821.png" />
+      <file href="meta.xml" />
+      <file href="story_content/5Y9fG7y8XcF.jpg" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5fMmJtkbZwz.js" />
+      <file href="html5/data/js/5hvhxCPoSnA.js" />
+      <file href="html5/data/js/5WhrLxwbPlu.js" />
+      <file href="html5/data/js/644kyIFq1bd.js" />
+      <file href="html5/data/js/659xearcGtj.js" />
+      <file href="html5/data/js/6cWAt0JdsDI.js" />
+      <file href="html5/data/js/6hgyxPFVKXb.js" />
+      <file href="html5/data/js/6hZXraBNCxR.js" />
+      <file href="html5/data/js/6pXdt9n4EBi.js" />
+      <file href="html5/data/js/6TCm555erVZ.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>
