@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_5VYHZK7qYz4_course_id" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">Sesión 3. La producción de una empresa. </langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="Sesión_3._La_producción_de_una_empresa.__ORG">
+    <organization identifier="Sesión_3._La_producción_de_una_empresa.__ORG">
+      <title>Sesión 3. La producción de una empresa. </title>
+      <item identifier="Sesión_4._La_producción_de_una_empresa._Manual_del_voluntario_SCO" isvisible="true" identifierref="__5VYHZK7qYz4_course_id_RES">
+        <title>Sesión 3. La producción de una empresa. </title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__5VYHZK7qYz4_course_id_RES" type="webcontent" href="index_lms.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/6dYR3nlWkto_80_P_64_77_268_112.png" />
+      <file href="mobile/5aAEIdzqNFT_80.jpg" />
+      <file href="mobile/6qSLyzTMp4A_80.jpg" />
+      <file href="mobile/6Z9PBO2TEXE_P_484_484_940_172.png" />
+      <file href="mobile/5YbYCV2HKNO_P_258_270_608_576.png" />
+      <file href="mobile/5hgHy2dPTus_P_472_496_948_320.png" />
+      <file href="mobile/6dVIiSDauQF.png" />
+      <file href="mobile/6axv6mGQs1L_80_P_393_416_1271_546.png" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5fJeC4tTflw.js" />
+      <file href="html5/data/js/5oWof69m0yd.js" />
+      <file href="html5/data/js/5q2hS1ZLQog.js" />
+      <file href="html5/data/js/5sGbzelHdo7.js" />
+      <file href="html5/data/js/5VcrWkeJugW.js" />
+      <file href="html5/data/js/5wNS4rJkimJ.js" />
+      <file href="html5/data/js/5ZyUR7u7vZH.js" />
+      <file href="html5/data/js/61L6xu46OuT.js" />
+      <file href="html5/data/js/69lknMEN1IP.js" />
+      <file href="html5/data/js/6Aa2Hwb7ZR1.js" />
+      <file href="html5/data/js/6aypz7JVhDF.js" />
+      <file href="html5/data/js/6b7cVCyTGRF.js" />
+      <file href="html5/data/js/6i9X6beydCN.js" />
+      <file href="html5/data/js/6iVDu8WTkUi.js" />
+      <file href="html5/data/js/6jS6q1M99nc.js" />
+      <file href="html5/data/js/6K8mbxuvspF.js" />
+      <file href="html5/data/js/6lihOqCGCON.js" />
+      <file href="html5/data/js/6lRYtc8KqPd.js" />
+      <file href="html5/data/js/6LX9JCbKSKZ.js" />
+      <file href="html5/data/js/6qFF57RuhiQ.js" />
+      <file href="html5/data/js/6qHQH8qaGHq.js" />
+      <file href="html5/data/js/6TLIitPqsiz.js" />
+      <file href="html5/data/js/6XjjeVYhckC.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>

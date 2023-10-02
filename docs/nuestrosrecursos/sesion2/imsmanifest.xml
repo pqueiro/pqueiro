@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_6dXz1xVK0bA_course_id" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">Sesión 2. Los recursos de capital</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="Sesión_2._Los_recursos_de_capital_ORG">
+    <organization identifier="Sesión_2._Los_recursos_de_capital_ORG">
+      <title>Sesión 2. Los recursos de capital</title>
+      <item identifier="Sesión_3Los_recursos_de_capital._Manual_voluntario_SCO" isvisible="true" identifierref="__6dXz1xVK0bA_course_id_RES">
+        <title>Sesión 2. Los recursos de capital</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__6dXz1xVK0bA_course_id_RES" type="webcontent" href="index_lms.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/6llM7yW905V_80_P_76_85_250_114.png" />
+      <file href="mobile/5xFy6vRdDVn_80.jpg" />
+      <file href="mobile/6hATQWoIqvG_P_283_353_1316_215.png" />
+      <file href="mobile/5jS18rCfn1W_P_220_568_1468_180.png" />
+      <file href="mobile/6qgjn27Yn17_P_216_350_640_463.png" />
+      <file href="mobile/6VkC8MSi01N_P_225_256_694_590.png" />
+      <file href="mobile/6Sc8ZMq1LPR_P_191_448_1504_288.png" />
+      <file href="mobile/5zewcJTjG0L_P_224_500_1500_267.png" />
+      <file href="mobile/6U4Sfq71IF5_P_448_424_1048_480.png" />
+      <file href="mobile/5iG9NVyNqgq.png" />
+      <file href="mobile/5ihLkyK3tj5.png" />
+      <file href="mobile/6NFPJAwcwIX_P_476_436_1028_124.png" />
+      <file href="mobile/6kyvHeKYkHp_80_P_375_400_1289_546.png" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5fJeC4tTflw.js" />
+      <file href="html5/data/js/5g07Xmev9Vr.js" />
+      <file href="html5/data/js/5kh1djHof1c.js" />
+      <file href="html5/data/js/5rJ0gQUMygO.js" />
+      <file href="html5/data/js/5vo4VuKLW74.js" />
+      <file href="html5/data/js/5vREaQW3kW5.js" />
+      <file href="html5/data/js/5WtBgbxIICt.js" />
+      <file href="html5/data/js/5ywoLVf1Ykf.js" />
+      <file href="html5/data/js/5ZTyDbUmEF3.js" />
+      <file href="html5/data/js/5ZyUR7u7vZH.js" />
+      <file href="html5/data/js/61e6VCfWHLm.js" />
+      <file href="html5/data/js/61L6xu46OuT.js" />
+      <file href="html5/data/js/65d9s7yU97A.js" />
+      <file href="html5/data/js/6a8ZEJdIHCI.js" />
+      <file href="html5/data/js/6Dxot0Aq5yW.js" />
+      <file href="html5/data/js/6EKAuL0Rkqq.js" />
+      <file href="html5/data/js/6eOvp4j3bc6.js" />
+      <file href="html5/data/js/6Hg3GbLk7Q8.js" />
+      <file href="html5/data/js/6iVDu8WTkUi.js" />
+      <file href="html5/data/js/6jS6q1M99nc.js" />
+      <file href="html5/data/js/6kVFeSlDDJX.js" />
+      <file href="html5/data/js/6LH12wDhMXg.js" />
+      <file href="html5/data/js/6Lk2vsjohhA.js" />
+      <file href="html5/data/js/6nfF2K4Rjob.js" />
+      <file href="html5/data/js/6OPCmyNJJYh.js" />
+      <file href="html5/data/js/6qFF57RuhiQ.js" />
+      <file href="html5/data/js/6qHQH8qaGHq.js" />
+      <file href="html5/data/js/6r5tOKthLmq.js" />
+      <file href="html5/data/js/6S6basFxVc3.js" />
+      <file href="html5/data/js/6Sa1lN1Ocxf.js" />
+      <file href="html5/data/js/6XjjeVYhckC.js" />
+      <file href="html5/data/js/6ZAwBgxojMp.js" />
+      <file href="html5/data/js/6ZHzHHrnqHR.js" />
+      <file href="html5/data/js/6Zx28X8wAmt.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>

@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_6nmBLWeOC2E_course_id" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">Sesión 1. Los recursos naturales y humanos</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="Sesión_1._Los_recursos_naturales_y_humanos_ORG">
+    <organization identifier="Sesión_1._Los_recursos_naturales_y_humanos_ORG">
+      <title>Sesión 1. Los recursos naturales y humanos</title>
+      <item identifier="Sesión_1._Los_recursos_naturales_y_humanos_SCO" isvisible="true" identifierref="__6nmBLWeOC2E_course_id_RES">
+        <title>Sesión 1. Los recursos naturales y humanos</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__6nmBLWeOC2E_course_id_RES" type="webcontent" href="index_lms.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/5yrHxxVm5fn_80_P_70_73_272_111.png" />
+      <file href="mobile/65OLlAnV4Fn_80.jpg" />
+      <file href="mobile/5k7cLJ8L3ka_P_144_238_784_613.png" />
+      <file href="mobile/6I3DwGWQ2Y8_P_258_264_610_598.png" />
+      <file href="mobile/5fsBVoapko7_P_682_214_520_802.png" />
+      <file href="mobile/5yrHxxVm5fn_80.png" />
+      <file href="mobile/5mPQas57cdD_P_412_476_357_232.png" />
+      <file href="mobile/5oJ6JWHYEfB_P_458_524_280_200.png" />
+      <file href="mobile/5sLtzhWT1el_P_391_432_395_336.png" />
+      <file href="mobile/6GG5va7UCRL_P_402_408_558_358.png" />
+      <file href="mobile/6CpptkJOJLk_P_456_478_452_270.png" />
+      <file href="mobile/63Yo3OHuH6T_P_366_386_552_390.png" />
+      <file href="mobile/6C8VlZZqcys_P_982_278_556_690.png" />
+      <file href="mobile/5Vjnm8LiU8E_P_666_442_586_319.png" />
+      <file href="mobile/5heUp5NyY1B.png" />
+      <file href="mobile/6CBbrmgP06a_80_P_309_337_1463_703.png" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5b1DrMDw7wF.js" />
+      <file href="html5/data/js/5d56B7iMw7G.js" />
+      <file href="html5/data/js/5d8XDs64Q7k.js" />
+      <file href="html5/data/js/5eOo2EDdmZA.js" />
+      <file href="html5/data/js/5fJeC4tTflw.js" />
+      <file href="html5/data/js/5gS1Pf1dxg0.js" />
+      <file href="html5/data/js/5h57cpuF7Va.js" />
+      <file href="html5/data/js/5lUKbovvTLt.js" />
+      <file href="html5/data/js/5nAArNoTHsx.js" />
+      <file href="html5/data/js/5pHeiJ87WCw.js" />
+      <file href="html5/data/js/5qb2nRVBW68.js" />
+      <file href="html5/data/js/5qZtGaZppOv.js" />
+      <file href="html5/data/js/5t3DvTQPA51.js" />
+      <file href="html5/data/js/5Ug6M3pcWui.js" />
+      <file href="html5/data/js/5UgLY20rxsu.js" />
+      <file href="html5/data/js/5Ui5veuhFq0.js" />
+      <file href="html5/data/js/5vN7Yd1rTD4.js" />
+      <file href="html5/data/js/5wll3Q9afOZ.js" />
+      <file href="html5/data/js/5wMMN2S9Ygi.js" />
+      <file href="html5/data/js/5xiPAV3gemH.js" />
+      <file href="html5/data/js/5ydXsavEVlR.js" />
+      <file href="html5/data/js/5yyXuHoGIGs.js" />
+      <file href="html5/data/js/5ZnGX3naFQV.js" />
+      <file href="html5/data/js/5ZyUR7u7vZH.js" />
+      <file href="html5/data/js/601irUAlvBU.js" />
+      <file href="html5/data/js/612lF8cXgwB.js" />
+      <file href="html5/data/js/66fsxBVheh5.js" />
+      <file href="html5/data/js/66lJFRUs6py.js" />
+      <file href="html5/data/js/678BjgBzxCS.js" />
+      <file href="html5/data/js/67A7a2oDBLQ.js" />
+      <file href="html5/data/js/6b4gLZUMO1u.js" />
+      <file href="html5/data/js/6BHNH7vkqdB.js" />
+      <file href="html5/data/js/6BIh7latsqX.js" />
+      <file href="html5/data/js/6bPHAGtSs1Q.js" />
+      <file href="html5/data/js/6CErORY8yZt.js" />
+      <file href="html5/data/js/6CjdQjNXdLm.js" />
+      <file href="html5/data/js/6dJM6boWzUQ.js" />
+      <file href="html5/data/js/6Jd4gal1PmU.js" />
+      <file href="html5/data/js/6jS6q1M99nc.js" />
+      <file href="html5/data/js/6L7GNKu9NHd.js" />
+      <file href="html5/data/js/6mOXVQj1a6D.js" />
+      <file href="html5/data/js/6NAmloX4KN6.js" />
+      <file href="html5/data/js/6NdlaoMm5I5.js" />
+      <file href="html5/data/js/6odbdzj1gNB.js" />
+      <file href="html5/data/js/6PeVhHPmUUo.js" />
+      <file href="html5/data/js/6PImwl8H3Xc.js" />
+      <file href="html5/data/js/6qFF57RuhiQ.js" />
+      <file href="html5/data/js/6qHQH8qaGHq.js" />
+      <file href="html5/data/js/6RgB0YFchKL.js" />
+      <file href="html5/data/js/6RKYdGiEHdE.js" />
+      <file href="html5/data/js/6rpfaBSkR3L.js" />
+      <file href="html5/data/js/6SDgobM6dKF.js" />
+      <file href="html5/data/js/6TT8bFymshJ.js" />
+      <file href="html5/data/js/6V9ZZAB6BPS.js" />
+      <file href="html5/data/js/6VYuDslS9f6.js" />
+      <file href="html5/data/js/6XjjeVYhckC.js" />
+      <file href="html5/data/js/6XneLCQNWSt.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>

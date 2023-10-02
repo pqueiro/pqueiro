@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_5aDW8MUMg0j_course_id" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">Sesión 4. Preparándonos para la feria</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="Sesión_4._Preparándonos_para_la_feria_ORG">
+    <organization identifier="Sesión_4._Preparándonos_para_la_feria_ORG">
+      <title>Sesión 4. Preparándonos para la feria</title>
+      <item identifier="Sesión_5._Preparándonos_para_la_feria._Manual_del_voluntario_SCO" isvisible="true" identifierref="__5aDW8MUMg0j_course_id_RES">
+        <title>Sesión 4. Preparándonos para la feria</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__5aDW8MUMg0j_course_id_RES" type="webcontent" href="index_lms.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/69sJEWE5Pe7_80_P_80_81_252_114.png" />
+      <file href="mobile/5mteZQ1g4MX_80.jpg" />
+      <file href="mobile/5bLp3gZ6xMt_P_275_275_590_571.png" />
+      <file href="mobile/6SDHjF4WS6f_P_216_316_715_496.png" />
+      <file href="mobile/63h81y5hc86_P_246_362_637_452.png" />
+      <file href="mobile/6fFG5hgM7cm_P_284_289_553_531.png" />
+      <file href="mobile/5kgc7gvxNW5_P_524_348_900_588.png" />
+      <file href="mobile/6MO9u35LQSN_P_211_311_713_507.png" />
+      <file href="mobile/5rwhZhjNVjA_P_275_296_548_517.png" />
+      <file href="mobile/5gGPKbGJpNi_P_122_504_374_271.png" />
+      <file href="mobile/6ZdqakpCLhn_P_233_235_694_625.png" />
+      <file href="mobile/6ndL2AhjzTY_P_345_260_457_629.png" />
+      <file href="mobile/5rWayJ6trce_P_284_294_571_531.png" />
+      <file href="mobile/60gZ5bDopXy.png" />
+      <file href="mobile/6NsNFPpVJBY_80_P_395_413_1248_549.png" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5aKCIPvrHcq.js" />
+      <file href="html5/data/js/5f9sOJcLtkJ.js" />
+      <file href="html5/data/js/5fJeC4tTflw.js" />
+      <file href="html5/data/js/5iATTVV8zQK.js" />
+      <file href="html5/data/js/5n2fn6LEj69.js" />
+      <file href="html5/data/js/5oWof69m0yd.js" />
+      <file href="html5/data/js/5pmtIEvocUv.js" />
+      <file href="html5/data/js/5VcrWkeJugW.js" />
+      <file href="html5/data/js/5WfLtayTDOg.js" />
+      <file href="html5/data/js/5xbLcvBOctB.js" />
+      <file href="html5/data/js/5XE3qTcLQ1v.js" />
+      <file href="html5/data/js/5ZyUR7u7vZH.js" />
+      <file href="html5/data/js/61L6xu46OuT.js" />
+      <file href="html5/data/js/65adLJW5JAl.js" />
+      <file href="html5/data/js/65muDcLv8sh.js" />
+      <file href="html5/data/js/69p7VbA41yW.js" />
+      <file href="html5/data/js/6cqqPQCliV2.js" />
+      <file href="html5/data/js/6DHWWNY88PJ.js" />
+      <file href="html5/data/js/6H4BkLquL9A.js" />
+      <file href="html5/data/js/6HdYWGEXGkD.js" />
+      <file href="html5/data/js/6HiqqlfqNn4.js" />
+      <file href="html5/data/js/6iuYwt2eNMf.js" />
+      <file href="html5/data/js/6jS6q1M99nc.js" />
+      <file href="html5/data/js/6KMGAhMs1rw.js" />
+      <file href="html5/data/js/6lRYtc8KqPd.js" />
+      <file href="html5/data/js/6LX9JCbKSKZ.js" />
+      <file href="html5/data/js/6lyvGic0G85.js" />
+      <file href="html5/data/js/6Mp24gKsk4G.js" />
+      <file href="html5/data/js/6MrPSpznlce.js" />
+      <file href="html5/data/js/6Na3QUJ4KMG.js" />
+      <file href="html5/data/js/6NnXl1tFkvR.js" />
+      <file href="html5/data/js/6qFF57RuhiQ.js" />
+      <file href="html5/data/js/6qHQH8qaGHq.js" />
+      <file href="html5/data/js/6qY6P8nXPAF.js" />
+      <file href="html5/data/js/6rnkS6YJYYx.js" />
+      <file href="html5/data/js/6XjjeVYhckC.js" />
+      <file href="html5/data/js/6ZQxlomuN49.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>
