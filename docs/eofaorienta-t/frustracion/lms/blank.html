@@ -1,0 +1,56 @@
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+	<head>
+	<script>
+	window.document.onkeypress = CheckForDebugCommand;
+
+	var intQuestionCounter = 0;
+	var ASCII_QUESTION = 63;
+	
+	function CheckForDebugCommand(e){
+
+
+		var intKeyCode = 0;			
+		if (window.event) {
+			e = window.event;
+			intKeyCode = e.keyCode;
+		}
+		else  {
+			intKeyCode = e.which;
+		}
+
+		if (intKeyCode == ASCII_QUESTION){
+			intQuestionCounter++;
+			if (intQuestionCounter == 3){
+				intQuestionCounter = 0;
+				
+				parent.ShowDebugWindow();
+			}
+		}
+		else if (intKeyCode !=0){		//in FireFox, the shift key comes through as a keypress with code of 0...we want to ignore this
+			intQuestionCounter = 0;
+		}
+	}		
+	
+	
+
+	</script>
+	
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">FJNHK3QCHCF6-2088904399-7076</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">2f1bef55-4cd4-4485-a783-d5b826e75b57</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://fundacionjaes.sharepoint.com/sites/desarrollo/programas/_layouts/15/DocIdRedir.aspx?ID=FJNHK3QCHCF6-2088904399-7076, FJNHK3QCHCF6-2088904399-7076</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+	<body>
+		&nbsp;
+<!--
+If the course does not load and is stuck on this page:
+ -Click in the middle of the page
+ -Press the question mark key (?) three times
+ -A window should pop up containing debug information, send this information to technical support for further assistance
+ -If no information appears, try again 1 or 2 more times, sometimes that just does the trick
+ -->
+	</body>
+</html>

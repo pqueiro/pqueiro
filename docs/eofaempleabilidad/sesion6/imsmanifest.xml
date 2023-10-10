@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_6h0yLx5mohl" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">SESIÓN 6. COMUNICACIÓN Y GESTIÓN DE CONFLICTOS</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="SESIÓN_6._COMUNICACIÓN_Y_GESTIÓN_DE_CONFLICTOS_ORG">
+    <organization identifier="SESIÓN_6._COMUNICACIÓN_Y_GESTIÓN_DE_CONFLICTOS_ORG">
+      <title>SESIÓN 6. COMUNICACIÓN Y GESTIÓN DE CONFLICTOS</title>
+      <item identifier="LAS_VENTAJAS_DE_PERMANECER_EN_EL_COLEGIO_SCO" isvisible="true" identifierref="__6h0yLx5mohl_RES">
+        <title>SESIÓN 6. COMUNICACIÓN Y GESTIÓN DE CONFLICTOS</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__6h0yLx5mohl_RES" type="webcontent" href="launcher.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/5bzWNK4ummb_80.jpg" />
+      <file href="mobile/67GcU3ewTqw.png" />
+      <file href="mobile/6rGYRV0LhkE_P_346_226_452_628.png" />
+      <file href="mobile/5aeqgAvTmca_80.jpg" />
+      <file href="mobile/6QouDfxHsG4_P_271_287_576_562.png" />
+      <file href="mobile/6blKpyXHOfl_P_264_256_607_571.png" />
+      <file href="mobile/6fdowVeIuvT_P_334_264_463_613.png" />
+      <file href="mobile/69aU3gnwF29_80.jpg" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5aUQXUoP6lc.js" />
+      <file href="html5/data/js/5bweqcoFA1O.js" />
+      <file href="html5/data/js/5egQV6E1amu.js" />
+      <file href="html5/data/js/5hp0FRe8dFG.js" />
+      <file href="html5/data/js/5hpc66H7eet.js" />
+      <file href="html5/data/js/5iUlv0TptGo.js" />
+      <file href="html5/data/js/5kUmdVXBDlE.js" />
+      <file href="html5/data/js/5lCIgqGhUVp.js" />
+      <file href="html5/data/js/5nqNoCjt43j.js" />
+      <file href="html5/data/js/5qt3UfLo2y6.js" />
+      <file href="html5/data/js/5qzj9xq720Y.js" />
+      <file href="html5/data/js/5W6Sqz3MMsd.js" />
+      <file href="html5/data/js/5wbwxE8bitC.js" />
+      <file href="html5/data/js/5XjcTrB1Gwr.js" />
+      <file href="html5/data/js/5YUokQJaEKV.js" />
+      <file href="html5/data/js/5yWHGEG70cH.js" />
+      <file href="html5/data/js/63ORIFTEd19.js" />
+      <file href="html5/data/js/63vPbbhqKMw.js" />
+      <file href="html5/data/js/64BLRpXcuD4.js" />
+      <file href="html5/data/js/689vfGsC3mP.js" />
+      <file href="html5/data/js/6cjuTrzDjK4.js" />
+      <file href="html5/data/js/6CP5JAdYgQn.js" />
+      <file href="html5/data/js/6Dail3AOa1H.js" />
+      <file href="html5/data/js/6Eg9rwQ1iTj.js" />
+      <file href="html5/data/js/6F0FxZOLTj1.js" />
+      <file href="html5/data/js/6G2wXvVr1Xu.js" />
+      <file href="html5/data/js/6gd5BLpRb6j.js" />
+      <file href="html5/data/js/6grTNbnF8uS.js" />
+      <file href="html5/data/js/6GuwT0bYB6N.js" />
+      <file href="html5/data/js/6hHR3LgeAR0.js" />
+      <file href="html5/data/js/6HJe0ViaGoe.js" />
+      <file href="html5/data/js/6HZLqw6DFlD.js" />
+      <file href="html5/data/js/6MehhuECygN.js" />
+      <file href="html5/data/js/6MNH4VcJ18h.js" />
+      <file href="html5/data/js/6n4pJViaDOe.js" />
+      <file href="html5/data/js/6oKF5aRhDih.js" />
+      <file href="html5/data/js/6OnqzD6S6bV.js" />
+      <file href="html5/data/js/6PigexCpZxt.js" />
+      <file href="html5/data/js/6QxDK2rCYuF.js" />
+      <file href="html5/data/js/6RiXPL9A6km.js" />
+      <file href="html5/data/js/6TNK0k5AWEI.js" />
+      <file href="html5/data/js/6TQrOKfzAn7.js" />
+      <file href="html5/data/js/6Ub0qv2hBGr.js" />
+      <file href="html5/data/js/6Vgw0HwDxnD.js" />
+      <file href="html5/data/js/6YfkRl6vC2l.js" />
+      <file href="html5/data/js/6YLIVoHC2nz.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="launcher.html" />
+      <file href="story_content/external_window.png" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>

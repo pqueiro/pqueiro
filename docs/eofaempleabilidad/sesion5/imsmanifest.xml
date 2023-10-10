@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_6h0yLx5mohl" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">SESIÓN 5. PREPARANDO LA ENTREVISTA</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="SESIÓN_5._PREPARANDO_LA_ENTREVISTA_ORG">
+    <organization identifier="SESIÓN_5._PREPARANDO_LA_ENTREVISTA_ORG">
+      <title>SESIÓN 5. PREPARANDO LA ENTREVISTA</title>
+      <item identifier="LAS_VENTAJAS_DE_PERMANECER_EN_EL_COLEGIO_SCO" isvisible="true" identifierref="__6h0yLx5mohl_RES">
+        <title>SESIÓN 5. PREPARANDO LA ENTREVISTA</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__6h0yLx5mohl_RES" type="webcontent" href="launcher.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/6Rw9gvapdJ3_80.jpg" />
+      <file href="mobile/67GcU3ewTqw.png" />
+      <file href="mobile/6rGYRV0LhkE_P_346_226_452_628.png" />
+      <file href="mobile/6o4BjVL2n2L_P_235_300_652_540.png" />
+      <file href="mobile/6iXR40kt0B6_P_329_287_462_556.png" />
+      <file href="mobile/68ct8DGwCTC_80.jpg" />
+      <file href="mobile/5wGyxKsdQqs_80.jpg" />
+      <file href="mobile/5biEjowYiwD_P_362_271_392_581.png" />
+      <file href="mobile/5wtNi2jVBCn_P_287_273_577_571.png" />
+      <file href="mobile/5YZ0BEct1O1_P_221_272_655_562.png" />
+      <file href="mobile/6E55k4PwJtX_P_160_287_797_564.png" />
+      <file href="mobile/5ifcAksYDEM_P_248_287_616_552.png" />
+      <file href="mobile/69aU3gnwF29_80.jpg" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5aB5T0QEnZ0.js" />
+      <file href="html5/data/js/5bFGaQLZtGr.js" />
+      <file href="html5/data/js/5bweqcoFA1O.js" />
+      <file href="html5/data/js/5egQV6E1amu.js" />
+      <file href="html5/data/js/5hp0FRe8dFG.js" />
+      <file href="html5/data/js/5kUmdVXBDlE.js" />
+      <file href="html5/data/js/5lCIgqGhUVp.js" />
+      <file href="html5/data/js/5lNWlwLnR5g.js" />
+      <file href="html5/data/js/5mkkgDQd0Xd.js" />
+      <file href="html5/data/js/5p6iu6kuvlK.js" />
+      <file href="html5/data/js/5qzj9xq720Y.js" />
+      <file href="html5/data/js/5rswG6urotI.js" />
+      <file href="html5/data/js/5szzCsXw18p.js" />
+      <file href="html5/data/js/5UioiXxHlYI.js" />
+      <file href="html5/data/js/5VgW0zY7ecf.js" />
+      <file href="html5/data/js/5vVeDzunF2Q.js" />
+      <file href="html5/data/js/5W6Sqz3MMsd.js" />
+      <file href="html5/data/js/5W7UpdnvsJP.js" />
+      <file href="html5/data/js/5W8CSRD4x97.js" />
+      <file href="html5/data/js/5WnLPwSyhmU.js" />
+      <file href="html5/data/js/5Z6lDJC1dlW.js" />
+      <file href="html5/data/js/61LeV7DrUnB.js" />
+      <file href="html5/data/js/62a9JCw3MD0.js" />
+      <file href="html5/data/js/63c0PFacnTx.js" />
+      <file href="html5/data/js/64YdMQraYnd.js" />
+      <file href="html5/data/js/65b5feZPtve.js" />
+      <file href="html5/data/js/66sjuZUJ0Lq.js" />
+      <file href="html5/data/js/6bvQ6JLUcwC.js" />
+      <file href="html5/data/js/6CASEF8dKfj.js" />
+      <file href="html5/data/js/6EE6Ffnv7G2.js" />
+      <file href="html5/data/js/6F0FxZOLTj1.js" />
+      <file href="html5/data/js/6G2wXvVr1Xu.js" />
+      <file href="html5/data/js/6g2XiGsIjet.js" />
+      <file href="html5/data/js/6gd5BLpRb6j.js" />
+      <file href="html5/data/js/6GuwT0bYB6N.js" />
+      <file href="html5/data/js/6hHR3LgeAR0.js" />
+      <file href="html5/data/js/6HJe0ViaGoe.js" />
+      <file href="html5/data/js/6HZLqw6DFlD.js" />
+      <file href="html5/data/js/6jwl6jJSV5t.js" />
+      <file href="html5/data/js/6KkmsyYZwby.js" />
+      <file href="html5/data/js/6LYfNlP0UAq.js" />
+      <file href="html5/data/js/6n4pJViaDOe.js" />
+      <file href="html5/data/js/6nRKAwtGZy6.js" />
+      <file href="html5/data/js/6nZeJ4pvkBQ.js" />
+      <file href="html5/data/js/6oKF5aRhDih.js" />
+      <file href="html5/data/js/6ozueFfnxWq.js" />
+      <file href="html5/data/js/6pFVjQT9bC2.js" />
+      <file href="html5/data/js/6qRSrRrfpRx.js" />
+      <file href="html5/data/js/6QxDK2rCYuF.js" />
+      <file href="html5/data/js/6RUu5TupaGx.js" />
+      <file href="html5/data/js/6T5SUFVbXsa.js" />
+      <file href="html5/data/js/6TNK0k5AWEI.js" />
+      <file href="html5/data/js/6WJGp2muiQO.js" />
+      <file href="html5/data/js/6Xx6bvWuEsq.js" />
+      <file href="html5/data/js/6YfkRl6vC2l.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="launcher.html" />
+      <file href="story_content/external_window.png" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>

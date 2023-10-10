@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_5uZBFixU62n" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">SESIÓN 2. OBJETIVOS Y PLAN DE ACCIÓN</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="SESIÓN_2._OBJETIVOS_Y_PLAN_DE_ACCIÓN_ORG">
+    <organization identifier="SESIÓN_2._OBJETIVOS_Y_PLAN_DE_ACCIÓN_ORG">
+      <title>SESIÓN 2. OBJETIVOS Y PLAN DE ACCIÓN</title>
+      <item identifier="LAS_VENTAJAS_DE_PERMANECER_EN_EL_COLEGIO_SCO" isvisible="true" identifierref="__5uZBFixU62n_RES">
+        <title>SESIÓN 2. OBJETIVOS Y PLAN DE ACCIÓN</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__5uZBFixU62n_RES" type="webcontent" href="launcher.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/5YlBpASh282_80.jpg" />
+      <file href="mobile/67GcU3ewTqw.png" />
+      <file href="mobile/6rGYRV0LhkE_P_346_226_452_628.png" />
+      <file href="mobile/6nVBCcIlK86_P_236_291_641_527.png" />
+      <file href="mobile/6QP7A7RZgq1_P_258_252_591_627.png" />
+      <file href="mobile/6B27g7ErQvj.png" />
+      <file href="mobile/5pysrwJhj0m_P_221_283_655_577.png" />
+      <file href="mobile/5keVGTVIt1A_P_322_235_471_623.png" />
+      <file href="mobile/5m13wogSnak_P_271_264_573_581.png" />
+      <file href="mobile/69aU3gnwF29_80.jpg" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5bweqcoFA1O.js" />
+      <file href="html5/data/js/5egQV6E1amu.js" />
+      <file href="html5/data/js/5fLhkyb1cfS.js" />
+      <file href="html5/data/js/5fphVjjYXBA.js" />
+      <file href="html5/data/js/5hp0FRe8dFG.js" />
+      <file href="html5/data/js/5jNRISW2XbZ.js" />
+      <file href="html5/data/js/5kUmdVXBDlE.js" />
+      <file href="html5/data/js/5n2ofMzt3Bu.js" />
+      <file href="html5/data/js/5p6iu6kuvlK.js" />
+      <file href="html5/data/js/5qq7stvdFtT.js" />
+      <file href="html5/data/js/5qzj9xq720Y.js" />
+      <file href="html5/data/js/5txYlIVX1kt.js" />
+      <file href="html5/data/js/62t508o77Xg.js" />
+      <file href="html5/data/js/6DJZQHCzv5N.js" />
+      <file href="html5/data/js/6FV6N1EN6r4.js" />
+      <file href="html5/data/js/6G2wXvVr1Xu.js" />
+      <file href="html5/data/js/6GuwT0bYB6N.js" />
+      <file href="html5/data/js/6HZLqw6DFlD.js" />
+      <file href="html5/data/js/6mgAaZqXP7u.js" />
+      <file href="html5/data/js/6oKF5aRhDih.js" />
+      <file href="html5/data/js/6oSXXLRDbpW.js" />
+      <file href="html5/data/js/6PGGUeCybiU.js" />
+      <file href="html5/data/js/6QtN24NFKLw.js" />
+      <file href="html5/data/js/6U9CsU4BU7p.js" />
+      <file href="html5/data/js/6Y0aRF8Vjjf.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="launcher.html" />
+      <file href="story_content/external_window.png" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_6Aud59p18O3" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">TOMA DE DECISIONES</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="TOMA_DE_DECISIONES_ORG">
+    <organization identifier="TOMA_DE_DECISIONES_ORG">
+      <title>TOMA DE DECISIONES</title>
+      <item identifier="Toma_de_decisiones._Manual_voluntario/_docente._SCO" isvisible="true" identifierref="__6Aud59p18O3_RES">
+        <title>TOMA DE DECISIONES</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__6Aud59p18O3_RES" type="webcontent" href="index_lms.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="mobile/66T9pFEjtIp.png" />
+      <file href="mobile/67GcU3ewTqw.png" />
+      <file href="mobile/5n7abOQA5ga_P_247_279_645_553.png" />
+      <file href="mobile/6DMfKGNBASV.png" />
+      <file href="mobile/5ovrbd7NVN0.png" />
+      <file href="mobile/6pQEebkxuiU.png" />
+      <file href="mobile/62POlxcpvIa.png" />
+      <file href="mobile/5ag5kckbZfg.png" />
+      <file href="mobile/6aMV5qaAITs.png" />
+      <file href="mobile/5YOutxE236k.png" />
+      <file href="mobile/6oQyRyyyUTY.png" />
+      <file href="mobile/6DEBeyFhLrU.png" />
+      <file href="mobile/6A8x8RpAiYQ.png" />
+      <file href="mobile/61coJMRXXf8.png" />
+      <file href="meta.xml" />
+      <file href="story_content/user.js" />
+      <file href="html5/data/css/output.min.css" />
+      <file href="html5/data/js/5evJjpeaIiN.js" />
+      <file href="html5/data/js/5i8ZNswNphD.js" />
+      <file href="html5/data/js/5kmD9C5fBWH.js" />
+      <file href="html5/data/js/5wkB0XksSVg.js" />
+      <file href="html5/data/js/5Xn6jWIahrj.js" />
+      <file href="html5/data/js/5zld19Ebu5c.js" />
+      <file href="html5/data/js/64AKBKhwxom.js" />
+      <file href="html5/data/js/68oMvM948F1.js" />
+      <file href="html5/data/js/69ktlbNHsxa.js" />
+      <file href="html5/data/js/69lE7hlIK9m.js" />
+      <file href="html5/data/js/6B31ZGONpyB.js" />
+      <file href="html5/data/js/6BSiVeIMGL9.js" />
+      <file href="html5/data/js/6DNMRSK5fPY.js" />
+      <file href="html5/data/js/6G2wXvVr1Xu.js" />
+      <file href="html5/data/js/6GuwT0bYB6N.js" />
+      <file href="html5/data/js/6i93ZYCAC1Y.js" />
+      <file href="html5/data/js/6IFQ4ceL7SB.js" />
+      <file href="html5/data/js/6jbjVdbl38J.js" />
+      <file href="html5/data/js/6kmk0XNSNv7.js" />
+      <file href="html5/data/js/6l9mO78AE2G.js" />
+      <file href="html5/data/js/6lMAG4aaJMT.js" />
+      <file href="html5/data/js/6P4xqRmvIyA.js" />
+      <file href="html5/data/js/6p5LcWVqUmd.js" />
+      <file href="html5/data/js/6SiQ81k8ezA.js" />
+      <file href="html5/data/js/6TvShccioDA.js" />
+      <file href="html5/data/js/6TyWNOoqWbl.js" />
+      <file href="html5/data/js/6V4nfWzh7Ek.js" />
+      <file href="html5/data/js/6Vry8KM9QZG.js" />
+      <file href="html5/data/js/6WHDxoroDwE.js" />
+      <file href="html5/data/js/data.js" />
+      <file href="html5/data/js/frame.js" />
+      <file href="html5/data/js/paths.js" />
+      <file href="html5/lib/scripts/bootstrapper.min.js" />
+      <file href="html5/lib/scripts/frame.desktop.min.js" />
+      <file href="html5/lib/scripts/frame.mobile.min.js" />
+      <file href="html5/lib/scripts/slides.min.js" />
+      <file href="html5/lib/stylesheets/desktop.min.css" />
+      <file href="html5/lib/stylesheets/mobile.min.css" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-bold.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-light.woff" />
+      <file href="html5/lib/stylesheets/mobile-fonts/open-sans-regular.woff" />
+      <file href="analytics-frame.html" />
+      <file href="story.html" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/scormdriver.js" />
+    </resource>
+  </resources>
+</manifest>
